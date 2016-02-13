@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Project Name="TwisterGamesToolkit" InternalType="">
+  <Plugins>
+    <Plugin Name="qmake">
+      <![CDATA[00020001N0005Debug0000000000000001N0007Release000000000000]]>
+    </Plugin>
+    <Plugin Name="CMakePlugin">
+      <![CDATA[[{
+  "name": "Debug",
+  "enabled": true,
+  "buildDirectory": "build-debug",
+  "sourceDirectory": "$(ProjectPath)",
+  "generator": "Unix Makefiles",
+  "buildType": "",
+  "arguments": [],
+  "parentProject": ""
+ }, {
+  "name": "Release",
+  "enabled": false,
+  "buildDirectory": "build-release",
+  "sourceDirectory": "$(ProjectPath)",
+  "generator": "Unix Makefiles",
+  "buildType": "",
+  "arguments": [],
+  "parentProject": ""
+ }]]]>
+    </Plugin>
+  </Plugins>
+  <Description/>
+  <Dependencies/>
+  <VirtualDirectory Name="src">
+    <File Name="GameExample.h"/>
+    <File Name="EscapeColors.h"/>
+    <File Name="Node.cpp"/>
+    <File Name="IUR.h"/>
+    <File Name="Window.h"/>
+    <File Name="stb_textedit.h"/>
+    <File Name="AnimatedSpriteEditor.h"/>
+    <File Name="GUI.cpp"/>
+    <File Name="Input.cpp"/>
+    <File Name="imgui_draw.cpp"/>
+    <File Name="SIG_OpenGL.h"/>
+    <File Name="ResourceManager.cpp"/>
+    <File Name="SIG_stbImage.h"/>
+    <File Name="Matrix4.cpp"/>
+    <File Name="Widget.cpp"/>
+    <File Name="sig_gpu_builtin.cpp"/>
+    <File Name="Color.cpp"/>
+    <File Name="MessageNetwork.cpp"/>
+    <File Name="LightNode.cpp"/>
+    <File Name="Scene.h"/>
+    <File Name="AnimatedSprite.h"/>
+    <File Name="Boolean.h"/>
+    <File Name="TileMapLayer.h"/>
+    <File Name="AudioClip.cpp"/>
+    <File Name="SpriteEditor.cpp"/>
+    <File Name="Camera2D.h"/>
+    <File Name="Component.cpp"/>
+    <File Name="AnimatedSpriteEditor.cpp"/>
+    <File Name="Texture2D.h"/>
+    <File Name="Slider.h"/>
+    <File Name="imgui_sdl.cpp"/>
+    <File Name="AudioClip.h"/>
+    <File Name="GUI.h"/>
+    <File Name="imgui_sdl.h"/>
+    <File Name="Rect.h"/>
+    <File Name="NumberEntry.h"/>
+    <File Name="Slider.cpp"/>
+    <File Name="Resource.h"/>
+    <File Name="Sprite.cpp"/>
+    <File Name="Color.h"/>
+    <File Name="Sigma.h"/>
+    <File Name="Rect.cpp"/>
+    <File Name="imgui_internal.h"/>
+    <File Name="main.cpp"/>
+    <File Name="GUIGFX.cpp"/>
+    <File Name="imgui_demo.cpp"/>
+    <File Name="BaseGame.cpp"/>
+    <File Name="AnimatedSprite.cpp"/>
+    <File Name="Component.h"/>
+    <File Name="Window.cpp"/>
+    <File Name="Button.cpp"/>
+    <File Name="imgui.cpp"/>
+    <File Name="imgui.h"/>
+    <File Name="Quaternion.h"/>
+    <File Name="Shader.h"/>
+    <File Name="SIG_Utilities.h"/>
+    <File Name="MessageNetwork.h"/>
+    <File Name="Box.cpp"/>
+    <File Name="Boolean.cpp"/>
+    <File Name="GUIGFX.h"/>
+    <File Name="Editor.cpp"/>
+    <File Name="Node.h"/>
+    <File Name="Camera2D.cpp"/>
+    <File Name="Entry.h"/>
+    <File Name="Entry.cpp"/>
+    <File Name="Label.cpp"/>
+    <File Name="Input.h"/>
+    <File Name="Quaternion.cpp"/>
+    <File Name="NumberEntry.cpp"/>
+    <File Name="IUR.cpp"/>
+    <File Name="BaseGame.h"/>
+    <File Name="Scene.cpp"/>
+    <File Name="Sprite.h"/>
+    <File Name="Label.h"/>
+    <File Name="Box.h"/>
+    <File Name="Shader.cpp"/>
+    <File Name="ComponentEditor.cpp"/>
+    <File Name="GameLoop.h"/>
+    <File Name="Matrix4.h"/>
+    <File Name="Button.h"/>
+    <File Name="SoundSystem.cpp"/>
+    <File Name="Texture2D.cpp"/>
+    <File Name="SpriteBatch.cpp"/>
+    <File Name="ComponentEditor.h"/>
+    <File Name="GameLoop.cpp"/>
+    <File Name="Editor.h"/>
+    <File Name="Time.cpp"/>
+    <File Name="imconfig.h"/>
+    <File Name="DebugDraw.h"/>
+    <File Name="SpriteBatch.h"/>
+    <File Name="SoundSystem.h"/>
+    <File Name="DebugDraw.cpp"/>
+    <File Name="LightNode.h"/>
+    <File Name="ResourceManager.h"/>
+    <File Name="Resource.cpp"/>
+    <File Name="Vector.h"/>
+    <File Name="stb_truetype.h"/>
+    <File Name="SpriteEditor.h"/>
+    <File Name="sig_gpu_builtin.h"/>
+    <File Name="Time.h"/>
+    <File Name="TileMapLayer.cpp"/>
+    <File Name="Widget.h"/>
+    <File Name="stb_rect_pack.h"/>
+    <File Name="Vector.cpp"/>
+    <File Name="picojson.h"/>
+  </VirtualDirectory>
+  <Dependencies Name="Debug"/>
+  <Dependencies Name="Release"/>
+  <Settings Type="Static Library">
+    <GlobalSettings>
+      <Compiler Options="" C_Options="" Assembler="">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="">
+        <LibraryPath Value="."/>
+      </Linker>
+      <ResourceCompiler Options=""/>
+    </GlobalSettings>
+    <Configuration Name="Debug" CompilerType="GCC ( 4.8 )" DebuggerType="GNU gdb debugger" Type="Static Library" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="-g;-O3;-O0;-W;-std=c++11" C_Options="-g" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="dependencies/Box2D/include"/>
+        <IncludePath Value="dependencies/OAL/include"/>
+        <IncludePath Value="./"/>
+      </Compiler>
+      <Linker Options="" Required="yes">
+        <LibraryPath Value="dependencies/Box2D/lib"/>
+        <LibraryPath Value="dependencies/OAL/lib"/>
+        <Library Value="GL"/>
+        <Library Value="GL"/>
+        <Library Value="GLU"/>
+        <Library Value="GLEW"/>
+        <Library Value="Box2D"/>
+        <Library Value="SDL2"/>
+        <Library Value="SDL2main"/>
+        <Library Value="OALWrapper"/>
+        <Library Value="vorbis"/>
+        <Library Value="vorbisfile"/>
+        <Library Value="openal"/>
+      </Linker>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="TGT.a" IntermediateDirectory="./Debug" Command="" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="yes">
+        <Target Name="CMake Release">mkdir -p build-release &amp;&amp; cd build-release &amp;&amp; cmake -g "Unix Makefiles" .. -DCMAKE_BUILD_TYPE=Release</Target>
+        <Target Name="CMake Debug">mkdir -p build-debug &amp;&amp; cd build-debug &amp;&amp; cmake -g "Unix Makefiles" .. -DCMAKE_BUILD_TYPE=Debug</Target>
+        <RebuildCommand>make clean &amp;&amp; make</RebuildCommand>
+        <CleanCommand>make clean</CleanCommand>
+        <BuildCommand>make</BuildCommand>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory>$(ProjectPath)</WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no" EnableCpp14="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+    <Configuration Name="Release" CompilerType="GCC ( 4.8 )" DebuggerType="GNU gdb debugger" Type="Dynamic Library" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="" C_Options="" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="-O2" Required="yes"/>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="" IntermediateDirectory="./Release" Command="" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="yes">
+        <RebuildCommand/>
+        <CleanCommand>make clean</CleanCommand>
+        <BuildCommand>make</BuildCommand>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory>$(WorkspacePath)</WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no" EnableCpp14="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+  </Settings>
+</CodeLite_Project>
