@@ -1,6 +1,5 @@
 #include "Entry.h"
 #include "GUIGFX.h"
-#include "SIG_Utilities.h"
 #include "Input.h"
 
 #include <SDL2/SDL.h>
@@ -42,7 +41,7 @@ sig::Entry::Entry()
 void sig::Entry::OnMouseDown(MouseEvent e)
 {
 	float xpos = 0;
-	for (int i = 0; i <= m_text.size(); i++) {
+	for (u32 i = 0; i <= m_text.size(); i++) {
 		if (xpos > GetBounds().width) { break; }
 		
 		char c = m_text[i];
@@ -135,7 +134,7 @@ void sig::Entry::Render()
 	
 	if (!m_text.empty()) {
 		float xpos = 0;
-		for (int i = 0; i < m_text.size(); i++) {
+		for (u32 i = 0; i < m_text.size(); i++) {
 			
 			char c = m_text[i];
 			string charS(1, c);

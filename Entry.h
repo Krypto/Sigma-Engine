@@ -2,6 +2,7 @@
 #define SIGMA_GUI_ENTRY
 
 #include "Label.h"
+#include "SIG_Utilities.h"
 
 #include <vector>
 #include <string>
@@ -28,7 +29,7 @@ namespace sig
 	protected:
 		bool m_masked;
 		vector<int> accepted_keys;
-		int m_caretx;
+		u32 m_caretx;
 		float m_btime;
 		bool m_blink;
 	};

@@ -125,7 +125,7 @@ void sig::Texture2D::InitFBO(int attachment)
 	
 	glFramebufferTexture2D(GL_FRAMEBUFFER, attachment, GL_TEXTURE_2D, m_bindCode, 0);
 	
-	GLenum drawBuffers[1] = { attachment };
+	GLenum drawBuffers[1] = { (GLenum)attachment };
 	glDrawBuffers(1, drawBuffers);
 	
 	if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE) {

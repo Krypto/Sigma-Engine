@@ -59,7 +59,6 @@ void sig::GameLoop::LogicStep(double dt)
 		if (m_game != nullptr) {
 			m_game->SIG_Update(deltaTime);
 		}
-		m_window->Update(deltaTime);
 		
 		frameTime -= deltaTime;
 	}
@@ -81,7 +80,7 @@ int sig::GameLoop::SIG_MainLoop(float fps)
 	}
 	
 	ImGui_ImplSdl_Init(m_game->GetWindow()->GetSDLWindow());
-		
+
 	SIG_LOG("Sigma-Project Engine Started...");
 	
 	while (!m_window->IsClosing()) {
@@ -98,13 +97,15 @@ int sig::GameLoop::SIG_MainLoop(float fps)
 		ImGui::Render();
 		
 		m_window->SwapBuffers();
-		
+		m_window->Update(0);
+
 		if (m_game != nullptr) {
 			m_game->SIG_Finalize();
 		}
 		m_frames++;
 	}
 	GPUShaders::Free();
+	m_window->Close();
 
 	SIG_LOG("Sigma-Project Engine Finished...");
 

@@ -48,13 +48,13 @@ namespace sig
 		float GetRotation() const { return m_rotation; }
 		const Vector2& GetSize() const { return m_size; }
 		
-		Node* SetScale(const Vector2& scale) { this->m_scale = scale; return this; }
-		Node* SetScale(float s) { return SetScale(Vector2(s, s)); }
+		void SetScale(const Vector2& scale) { this->m_scale = scale; }
 		const Vector2& GetScale() const { return m_scale; }
 				
 		math::Matrix4 GetTransformMatrix();
 		math::Matrix4 GetParentTransformMatrix();
 		
+		const vector<Component*>& GetComponent(const string &nametype);
 		const vector<Component*>& GetComponents() const { return m_components; }
 		void AddComponent(Component *component);
 		

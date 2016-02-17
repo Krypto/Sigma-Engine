@@ -71,7 +71,7 @@ void sig::TileMapLayer::Render(SpriteBatch *batch)
 
 void sig::TileMapLayer::PutTile(int index, int x, int y)
 {
-	int id = y * m_mapWidth + x;
+	u32 id = y * m_mapWidth + x;
 	if (id > m_map.size()) { return; }
 	m_map[id] = index;
 }

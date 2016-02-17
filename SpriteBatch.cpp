@@ -151,12 +151,9 @@ void sig::SpriteBatch::CreateRenderBatches()
 
 	offset += 6;
 
-	for (int cg = 1; cg < m_glyphs.size(); cg++) {
-//		if (m_glyphs[cg]->texture != m_glyphs[cg-1]->texture) {
-			m_renderBatches.emplace_back(m_glyphs[cg]->shader, offset, 6, m_glyphs[cg]->texture, m_glyphs[cg]->transform);
-//		} else {
-//			m_renderBatches.back().numVertices += 6;
-//		}
+	for (u32 cg = 1; cg < m_glyphs.size(); cg++) {
+		m_renderBatches.emplace_back(m_glyphs[cg]->shader, offset, 6, m_glyphs[cg]->texture, m_glyphs[cg]->transform);
+
 		verts[cv++] = m_glyphs[cg]->topLeft;
 		verts[cv++] = m_glyphs[cg]->bottomLeft;
 		verts[cv++] = m_glyphs[cg]->bottomRight;

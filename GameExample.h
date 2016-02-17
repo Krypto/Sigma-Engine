@@ -17,16 +17,12 @@ class GameExample : public BaseGame
 public:
 	GameExample() : BaseGame() {
 		selectedNode = nullptr;
-		NewResource("test", "cone.png", ResourceType::RESOURCE_TEXTURE);
 		NewResource("asteroid", "asteroid1.png", ResourceType::RESOURCE_TEXTURE);
 	}
 	
 	void Initialize() {
-		n = GetCurrentScene()->CreateNode("cone");
-		
-		sprite = new Sprite(GetResourceData(Texture2D*, "test"));
-		sprite->SetColor(Color::WHITE);
-		
+		n = GetCurrentScene()->CreateNode("test");
+
 		ast = new AnimatedSprite(GetResourceData(Texture2D*, "asteroid"), 1, 15);
 		ast->AddAnimation("default", 0.05f, true, {});
 		
@@ -106,45 +102,7 @@ public:
 	}
 	
 	void OnGUI() {
-		static bool show_node_inspector = false;
-				
-		if (ImGui::BeginMainMenuBar()) {
-			if (ImGui::BeginMenu("File")) {
-				ImGui::EndMenu();
-			}
-			
-			if (ImGui::BeginMenu("Edit")) {
-				if (ImGui::MenuItem("Delete Selected", "X")) {
-					if (selectedNode != nullptr) {
-						if (selectedNode->GetParent() != nullptr) {
-							selectedNode->GetParent()->RemoveChild(selectedNode);
-							selectedNode = nullptr;
-							hoveredNode = nullptr;
-						}
-					}
-				}
-				ImGui::EndMenu();
-			}
-			
-			if (ImGui::BeginMenu("Create")) {
-				if (ImGui::MenuItem("Node")) {
-					Node *node = GetCurrentScene()->CreateNode("Node");
-					if (selectedNode != nullptr) {
-						selectedNode->AddChild(node);
-					} else {
-						GetCurrentScene()->AddChild(node);
-					}
-					selectedNode = node;
-				}
-				ImGui::EndMenu();
-			}
-			
-			if (ImGui::BeginMenu("View")) {
-				ImGui::MenuItem("Node Inspector", "Ctrl+Shift+I", &show_node_inspector);
-				ImGui::EndMenu();
-			}
-			ImGui::EndMainMenuBar();
-		}
+		static bool show_node_inspector = true;
 		
 		Vector2 vpos = Vector2::Zero;
 		Vector2 vscl = Vector2::Zero;
@@ -255,7 +213,6 @@ public:
 	}
 	
 	bool drag;
-	Sprite *sprite;
 	AnimatedSprite *ast;
 	Node *n;
 	

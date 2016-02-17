@@ -79,7 +79,7 @@ void sig::Window::SwapBuffers()
 void sig::Window::Update(float dt)
 {
 	if (Input::CLOSE_REQUESTED) {
-		Close();
+		m_closing = true;
 	}
 }
 

@@ -7,6 +7,7 @@ sig::AnimatedSprite::AnimatedSprite()
 	m_rows = 1;
 	m_cols = 1;
 	m_static = false;
+	m_current = nullptr;
 }
 
 sig::AnimatedSprite::AnimatedSprite(Texture2D* texture, int rows, int cols)
@@ -63,7 +64,7 @@ void sig::AnimatedSprite::Update(float dt)
 				}
 			}
 		} else {
-			int maxF = m_rows * m_cols;
+			u32 maxF = m_rows * m_cols;
 			if (m_current->currentIndex++ >= maxF-1) {
 				if (m_current->loop) {
 					m_current->currentIndex = 0;

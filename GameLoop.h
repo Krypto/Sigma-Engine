@@ -1,6 +1,8 @@
 #ifndef SIGMA_GAMELOOP
 #define SIGMA_GAMELOOP
 
+#include "MakeChai.h"
+
 namespace sig
 {
 	class Window;

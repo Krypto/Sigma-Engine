@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
-project(TGT)
+project(SigmaEngine)
 
-SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${TGT_SOURCE_DIR}/CMakeModules)
+SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${SigmaEngine_SOURCE_DIR}/CMakeModules)
 
-set(BOX2D_LIB ${TGT_SOURCE_DIR}/dependencies/Box2D/lib)
-set(OAL_LIB ${TGT_SOURCE_DIR}/dependencies/OAL/lib)
+set(BOX2D_LIB ${SigmaEngine_SOURCE_DIR}/dependencies/Box2D/lib)
+set(OAL_LIB ${SigmaEngine_SOURCE_DIR}/dependencies/OAL/lib)
 
 find_library(BOX_2D libBox2D.a ${BOX2D_LIB})
 find_library(OAL_WRAPPER libOALWrapper.a ${OAL_LIB})
@@ -22,8 +22,10 @@ include_directories(
 	${Vorbis_INCLUDE_DIR}
 	${VorbisFile_INCLUDE_DIR}
 	${OpenAL_INCLUDE_DIR}
-    ${TGT_SOURCE_DIR}/dependencies/Box2D/include
-    ${TGT_SOURCE_DIR}/dependencies/OAL/include
+	${SigmaEngine_SOURCE_DIR}/
+	${SigmaEngine_SOURCE_DIR}/dependencies/Box2D/include
+	${SigmaEngine_SOURCE_DIR}/dependencies/OAL/include
+	${SigmaEngine_SOURCE_DIR}/dependencies/ChaiScript/include
 )
 
 # Linker options
@@ -35,6 +37,7 @@ set(CMAKE_LDFLAGS "${CMAKE_LDFLAGS} -L\".\" -L\"dependencies/Box2D/lib\" -L\"dep
 # Define the CXX sources
 set ( CXX_SRCS
     main.cpp
+	GameExample.h
     Window.cpp
     GameLoop.cpp
     Time.cpp
@@ -82,11 +85,15 @@ set ( CXX_SRCS
     ComponentEditor.cpp
     SpriteEditor.cpp
     AnimatedSpriteEditor.cpp
+	Script.cpp
+	GameLogic.cpp
+	MakeChai.h
+	tests.h
 )
 
 set_source_files_properties(
     ${CXX_SRCS} PROPERTIES COMPILE_FLAGS 
-    " -g -O0 -std=c++11 -Wall")
+	" -g -O2 -Wall -std=c++11")
 
 add_executable(TGT ${CXX_SRCS} ${C_SRCS})
 
@@ -95,10 +102,11 @@ target_link_libraries(TGT
     GLU
     ${GLEW_LIBRARY}
     ${BOX_2D}
-    ${SDL2_LIBRARY}
+	${SDL2_LIBRARY}
     ${OAL_WRAPPER}
 	${VORBIS_LIBRARY}
     ${VORBISFILE_LIBRARY}
-    ${OPENAL_LIBRARY}
+	${OPENAL_LIBRARY}
+	dl
 )
 

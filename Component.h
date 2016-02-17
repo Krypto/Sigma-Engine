@@ -61,7 +61,7 @@ namespace sig
 		 * @param owner Owner Node
 		 * @param msg Message Object
 		 */
-		virtual void MessageReceived(Message& msg) {}
+		virtual void MessageReceived(const Message& msg) {}
 		
 		/**
 		 * @brief Called when the Owner Node starts colliding with another Node.

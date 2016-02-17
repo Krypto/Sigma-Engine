@@ -187,6 +187,18 @@ namespace sig
 		return ret;
 	}
 
+	const vector<Component *> &Node::GetComponent(const string &nametype)
+	{
+		vector<Component*> comps;
+		for (auto it = m_components.begin(); it != m_components.end(); ++it) {
+			Component *c = *it;
+			if (c->GetName() == nametype) {
+				comps.push_back(c);
+			}
+		}
+		return comps;
+	}
+
 	void Node::AddComponent(Component* component)
 	{
 		if (component == nullptr) {

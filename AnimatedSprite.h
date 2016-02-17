@@ -1,6 +1,7 @@
 #ifndef SIGMA_DRAWABLE_ANIMATED_IMAGE
 #define SIGMA_DRAWABLE_ANIMATED_IMAGE
 
+#include "SIG_Utilities.h"
 #include "Sprite.h"
 #include <vector>
 #include <initializer_list>
@@ -15,7 +16,7 @@ namespace sig
 		float time;
 		bool loop;
 		bool stopped;
-		int currentIndex;
+		u32 currentIndex;
 	} Animation;
 	
 	class AnimatedSprite : public Sprite

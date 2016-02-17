@@ -68,7 +68,7 @@ void sig::AnimatedSpriteEditor::GenerateEditor(Component* comp)
 			ImGui::PushStyleVar(ImGuiStyleVar_ChildWindowRounding, 2.0f);
             ImGui::BeginChild("Sub2", ImVec2(0,0), true, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_AlwaysAutoResize);
 			string title = string("Animation (") + cani->name + string(")");
-            ImGui::Text(title.c_str());
+			ImGui::Text("%s", title.c_str());
             
 			bool _loop = cani->loop;
 			if (ImGui::Checkbox("Loop", &_loop)) {

@@ -17,7 +17,7 @@ sig::SoundSystem::~SoundSystem()
 
 void sig::SoundSystem::Initialize()
 {
-	OAL_SetupLogging(true, eOAL_LogOutput_File, eOAL_LogVerbose_High);
+	// OAL_SetupLogging(true, eOAL_LogOutput_File, eOAL_LogVerbose_High);
 	
 	cOAL_Init_Params params;
 	
