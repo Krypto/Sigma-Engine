@@ -4,6 +4,7 @@
 #include "MessageNetwork.h"
 #include "ResourceManager.h"
 #include "Window.h"
+#include "SigmaTypeReg.h"
 
 sig::BaseGame::BaseGame()
 {
@@ -93,8 +94,12 @@ void sig::BaseGame::SIG_Init(Window *w)
 	m_spriteBatch->Initialize();
 	
 	GetSoundSystem()->Initialize();
-
 	GetCurrentScene()->Initialize();
+
+	// Register Types
+	m_lua = new Lua();
+	reg::RegisterTypes(m_lua, this);
+
 	Initialize();
 }
 

@@ -2,6 +2,7 @@
 #define SIGMA_ENGINE
 
 #include "ResourceManager.h"
+#include <string>
 
 // Some macros to help you out ;)
 
@@ -11,6 +12,7 @@
 #define GetResource(name) Resources->GetResource(name)
 // Get a Resource (Data) by name and casts it into rtype
 #define GetResourceData(rtype, name) (rtype) GetResource(name)->GetData()
+#define GetResourceText(name) *((std::string*)GetResource(name)->GetData())
 // Creates a new resource with the specified name, file name and ResourceType
 #define NewResource(name, filename, rtype) Resources->AddResource(name, filename, rtype)
 
@@ -45,6 +47,8 @@
 #include "Label.h"
 #include "Box.h"
 #include "Widget.h"
+
+#include "LuaEngine.h"
 
 #include "SIG_Utilities.h"
 

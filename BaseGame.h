@@ -16,6 +16,7 @@ namespace sig
 {
 	class GUI;
 	class GameLoop;
+	class Lua;
 	class Window;
 	class BaseGame : public IUR
 	{
@@ -36,13 +37,12 @@ namespace sig
 
 		SpriteBatch* GetSpriteBatch() {return m_spriteBatch;}
 		
-		BaseGame* SetCurrentScene(Scene* currentScene) {
+		void SetCurrentScene(Scene* currentScene) {
 			this->m_currentScene = currentScene;
 			if (this->m_currentScene != nullptr) {
 				this->m_currentScene->m_game = this;
 				this->m_currentScene->Initialize();
 			}
-			return this;
 		}
 		Scene* GetCurrentScene() {
 			if (m_currentScene == nullptr) {
@@ -55,6 +55,7 @@ namespace sig
 		void Pause();
 		void Resume();
 		
+		Lua* GetLua() { return m_lua; }
 	private:
 		bool m_paused;
 
@@ -69,7 +70,8 @@ namespace sig
 		SoundSystem *m_soundSystem;
 		SpriteBatch *m_spriteBatch;
 		Window *m_window;
-				
+		Lua *m_lua;
+
 		Scene *m_currentScene;
 	};
 

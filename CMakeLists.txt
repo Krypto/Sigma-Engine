@@ -15,17 +15,19 @@ find_package(Vorbis REQUIRED)
 find_package(VorbisFile REQUIRED)
 find_package(OpenAL REQUIRED)
 find_package(OpenGL REQUIRED)
+find_package(Lua52 REQUIRED)
 
 include_directories(
 	${SDL2_INCLUDE_DIR}
 	${GLEW_INCLUDE_DIR}
 	${Vorbis_INCLUDE_DIR}
 	${VorbisFile_INCLUDE_DIR}
+	${LUA_INCLUDE_DIR}
 	${OpenAL_INCLUDE_DIR}
 	${SigmaEngine_SOURCE_DIR}/
 	${SigmaEngine_SOURCE_DIR}/dependencies/Box2D/include
 	${SigmaEngine_SOURCE_DIR}/dependencies/OAL/include
-	${SigmaEngine_SOURCE_DIR}/dependencies/ChaiScript/include
+	${SigmaEngine_SOURCE_DIR}/dependencies/lua-intf
 )
 
 # Linker options
@@ -35,7 +37,7 @@ set(CMAKE_LDFLAGS "${CMAKE_LDFLAGS}  ")
 set(CMAKE_LDFLAGS "${CMAKE_LDFLAGS} -L\".\" -L\"dependencies/Box2D/lib\" -L\"dependencies/OAL/lib\" ")
 
 # Define the CXX sources
-set ( CXX_SRCS
+set( CXX_SRCS
     main.cpp
 	GameExample.h
     Window.cpp
@@ -85,15 +87,14 @@ set ( CXX_SRCS
     ComponentEditor.cpp
     SpriteEditor.cpp
     AnimatedSpriteEditor.cpp
-	Script.cpp
-	GameLogic.cpp
-	MakeChai.h
-	tests.h
+	LuaEngine.cpp
+	SigmaTypeReg.h
+	Sigma.h
 )
 
 set_source_files_properties(
     ${CXX_SRCS} PROPERTIES COMPILE_FLAGS 
-	" -g -O2 -Wall -std=c++11")
+	" -g -O0 -Wall -std=c++11")
 
 add_executable(TGT ${CXX_SRCS} ${C_SRCS})
 
@@ -107,6 +108,7 @@ target_link_libraries(TGT
 	${VORBIS_LIBRARY}
     ${VORBISFILE_LIBRARY}
 	${OPENAL_LIBRARY}
+	${LUA_LIBRARY}
 	dl
 )
 

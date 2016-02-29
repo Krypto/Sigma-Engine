@@ -13,9 +13,7 @@ namespace sig
 		LightNode();
 		
 		void Update(float dt);
-		
-		int GetType() { return LIGHT; }
-		
+
 		LightNode* SetColor(const Color& color) {this->m_color = color; return this;}
 		LightNode* SetZ(float z) {this->m_z = z; return this;}
 		const Color& GetColor() const {return m_color;}

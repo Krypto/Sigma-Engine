@@ -62,7 +62,7 @@ namespace sig
 		int GetCols() const {return m_cols;}
 		int GetRows() const {return m_rows;}
 		
-		AnimatedSprite* SetStatic(bool _static) {this->m_static = _static; return this;}
+		void SetStatic(bool _static) {this->m_static = _static;}
 		bool IsStatic() const {return m_static;}
 		
 		Animation* GetCurrent() {return m_current;}
@@ -70,7 +70,7 @@ namespace sig
 				
 		void Update(float dt);
 		
-		virtual string GetName() const { return "Animated Sprite"; }
+		COMPONENT_NAME("AnimatedSprite")
 	private:
 		vector<Animation*> m_animations;
 		Animation* m_current;

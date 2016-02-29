@@ -52,11 +52,8 @@ bool sig::Resource::Load()
 			return true;
 		}
 		case RESOURCE_TEXT: {
-			std::ifstream ifs("myfile.txt");
-			std::string content( 	(std::istreambuf_iterator<char>(ifs) ),
-									(std::istreambuf_iterator<char>()	));
-			
-			data = const_cast<char*>(content.c_str());
+			std::ifstream ifs(m_fileName);
+			data = new std::string(std::istreambuf_iterator<char>(ifs), std::istreambuf_iterator<char>());
 			return true;
 		}
 		case RESOURCE_AUDIO: {

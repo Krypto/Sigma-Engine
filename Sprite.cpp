@@ -15,13 +15,23 @@ void sig::Sprite::Render(SpriteBatch* batch)
 		}
 	}
 }
+int sig::Sprite::GetDrawOrder() const
+{
+    return m_drawOrder;
+}
+
+void sig::Sprite::SetDrawOrder(int drawOrder)
+{
+    m_drawOrder = drawOrder;
+}
+
 
 sig::Sprite::Sprite()
-	:	Sprite(nullptr, GPUShaders::SIG_GPU_SPRITEDEFAULT)
+    :	Sprite(nullptr, GPUShaders::SIG_GPU_SPRITEDEFAULT)
 {}
 
 sig::Sprite::Sprite(Texture2D* tex)
-	:	Sprite(tex, GPUShaders::SIG_GPU_SPRITEDEFAULT)
+    :	Sprite(tex, GPUShaders::SIG_GPU_SPRITEDEFAULT)
 {}
 
 sig::Sprite::Sprite(Texture2D *tex, Shader *shad)
@@ -31,5 +41,6 @@ sig::Sprite::Sprite(Texture2D *tex, Shader *shad)
 	m_shader = shad;
 	m_uvRectangle = Rect(0, 0, 1, 1);
 	m_color = Color::WHITE;
+	m_drawOrder = 0;
 }
 

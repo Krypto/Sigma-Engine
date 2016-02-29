@@ -97,7 +97,7 @@ void sig::Window::Initialize()
 	glDisable(GL_CULL_FACE);
 	
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-	
+
 	glViewport(0, 0, m_width, m_height);
 	
 	Input::win = m_sdl_window;

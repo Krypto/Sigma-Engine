@@ -72,7 +72,7 @@ namespace sig
 		~SpriteBatch();
 		
 		void Initialize();
-		void Begin(GlyphSortingMode sortingMode = GlyphSortingMode::TEXTURE);
+		void Begin(GlyphSortingMode sortingMode = GlyphSortingMode::FRONT_TO_BACK);
 		void End();
 		
 		void Draw(Glyph *glyph);
@@ -82,6 +82,7 @@ namespace sig
 		void Draw(float x, float y, float scalex, float scaley, Sprite *sprite);
 		void Draw(float x, float y, float scalex, float scaley, float orix, float oriy, float rot, Sprite *sprite);
 		void Draw(float x, float y, float scalex, float scaley, float orix, float oriy, float rot, const Rect &uv, Sprite *sprite);
+		void Draw(int order, float x, float y, float scalex, float scaley, float orix, float oriy, float rot, const Rect &uv, Sprite *sprite);
 		void Draw(float x, float y, float orix, float oriy, float rot, Sprite *sprite);
 		void Draw(float x, float y, float rot, Sprite *sprite);
 		

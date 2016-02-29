@@ -61,12 +61,12 @@ namespace sig
 		Scene* SetPixelsPerMeter(float pixelsPerMeter) {this->m_pixelsPerMeter = pixelsPerMeter; return this;}
 		float GetPixelsPerMeter() const {return m_pixelsPerMeter;}
 		
-		Scene* SetAmbient(const Color& ambient) {this->m_ambient = ambient; return this;}
-		Scene* SetBackground(const Color& background) {this->m_background = background; return this;}
+		void SetAmbient(const Color& ambient) {this->m_ambient = ambient;}
+		void SetBackground(const Color& background) {this->m_background = background;}
 		const Color& GetAmbient() const {return m_ambient;}
 		const Color& GetBackground() const {return m_background;}
 		
-		Scene* SetCamera(Camera2D* camera) {this->m_camera = camera; return this;}
+		void SetCamera(Camera2D* camera) {this->m_camera = camera;}
 		Camera2D* GetCamera() {return m_camera;}
 		
 		Node* GetRoot() {

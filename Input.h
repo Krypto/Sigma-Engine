@@ -8,6 +8,9 @@
 #include <SDL2/SDL.h>
 #include "imgui_sdl.h"
 
+#include <map>
+#include <string>
+
 namespace sig
 {
 	using namespace math;

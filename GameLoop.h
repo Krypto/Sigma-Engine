@@ -1,10 +1,9 @@
 #ifndef SIGMA_GAMELOOP
 #define SIGMA_GAMELOOP
 
-#include "MakeChai.h"
-
 namespace sig
 {
+
 	class Window;
 	class BaseGame;
 	class GameLoop
@@ -35,7 +34,7 @@ namespace sig
 		
 		Window *m_window;
 		BaseGame *m_game;
-		
+
 		double m_startTime, m_frameTime;
 		int m_frames;
 	};

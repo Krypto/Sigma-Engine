@@ -25,24 +25,29 @@ namespace sig
 		Sprite(Texture2D *tex, Shader *shad);
 		~Sprite() {}
 		
-		Sprite* SetShader(Shader* shader) {this->m_shader = shader; return this;}
-		Sprite* SetTexture(Texture2D* texture) {this->m_texture = texture; return this;}
-		Sprite* SetUVRectangle(const Rect& uvRectangle) {this->m_uvRectangle = uvRectangle; return this;}
+		void SetShader(Shader* shader) {this->m_shader = shader;}
+		void SetTexture(Texture2D* texture) {this->m_texture = texture;}
+		void SetUVRectangle(const Rect& uvRectangle) {this->m_uvRectangle = uvRectangle;}
 		Shader* GetShader() {return m_shader;}
 		Texture2D* GetTexture() {return m_texture;}
 		const Rect& GetUVRectangle() const {return m_uvRectangle;}
 		
-		Sprite* SetColor(const Color& color) {this->m_color = color; return this;}
+		void SetColor(const Color& color) {this->m_color = color;}
 		const Color& GetColor() const {return m_color;}
 		
+		int GetDrawOrder() const;
+		void SetDrawOrder(int drawOrder);
+
 		void Render(SpriteBatch *batch);
 		
 		virtual string GetName() const { return "Sprite"; }
+
 	protected:
 		Texture2D *m_texture;
 		Shader *m_shader;
 		Rect m_uvRectangle;
 		Color m_color;
+		int m_drawOrder;
 	};
 }
 

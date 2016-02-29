@@ -60,7 +60,7 @@ void sig::SpriteBatch::Draw(const math::Matrix4& transform, Sprite* sprite)
 	
 	Draw(	transform, sprite->GetShader(), w, h,
 			sprite->GetUVRectangle(), sprite->GetTexture(),
-			drawOrder++, sprite->GetColor());
+			sprite->GetDrawOrder(), sprite->GetColor());
 }
 
 void sig::SpriteBatch::Begin(GlyphSortingMode sortingMode)
@@ -190,9 +190,10 @@ void sig::SpriteBatch::Render()
 				b.shader->SetInt("tex0", 0);
 			}
 		}
-		
+		glEnable(GL_BLEND);
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 		glDrawArrays(GL_TRIANGLES, b.offset, b.numVertices);
-		
+		glDisable(GL_BLEND);
 		glPopMatrix();
 		
 		Texture2D::Unbind();
@@ -200,6 +201,7 @@ void sig::SpriteBatch::Render()
 	}
 	
 	glBindVertexArray(0);
+	glEnable(GL_BLEND);
 }
 
 bool sig::SpriteBatch::CompareFRONT_TO_BACK(Glyph* a, Glyph* b)
@@ -256,7 +258,9 @@ void sig::SpriteBatch::Draw(float x, float y, float scalex, float scaley, float 
 {
 	float w 		= sprite->GetTexture() != nullptr ? sprite->GetTexture()->GetWidth() : 1;
 	float h 		= sprite->GetTexture() != nullptr ? sprite->GetTexture()->GetHeight() : 1;
-	
+	w *= uv.width;
+	h *= uv.height;
+
 	Matrix4 pos = Matrix4::MakeTranslation(Vector3(x, y, 0));
 	Matrix4 rotm = Matrix4::MakeRotation(rot, Vector3(0, 0, 1));
 	Matrix4 ori = Matrix4::MakeTranslation(Vector3(-orix * w, -oriy * h, 0));
@@ -264,5 +268,22 @@ void sig::SpriteBatch::Draw(float x, float y, float scalex, float scaley, float 
 
 	Matrix4 t = pos * siz * rotm * ori;
 	
-	Draw(t, sprite->GetShader(), w, h, uv, sprite->GetTexture(), drawOrder, sprite->GetColor());
+	Draw(t, sprite->GetShader(), w, h, uv, sprite->GetTexture(), sprite->GetDrawOrder(), sprite->GetColor());
+}
+
+void sig::SpriteBatch::Draw(int order, float x, float y, float scalex, float scaley, float orix, float oriy, float rot, const sig::Rect &uv, sig::Sprite *sprite)
+{
+	float w 		= sprite->GetTexture() != nullptr ? sprite->GetTexture()->GetWidth() : 1;
+	float h 		= sprite->GetTexture() != nullptr ? sprite->GetTexture()->GetHeight() : 1;
+	w *= uv.width;
+	h *= uv.height;
+
+	Matrix4 pos = Matrix4::MakeTranslation(Vector3(x, y, 0));
+	Matrix4 rotm = Matrix4::MakeRotation(rot, Vector3(0, 0, 1));
+	Matrix4 ori = Matrix4::MakeTranslation(Vector3(-orix * w, -oriy * h, 0));
+	Matrix4 siz = Matrix4::MakeScale(Vector3(scalex, scaley, 1));
+
+	Matrix4 t = pos * siz * rotm * ori;
+
+	Draw(t, sprite->GetShader(), w, h, uv, sprite->GetTexture(), order, sprite->GetColor());
 }

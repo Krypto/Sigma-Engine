@@ -61,7 +61,7 @@ namespace sig
 		 * @param owner Owner Node
 		 * @param msg Message Object
 		 */
-		virtual void MessageReceived(const Message& msg) {}
+		virtual void MessageReceived(Message& msg) {}
 		
 		/**
 		 * @brief Called when the Owner Node starts colliding with another Node.
@@ -77,7 +77,7 @@ namespace sig
 		 */
 		virtual void CollisionExit(const Collision &col) {}
 		
-		Component* SetEnabled(bool enabled) { this->m_enabled = enabled; return this; }
+		void SetEnabled(bool enabled) { this->m_enabled = enabled; }
 		bool IsEnabled() const { return m_enabled; }
 		
 		virtual Component* GetInstance(Node* owner) {
@@ -95,7 +95,8 @@ namespace sig
 		void RemoveUser() { m_users--; }
 		int GetUsers() const { return m_users; }
 		
-		COMPONENT_NAME("Component");
+		COMPONENT_NAME("Component")
+
 	protected:
 		int m_users;
 		bool m_initialized;

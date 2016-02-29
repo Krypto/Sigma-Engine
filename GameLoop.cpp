@@ -74,11 +74,11 @@ int sig::GameLoop::SIG_MainLoop(float fps)
 	m_window->Initialize();
 	GPUShaders::Initialize();
 	GFX::Initialize();
-	
+
 	if (m_game != nullptr) {
 		m_game->SIG_Init(m_window);
 	}
-	
+
 	ImGui_ImplSdl_Init(m_game->GetWindow()->GetSDLWindow());
 
 	SIG_LOG("Sigma-Project Engine Started...");

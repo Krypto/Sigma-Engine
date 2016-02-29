@@ -78,6 +78,7 @@ namespace sig
 			m_timeout 	= msg.m_timeout;
 			userData	= msg.userData;
 		}
+		Message(const Message&) {}
 
 		Message& SetBody(const string& body) {
 			this->body = body;
