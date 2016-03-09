@@ -1,4 +1,7 @@
 #include "Input.h"
+#include "Node.h"
+#include "Camera2D.h"
+#include "Matrix4.h"
 
 namespace sig
 {

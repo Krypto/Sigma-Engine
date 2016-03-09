@@ -1,7 +1,7 @@
 #include "Resource.h"
 #include "Texture2D.h"
 #include "AudioClip.h"
-#include "TileMapLayer.h"
+#include "TileMap.h"
 
 #include <fstream>
 #include <string>
@@ -61,7 +61,7 @@ bool sig::Resource::Load()
 			return true;
 		}
 		case RESOURCE_TILEMAP: {
-			data = new TileMapLayer(m_fileName);
+			data = new TileMap(m_fileName);
 			return true;
 		}
 	}

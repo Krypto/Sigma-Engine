@@ -50,6 +50,11 @@ sig::Color sig::Color::FromColorAlpha(const Color& color, float a)
 	return Color(color.r, color.g, color.b, a);
 }
 
+sig::Color sig::Color::operator -(const sig::Color &_b)
+{
+	return Color(_b.r - r, _b.g - g, _b.b - b, _b.a);
+}
+
 sig::Color sig::Color::Brightness(float factor)
 {
 	Color ret;

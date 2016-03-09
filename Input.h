@@ -14,6 +14,7 @@
 namespace sig
 {
 	using namespace math;
+	class Camera2D;
 	class Input
 	{
 		friend class Window;

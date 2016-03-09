@@ -10,14 +10,14 @@ class GameExample : public BaseGame
 public:
 	GameExample() : BaseGame() {
 		NewResource("car", "car_animated.png", ResourceType::RESOURCE_TEXTURE);
-		NewResource("track", "isotiles.png", ResourceType::RESOURCE_TEXTURE);
+		NewResource("particle", "fire.png", ResourceType::RESOURCE_TEXTURE);
+		NewResource("track", "map.png", ResourceType::RESOURCE_TEXTURE);
 		NewResource("car_logic", "CarISO.lua", ResourceType::RESOURCE_TEXT);
-		NewResource("movet", "move.lua", ResourceType::RESOURCE_TEXT);
 		NewResource("map", "tg_track.json", ResourceType::RESOURCE_TEXT);
 	}
 	
 	void Initialize() {
-		GetCurrentScene()->GetCamera()->SetZoom(2.0f);
+		GetCurrentScene()->GetCamera()->SetZoom(0.5f);
 
 		car = GetCurrentScene()->CreateNode("Car");
 		car->SetOrigin(Vector2(0.5f));
@@ -37,21 +37,37 @@ public:
 		car->AddComponent(scr);
 
 		track = GetCurrentScene()->CreateNode("track");
-		track->SetPosition(Vector2(-(16 * 144)/4));
 
-		TileMapLayer *tml = new TileMapLayer(GetResourceData(Texture2D*, "track"));
+		TileMap *tml = new TileMap(GetResourceData(Texture2D*, "track"));
+		tml->SetProjection(TileMap::MAP_ISOMETRIC);
 		tml->Configure(1, 3);
 		tml->LoadFromJSONString(GetResourceText("map"));
 
-		track->AddComponent(GetLua()->RunStringModule("move", GetResourceText("movet")));
 		track->AddComponent(tml);
 
+		pt = GetCurrentScene()->CreateNode("psys");
+		pt->SetPosition(Vector2(-200, 0));
+
+		ParticleEmitter *emt = new ParticleEmitter();
+		emt->SetTexture(GetResourceData(Texture2D*, "particle"));
+		emt->SetParticleSpeed(60);
+		emt->SetParticleSpread(1.6f);
+		emt->SetStartColor(Color::DARK_GRAY);
+		emt->SetEndColor(Color::BLACK);
+		emt->SetParticleBlend(BlendMode::ADD);
+		emt->SetParticleAcceleration(Vector2(0, -2));
+		emt->SetParticleAngularVelocity(0.6f);
+		emt->SetParticleStartSize(0.5f);
+		emt->SetEmitRate(0.01f);
+
+		pt->AddComponent(emt);
+
+		GetCurrentScene()->AddChild(pt);
 		GetCurrentScene()->AddChild(car);
 		GetCurrentScene()->AddChild(track);
-
 	}
 
-	Node *car, *track;
+	Node *car, *track, *pt;
 };
 
 #endif // GAME_EXAMPLE

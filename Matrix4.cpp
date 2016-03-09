@@ -48,16 +48,32 @@ Matrix4 Matrix4::RotationFromVectors(Vector3 forward, Vector3 up, Vector3 right)
     (*this)(2, 3) = 0.0f;
     (*this)(3, 3) = 1.0f;
 
-    return *this;
+	return *this;
+}
+
+Vector3 Matrix4::TransformPoint(const Vector3 &pt)
+{
+	Matrix4 me = (*this);
+	float w = pt.X() * me(0, 3) + pt.Y() * me(1, 3) + pt.Z() * me(2, 3) + me(3, 3);
+	if (w) {
+		const float iw = 1.0f / w;
+		return Vector3(
+			(pt.X() * me(0, 0) + pt.Y() * me(0, 1) + pt.Z() * me(0, 2) + me(0, 3)) * iw,
+			(pt.X() * me(1, 0) + pt.Y() * me(1, 1) + pt.Z() * me(1, 2) + me(1, 3)) * iw,
+			(pt.X() * me(2, 0) + pt.Y() * me(2, 1) + pt.Z() * me(2, 2) + me(2, 3)) * iw
+		);
+	} else {
+		return Vector3::Zero;
+	}
 }
 
 Matrix4::Matrix4(float m[16])
 {
     int index = 0;
     for(int i = 0; i < 4; i++) {
-	for(int j = 0; j < 4; j++) {
-	    (*this)(i, j) = m[index++];
-	}
+		for(int j = 0; j < 4; j++) {
+			(*this)(i, j) = m[index++];
+		}
     }
 }
 
@@ -113,7 +129,7 @@ Matrix4 Matrix4::MakeTranslation(const Vector3& trans)
     return translate;
 }
 
-Matrix4 Matrix4::MakeRotation(Scalar& angle, Vector3 axis)
+Matrix4 Matrix4::MakeRotation(Scalar angle, Vector3 axis)
 {
     Matrix4 rotate;
 

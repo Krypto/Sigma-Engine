@@ -44,9 +44,9 @@ set( CXX_SRCS
     GameLoop.cpp
     Time.cpp
     IUR.cpp
-    Matrix4.cpp
-    Quaternion.cpp
-    Vector.cpp
+	Matrix4.cpp
+	Quaternion.cpp
+	Vector.cpp
     Color.cpp
     Rect.cpp
     Texture2D.cpp
@@ -76,7 +76,7 @@ set( CXX_SRCS
     ResourceManager.cpp
     AudioClip.cpp
     SoundSystem.cpp
-    TileMapLayer.cpp
+	TileMap.cpp
     Camera2D.cpp
     LightNode.cpp
     SpriteBatch.cpp
@@ -90,11 +90,12 @@ set( CXX_SRCS
 	LuaEngine.cpp
 	SigmaTypeReg.h
 	Sigma.h
+	ParticleEmitter.cpp
 )
 
 set_source_files_properties(
     ${CXX_SRCS} PROPERTIES COMPILE_FLAGS 
-	" -g -O0 -Wall -std=c++11")
+	" -g -O2 -Wall -std=c++11")
 
 add_executable(TGT ${CXX_SRCS} ${C_SRCS})
 

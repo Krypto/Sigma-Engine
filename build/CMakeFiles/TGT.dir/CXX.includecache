@@ -720,6 +720,22 @@ Entry.h
 functional
 -
 
+/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/ParticleEmitter.h
+Color.h
+/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Color.h
+Vector.h
+/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Vector.h
+Component.h
+/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Component.h
+Texture2D.h
+/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Texture2D.h
+SIG_Utilities.h
+/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/SIG_Utilities.h
+vector
+-
+functional
+-
+
 /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Quaternion.h
 Matrix4.h
 /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Matrix4.h
@@ -764,6 +780,8 @@ sstream
 string
 -
 initializer_list
+-
+cstdlib
 -
 
 /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Scene.h
@@ -813,8 +831,10 @@ Sprite.h
 /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Sprite.h
 AnimatedSprite.h
 /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/AnimatedSprite.h
-TileMapLayer.h
-/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/TileMapLayer.h
+TileMap.h
+/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/TileMap.h
+ParticleEmitter.h
+/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/ParticleEmitter.h
 Component.h
 /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Component.h
 MessageNetwork.h
@@ -861,6 +881,8 @@ SIG_Utilities.h
 /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/SIG_Utilities.h
 imgui.h
 /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui.h
+cmath
+-
 
 /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Slider.h
 Label.h
@@ -873,7 +895,11 @@ AudioClip.h
 /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/AudioClip.h
 OALWrapper/OAL_Funcs.h
 -
+map
+-
 vector
+-
+string
 -
 
 /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Sprite.h
@@ -926,7 +952,7 @@ SIG_OpenGL.h
 string
 -
 
-/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/TileMapLayer.h
+/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/TileMap.h
 Sprite.h
 /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Sprite.h
 Matrix4.h

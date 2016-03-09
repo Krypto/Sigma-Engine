@@ -26,3 +26,5 @@ Debug
 Release
 build-debug
 build-release
+build
+/build

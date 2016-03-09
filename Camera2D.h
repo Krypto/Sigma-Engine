@@ -20,6 +20,8 @@ namespace sig
 			}
 		}
 		float GetZoom() const {return m_zoom;}
+
+		math::Matrix4 GetCameraMatrix();
 	private:
 		float m_zoom, m_zNear, m_zFar;
 	};

@@ -21,7 +21,8 @@
 #include "SpriteBatch.h"
 #include "Sprite.h"
 #include "AnimatedSprite.h"
-#include "TileMapLayer.h"
+#include "TileMap.h"
+#include "ParticleEmitter.h"
 
 #include "Component.h"
 #include "MessageNetwork.h"
@@ -49,9 +50,8 @@
 #include "Widget.h"
 
 #include "LuaEngine.h"
-
 #include "SIG_Utilities.h"
-
 #include "imgui.h"
+#include <cmath>
 
 #endif // SIGMA_ENGINE

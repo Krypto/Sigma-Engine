@@ -21,10 +21,15 @@ void sig::Camera2D::ApplyTransformation(int w, int h)
     glMatrixMode(GL_MODELVIEW);
 	
 	glLoadIdentity();
-	
-	glTranslatef(m_origin.X(), m_origin.Y(), 0);
-	glRotatef(-ToDegrees(m_rotation), 0, 0, 1);
-	glScalef(m_zoom, m_zoom, 1);
-	glTranslatef(-m_position.X(), -m_position.Y(), 0);
+	glLoadMatrixf(&GetCameraMatrix()(0, 0));
+}
 
+sig::math::Matrix4 sig::Camera2D::GetCameraMatrix()
+{
+	Matrix4 t1 = math::Matrix4::MakeTranslation(Vector3(m_origin.X(), m_origin.Y(), 0));
+	Matrix4 r = math::Matrix4::MakeRotation(-m_rotation, Vector3(0, 0, 1));
+	Matrix4 s = math::Matrix4::MakeScale(Vector3(m_zoom, m_zoom, 0));
+	Matrix4 t2 = math::Matrix4::MakeTranslation(Vector3(-m_position.X(), -m_position.Y(), 0));
+
+	return t1 * r * s * t2;
 }

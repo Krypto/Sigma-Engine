@@ -7,6 +7,7 @@
 #include <sstream>
 #include <string>
 #include <initializer_list>
+#include <cstdlib>
 
 #define SIG_FREE(x) 		if (x != 0) { delete x; x = 0; }
 #define SIG_LOG(msg) 		std::cout << COLOR_WHITE_NORMAL << msg << COLOR_NORMAL << std::endl;
@@ -101,6 +102,11 @@ T* Offset(T* p, int offset) {
 	unsigned char* pt = reinterpret_cast<unsigned char*>(p);
 	pt += offset;
 	return reinterpret_cast<T*>(pt);
+}
+
+template<typename T>
+T RandRange(T _min, T _max) {
+	return _min + static_cast<T>(std::rand()) / (static_cast<T>(RAND_MAX / (_max - _min)));
 }
 
 typedef unsigned char Byte;

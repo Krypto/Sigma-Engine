@@ -526,8 +526,51 @@ CMakeFiles/TGT.dir/IUR.cpp.o
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/IUR.cpp
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/IUR.h
 CMakeFiles/TGT.dir/Input.cpp.o
+ ../dependencies/Box2D/include/Box2D/Box2D.h
+ ../dependencies/Box2D/include/Box2D/Collision/Shapes/b2ChainShape.h
+ ../dependencies/Box2D/include/Box2D/Collision/Shapes/b2CircleShape.h
+ ../dependencies/Box2D/include/Box2D/Collision/Shapes/b2EdgeShape.h
+ ../dependencies/Box2D/include/Box2D/Collision/Shapes/b2PolygonShape.h
+ ../dependencies/Box2D/include/Box2D/Collision/Shapes/b2Shape.h
+ ../dependencies/Box2D/include/Box2D/Collision/b2BroadPhase.h
+ ../dependencies/Box2D/include/Box2D/Collision/b2Collision.h
+ ../dependencies/Box2D/include/Box2D/Collision/b2Distance.h
+ ../dependencies/Box2D/include/Box2D/Collision/b2DynamicTree.h
+ ../dependencies/Box2D/include/Box2D/Collision/b2TimeOfImpact.h
+ ../dependencies/Box2D/include/Box2D/Common/b2BlockAllocator.h
+ ../dependencies/Box2D/include/Box2D/Common/b2Draw.h
+ ../dependencies/Box2D/include/Box2D/Common/b2GrowableStack.h
+ ../dependencies/Box2D/include/Box2D/Common/b2Math.h
+ ../dependencies/Box2D/include/Box2D/Common/b2Settings.h
+ ../dependencies/Box2D/include/Box2D/Common/b2StackAllocator.h
+ ../dependencies/Box2D/include/Box2D/Common/b2Timer.h
+ ../dependencies/Box2D/include/Box2D/Dynamics/Contacts/b2Contact.h
+ ../dependencies/Box2D/include/Box2D/Dynamics/Joints/b2DistanceJoint.h
+ ../dependencies/Box2D/include/Box2D/Dynamics/Joints/b2FrictionJoint.h
+ ../dependencies/Box2D/include/Box2D/Dynamics/Joints/b2GearJoint.h
+ ../dependencies/Box2D/include/Box2D/Dynamics/Joints/b2Joint.h
+ ../dependencies/Box2D/include/Box2D/Dynamics/Joints/b2MotorJoint.h
+ ../dependencies/Box2D/include/Box2D/Dynamics/Joints/b2MouseJoint.h
+ ../dependencies/Box2D/include/Box2D/Dynamics/Joints/b2PrismaticJoint.h
+ ../dependencies/Box2D/include/Box2D/Dynamics/Joints/b2PulleyJoint.h
+ ../dependencies/Box2D/include/Box2D/Dynamics/Joints/b2RevoluteJoint.h
+ ../dependencies/Box2D/include/Box2D/Dynamics/Joints/b2RopeJoint.h
+ ../dependencies/Box2D/include/Box2D/Dynamics/Joints/b2WeldJoint.h
+ ../dependencies/Box2D/include/Box2D/Dynamics/Joints/b2WheelJoint.h
+ ../dependencies/Box2D/include/Box2D/Dynamics/b2Body.h
+ ../dependencies/Box2D/include/Box2D/Dynamics/b2ContactManager.h
+ ../dependencies/Box2D/include/Box2D/Dynamics/b2Fixture.h
+ ../dependencies/Box2D/include/Box2D/Dynamics/b2TimeStep.h
+ ../dependencies/Box2D/include/Box2D/Dynamics/b2World.h
+ ../dependencies/Box2D/include/Box2D/Dynamics/b2WorldCallbacks.h
+ /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Camera2D.h
+ /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Component.h
+ /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/IUR.h
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Input.cpp
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Input.h
+ /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Matrix4.h
+ /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Node.h
+ /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Rect.h
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Vector.h
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imconfig.h
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui.h
@@ -857,6 +900,61 @@ CMakeFiles/TGT.dir/NumberEntry.cpp.o
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imconfig.h
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui.h
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui_sdl.h
+CMakeFiles/TGT.dir/ParticleEmitter.cpp.o
+ ../dependencies/Box2D/include/Box2D/Box2D.h
+ ../dependencies/Box2D/include/Box2D/Collision/Shapes/b2ChainShape.h
+ ../dependencies/Box2D/include/Box2D/Collision/Shapes/b2CircleShape.h
+ ../dependencies/Box2D/include/Box2D/Collision/Shapes/b2EdgeShape.h
+ ../dependencies/Box2D/include/Box2D/Collision/Shapes/b2PolygonShape.h
+ ../dependencies/Box2D/include/Box2D/Collision/Shapes/b2Shape.h
+ ../dependencies/Box2D/include/Box2D/Collision/b2BroadPhase.h
+ ../dependencies/Box2D/include/Box2D/Collision/b2Collision.h
+ ../dependencies/Box2D/include/Box2D/Collision/b2Distance.h
+ ../dependencies/Box2D/include/Box2D/Collision/b2DynamicTree.h
+ ../dependencies/Box2D/include/Box2D/Collision/b2TimeOfImpact.h
+ ../dependencies/Box2D/include/Box2D/Common/b2BlockAllocator.h
+ ../dependencies/Box2D/include/Box2D/Common/b2Draw.h
+ ../dependencies/Box2D/include/Box2D/Common/b2GrowableStack.h
+ ../dependencies/Box2D/include/Box2D/Common/b2Math.h
+ ../dependencies/Box2D/include/Box2D/Common/b2Settings.h
+ ../dependencies/Box2D/include/Box2D/Common/b2StackAllocator.h
+ ../dependencies/Box2D/include/Box2D/Common/b2Timer.h
+ ../dependencies/Box2D/include/Box2D/Dynamics/Contacts/b2Contact.h
+ ../dependencies/Box2D/include/Box2D/Dynamics/Joints/b2DistanceJoint.h
+ ../dependencies/Box2D/include/Box2D/Dynamics/Joints/b2FrictionJoint.h
+ ../dependencies/Box2D/include/Box2D/Dynamics/Joints/b2GearJoint.h
+ ../dependencies/Box2D/include/Box2D/Dynamics/Joints/b2Joint.h
+ ../dependencies/Box2D/include/Box2D/Dynamics/Joints/b2MotorJoint.h
+ ../dependencies/Box2D/include/Box2D/Dynamics/Joints/b2MouseJoint.h
+ ../dependencies/Box2D/include/Box2D/Dynamics/Joints/b2PrismaticJoint.h
+ ../dependencies/Box2D/include/Box2D/Dynamics/Joints/b2PulleyJoint.h
+ ../dependencies/Box2D/include/Box2D/Dynamics/Joints/b2RevoluteJoint.h
+ ../dependencies/Box2D/include/Box2D/Dynamics/Joints/b2RopeJoint.h
+ ../dependencies/Box2D/include/Box2D/Dynamics/Joints/b2WeldJoint.h
+ ../dependencies/Box2D/include/Box2D/Dynamics/Joints/b2WheelJoint.h
+ ../dependencies/Box2D/include/Box2D/Dynamics/b2Body.h
+ ../dependencies/Box2D/include/Box2D/Dynamics/b2ContactManager.h
+ ../dependencies/Box2D/include/Box2D/Dynamics/b2Fixture.h
+ ../dependencies/Box2D/include/Box2D/Dynamics/b2TimeStep.h
+ ../dependencies/Box2D/include/Box2D/Dynamics/b2World.h
+ ../dependencies/Box2D/include/Box2D/Dynamics/b2WorldCallbacks.h
+ /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Color.h
+ /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Component.h
+ /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/EscapeColors.h
+ /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/IUR.h
+ /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Matrix4.h
+ /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Node.h
+ /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/ParticleEmitter.cpp
+ /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/ParticleEmitter.h
+ /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Rect.h
+ /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/SIG_OpenGL.h
+ /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/SIG_Utilities.h
+ /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Shader.h
+ /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Sprite.h
+ /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/SpriteBatch.h
+ /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Texture2D.h
+ /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Vector.h
+ /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/sig_gpu_builtin.h
 CMakeFiles/TGT.dir/Quaternion.cpp.o
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Matrix4.h
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Quaternion.cpp
@@ -902,7 +1000,7 @@ CMakeFiles/TGT.dir/Resource.cpp.o
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Shader.h
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Sprite.h
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Texture2D.h
- /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/TileMapLayer.h
+ /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/TileMap.h
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Vector.h
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/picojson.h
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/sig_gpu_builtin.h
@@ -1146,7 +1244,7 @@ CMakeFiles/TGT.dir/Texture2D.cpp.o
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Texture2D.h
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/stb/stb_image.h
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/stb/stb_image_write.h
-CMakeFiles/TGT.dir/TileMapLayer.cpp.o
+CMakeFiles/TGT.dir/TileMap.cpp.o
  ../dependencies/Box2D/include/Box2D/Box2D.h
  ../dependencies/Box2D/include/Box2D/Collision/Shapes/b2ChainShape.h
  ../dependencies/Box2D/include/Box2D/Collision/Shapes/b2CircleShape.h
@@ -1225,8 +1323,8 @@ CMakeFiles/TGT.dir/TileMapLayer.cpp.o
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Sprite.h
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/SpriteBatch.h
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Texture2D.h
- /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/TileMapLayer.cpp
- /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/TileMapLayer.h
+ /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/TileMap.cpp
+ /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/TileMap.h
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Vector.h
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/picojson.h
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/sig_gpu_builtin.h
@@ -1397,6 +1495,7 @@ CMakeFiles/TGT.dir/main.cpp.o
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/MessageNetwork.h
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Node.h
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/NumberEntry.h
+ /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/ParticleEmitter.h
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Quaternion.h
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Rect.h
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Resource.h
@@ -1411,7 +1510,7 @@ CMakeFiles/TGT.dir/main.cpp.o
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Sprite.h
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/SpriteBatch.h
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Texture2D.h
- /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/TileMapLayer.h
+ /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/TileMap.h
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Vector.h
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Widget.h
  /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Window.h

@@ -1,0 +1,39 @@
+{ "height":10,
+ "layers":[
+        {
+         "data":[5, 1, 1, 73, 81, 81, 81, 81, 81, 81, 5, 1, 1, 19, 21, 75, 81, 81, 81, 81, 32, 4, 1, 1, 1, 73, 81, 81, 81, 81, 41, 5, 1, 1, 1, 73, 81, 81, 81, 81, 41, 32, 4, 1, 1, 19, 21, 21, 21, 75, 41, 41, 32, 4, 1, 1, 1, 1, 1, 19, 41, 41, 41, 32, 4, 1, 1, 1, 1, 1, 41, 41, 41, 41, 32, 4, 1, 1, 1, 1, 41, 41, 41, 41, 41, 32, 4, 1, 1, 1, 41, 41, 41, 41, 41, 41, 32, 4, 1, 1],
+         "height":10,
+         "name":"Tile Layer 1",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":10,
+         "x":0,
+         "y":0
+        }],
+ "orientation":"isometric",
+ "properties":
+    {
+
+    },
+ "tileheight":64,
+ "tilesets":[
+        {
+         "firstgid":1,
+         "image":"map.png",
+         "imageheight":576,
+         "imagewidth":1152,
+         "margin":0,
+         "name":"map",
+         "properties":
+            {
+
+            },
+         "spacing":0,
+         "tileheight":64,
+         "tilewidth":128
+        }],
+ "tilewidth":128,
+ "version":1,
+ "width":10
+}

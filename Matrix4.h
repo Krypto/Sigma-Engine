@@ -19,10 +19,12 @@ namespace sig { namespace math {
 		Matrix4 Transposed();
 		Matrix4 RotationFromVectors(Vector3 forward, Vector3 up, Vector3 right);
 
+		Vector3 TransformPoint(const Vector3& pt);
+
 		const static Matrix4 Identity;
 
 		static Matrix4 MakeTranslation(const Vector3 &trans);
-		static Matrix4 MakeRotation(Scalar& angle, Vector3 axis);
+		static Matrix4 MakeRotation(Scalar angle, Vector3 axis);
 		static Matrix4 MakeScale(const Vector3 &scal);
 		static Matrix4 MakeLookAt(const Vector3 &eye, const Vector3 &center, const Vector3 &up);
 		static Matrix4 MakePerspective(Scalar fov, Scalar aspect, Scalar znear, Scalar zfar);

@@ -40,12 +40,12 @@ namespace sig
 		
 		void Update(SoundSystem *ss);
 		
-		AudioClip* SetIs3D(bool is3D) {this->m_is3D = is3D; return this;}
-		AudioClip* SetLoop(bool loop) {this->m_loop = loop; return this;}
-		AudioClip* SetPan(float pan) {this->m_pan = pan; return this;}
-		AudioClip* SetPitch(float pitch) {this->m_pitch = pitch; return this;}
-		AudioClip* SetPosition(const Vector3& position) {this->m_position = position; return this;}
-		AudioClip* SetVolume(float volume) {this->m_volume = volume; return this;}
+		void SetIs3D(bool is3D) {this->m_is3D = is3D;}
+		void SetLoop(bool loop) {this->m_loop = loop;}
+		void SetPan(float pan) {this->m_pan = pan;}
+		void SetPitch(float pitch) {this->m_pitch = pitch;}
+		void SetPosition(const Vector3& position) {this->m_position = position;}
+		void SetVolume(float volume) {this->m_volume = volume;}
 		bool Is3D() const {return m_is3D;}
 		bool IsLoop() const {return m_loop;}
 		const string& GetName() const {return m_name;}
@@ -53,7 +53,7 @@ namespace sig
 		bool IsPaused() const {return m_paused;}
 		float GetPitch() const {return m_pitch;}
 		bool IsPlaying() const {return m_playing;}
-		const Vector3& GetPosition() const {return m_position;}
+		Vector3& GetPosition() {return m_position;}
 		float GetVolume() const {return m_volume;}
 	
 	protected:

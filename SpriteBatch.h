@@ -21,7 +21,7 @@ namespace sig
 {
 	using namespace math;
 	
-	typedef struct _vertex {
+	typedef struct {
 		Vector2 position;
 		Vector2 uv;
 		Color color;
@@ -33,10 +33,15 @@ namespace sig
 		TEXTURE,
 		NONE
 	};
+
+	enum class BlendMode {
+		NORMAL,
+		ADD
+	};
 	
 	class Glyph {
 	public:
-		~Glyph() {}
+		~Glyph() { blendMode = BlendMode::NORMAL; }
 		
 		Shader *shader;
 		Texture2D *texture;
@@ -48,14 +53,17 @@ namespace sig
 		Vertex bottomRight;
 		
 		math::Matrix4 transform;
+
+		BlendMode blendMode;
 	};
 	
 	class RenderBatch {
 	public:
-		RenderBatch(Shader *prog, u32 _offset, u32 _numVertices, Texture2D *_texture, math::Matrix4 t)
+		RenderBatch(Shader *prog, u32 _offset, u32 _numVertices, Texture2D *_texture, math::Matrix4 t, BlendMode bmode)
 			:	shader(prog), offset(_offset),
 				numVertices(_numVertices), texture(_texture),
-				transform(t)
+				transform(t),
+				blendMode(bmode)
 		{}
 		
 		Shader *shader;
@@ -63,6 +71,7 @@ namespace sig
 		u32 numVertices;
 		Texture2D *texture;
 		math::Matrix4 transform;
+		BlendMode blendMode;
 	};
 	
 	class SpriteBatch
@@ -76,7 +85,7 @@ namespace sig
 		void End();
 		
 		void Draw(Glyph *glyph);
-		void Draw(const math::Matrix4 &transform, Shader *shader, float w, float h, const Rect &uv, Texture2D *texture, int z, const Color &col);
+		void Draw(const math::Matrix4 &transform, Shader *shader, float w, float h, const Rect &uv, Texture2D *texture, int z, const Color &col, BlendMode blend_mode = BlendMode::NORMAL);
 		void Draw(const math::Matrix4 &transform, Sprite *sprite);
 		void Draw(float x, float y, Sprite *sprite);
 		void Draw(float x, float y, float scalex, float scaley, Sprite *sprite);
@@ -85,6 +94,7 @@ namespace sig
 		void Draw(int order, float x, float y, float scalex, float scaley, float orix, float oriy, float rot, const Rect &uv, Sprite *sprite);
 		void Draw(float x, float y, float orix, float oriy, float rot, Sprite *sprite);
 		void Draw(float x, float y, float rot, Sprite *sprite);
+		void Draw(int order, float x, float y, float scale, float rot, Texture2D *tex, const Color& color, BlendMode blend_mode = BlendMode::NORMAL);
 		
 		void Render();
 		

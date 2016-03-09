@@ -158,7 +158,25 @@ namespace sig {
 			LuaBinding(L)
 				.beginClass<SoundSystem>("SoundSystem")
 					.addProperty("master_volume", &SoundSystem::GetMasterVolume, &SoundSystem::SetMasterVolume)
-					.addFunction("play", &SoundSystem::Play)
+					.addFunction("play", static_cast<void(SoundSystem::*)(AudioClip*)>(&SoundSystem::Play))
+					.addFunction("play", static_cast<void(SoundSystem::*)(const string&)>(&SoundSystem::Play))
+				.endClass();
+
+			// Register AudioClip
+			LuaBinding(L)
+				.beginClass<AudioClip>("AudioClip")
+					.addProperty("pan", &AudioClip::GetPan, &AudioClip::SetPan)
+					.addProperty("pitch", &AudioClip::GetPitch, &AudioClip::SetPitch)
+					.addProperty("volume", &AudioClip::GetVolume, &AudioClip::SetVolume)
+					.addProperty("position", &AudioClip::GetPosition, &AudioClip::SetPosition)
+					.addProperty("spatial", &AudioClip::Is3D, &AudioClip::SetIs3D)
+					.addProperty("loop", &AudioClip::IsLoop, &AudioClip::SetLoop)
+					.addPropertyReadOnly("playing", &AudioClip::IsPlaying)
+					.addPropertyReadOnly("paused", &AudioClip::IsPaused)
+					.addPropertyReadOnly("name", &AudioClip::GetName)
+					.addFunction("play", &AudioClip::Play)
+					.addFunction("pause", &AudioClip::Pause)
+					.addFunction("stop", &AudioClip::Stop)
 				.endClass();
 
 			// Register Window

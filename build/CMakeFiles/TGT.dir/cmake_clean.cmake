@@ -36,7 +36,7 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/TGT.dir/ResourceManager.cpp.o"
   "CMakeFiles/TGT.dir/AudioClip.cpp.o"
   "CMakeFiles/TGT.dir/SoundSystem.cpp.o"
-  "CMakeFiles/TGT.dir/TileMapLayer.cpp.o"
+  "CMakeFiles/TGT.dir/TileMap.cpp.o"
   "CMakeFiles/TGT.dir/Camera2D.cpp.o"
   "CMakeFiles/TGT.dir/LightNode.cpp.o"
   "CMakeFiles/TGT.dir/SpriteBatch.cpp.o"
@@ -48,6 +48,7 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/TGT.dir/SpriteEditor.cpp.o"
   "CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.o"
   "CMakeFiles/TGT.dir/LuaEngine.cpp.o"
+  "CMakeFiles/TGT.dir/ParticleEmitter.cpp.o"
   "TGT.pdb"
   "TGT"
 )

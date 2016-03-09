@@ -46,6 +46,8 @@ namespace sig
 		 */
 		static Color FromColorAlpha(const Color& color, float a=1);
 		
+		Color operator -(const Color& _b);
+
 		float r, g, b, a;
 		
 		static Color BLACK;

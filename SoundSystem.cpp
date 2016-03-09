@@ -5,7 +5,8 @@
 #include <algorithm>
 
 sig::SoundSystem::SoundSystem()
-	:	m_masterVolume(1)
+	:	m_masterVolume(1),
+		m_valid(false)
 {
 }
 
@@ -23,12 +24,16 @@ void sig::SoundSystem::Initialize()
 	
 	if (OAL_Init(params) == false) {
 		SIG_LOG_ERROR("Could not initialize OAL. Check your OpenAL installation and try again.");
-		return;
+		m_valid = false;
+	} else {
+		m_valid = true;
 	}
 }
 
 void sig::SoundSystem::Update()
 {
+	if (!m_valid) { return; }
+
 	for (auto it = m_playing.begin(); it != m_playing.end(); ++it) {
 		auto ac = (*it);
 		ac->Update(this);
@@ -51,19 +56,48 @@ void sig::SoundSystem::Update()
 
 void sig::SoundSystem::Play(AudioClip* ac)
 {
-	AudioClip *cp = new AudioClip();
-	cp->m_name = ac->m_name;
-	cp->m_sample = ac->m_sample;
-	cp->m_volume = ac->m_volume;
-	cp->m_pitch = ac->m_pitch;
-	cp->m_pan = ac->m_pan;
-	cp->m_loop = ac->m_loop;
-	cp->m_paused = ac->m_paused;
-	cp->m_is3D = ac->m_is3D;
-	cp->m_playing = ac->m_playing;
-	cp->m_position = Vector3(ac->m_position);
-	
-	cp->Play();
-	
-	m_playing.push_back(cp);
+	if (!m_valid) { return; }
+
+	if (ac == nullptr) {
+		SIG_LOG_ERROR("The AudioClip object must not be null.");
+	} else {
+		ac->Play();
+		m_playing.push_back(ac);
+	}
+}
+
+void sig::SoundSystem::Play(const string &name)
+{
+	if (!m_valid) { return; }
+
+	AudioClipMap::iterator pos = m_library.find(name);
+	if (pos != m_library.end()) {
+		AudioClip *clip = m_library.at(name);
+		Play(clip);
+	} else {
+		SIG_LOG_ERROR("There's no AudioClip named \"" << name << "\"");
+	}
+}
+
+void sig::SoundSystem::AddToLibrary(const string &name, sig::AudioClip *audio_clip)
+{
+	if (!m_valid) { return; }
+
+	AudioClipMap::iterator pos = m_library.find(name);
+	if (pos == m_library.end()) {
+		m_library.insert({name, audio_clip});
+	} else {
+		SIG_LOG_ERROR("An AudioClip with this name (\"" << name << "\") already exists.");
+	}
+}
+
+sig::AudioClip *sig::SoundSystem::GetAudioClipFromLibrary(const string &name)
+{
+	if (!m_valid) { return nullptr; }
+
+	AudioClipMap::iterator pos = m_library.find(name);
+	if (pos != m_library.end()) {
+		return m_library.at(name);
+	}
+	return nullptr;
 }

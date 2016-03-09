@@ -738,6 +738,30 @@ NumberEntry.cpp.s:
 	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/NumberEntry.cpp.s
 .PHONY : NumberEntry.cpp.s
 
+ParticleEmitter.o: ParticleEmitter.cpp.o
+.PHONY : ParticleEmitter.o
+
+# target to build an object file
+ParticleEmitter.cpp.o:
+	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/ParticleEmitter.cpp.o
+.PHONY : ParticleEmitter.cpp.o
+
+ParticleEmitter.i: ParticleEmitter.cpp.i
+.PHONY : ParticleEmitter.i
+
+# target to preprocess a source file
+ParticleEmitter.cpp.i:
+	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/ParticleEmitter.cpp.i
+.PHONY : ParticleEmitter.cpp.i
+
+ParticleEmitter.s: ParticleEmitter.cpp.s
+.PHONY : ParticleEmitter.s
+
+# target to generate assembly for a file
+ParticleEmitter.cpp.s:
+	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/ParticleEmitter.cpp.s
+.PHONY : ParticleEmitter.cpp.s
+
 Quaternion.o: Quaternion.cpp.o
 .PHONY : Quaternion.o
 
@@ -1026,29 +1050,29 @@ Texture2D.cpp.s:
 	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/Texture2D.cpp.s
 .PHONY : Texture2D.cpp.s
 
-TileMapLayer.o: TileMapLayer.cpp.o
-.PHONY : TileMapLayer.o
+TileMap.o: TileMap.cpp.o
+.PHONY : TileMap.o
 
 # target to build an object file
-TileMapLayer.cpp.o:
-	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/TileMapLayer.cpp.o
-.PHONY : TileMapLayer.cpp.o
+TileMap.cpp.o:
+	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/TileMap.cpp.o
+.PHONY : TileMap.cpp.o
 
-TileMapLayer.i: TileMapLayer.cpp.i
-.PHONY : TileMapLayer.i
+TileMap.i: TileMap.cpp.i
+.PHONY : TileMap.i
 
 # target to preprocess a source file
-TileMapLayer.cpp.i:
-	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/TileMapLayer.cpp.i
-.PHONY : TileMapLayer.cpp.i
+TileMap.cpp.i:
+	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/TileMap.cpp.i
+.PHONY : TileMap.cpp.i
 
-TileMapLayer.s: TileMapLayer.cpp.s
-.PHONY : TileMapLayer.s
+TileMap.s: TileMap.cpp.s
+.PHONY : TileMap.s
 
 # target to generate assembly for a file
-TileMapLayer.cpp.s:
-	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/TileMapLayer.cpp.s
-.PHONY : TileMapLayer.cpp.s
+TileMap.cpp.s:
+	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/TileMap.cpp.s
+.PHONY : TileMap.cpp.s
 
 Time.o: Time.cpp.o
 .PHONY : Time.o
@@ -1377,6 +1401,9 @@ help:
 	@echo "... NumberEntry.o"
 	@echo "... NumberEntry.i"
 	@echo "... NumberEntry.s"
+	@echo "... ParticleEmitter.o"
+	@echo "... ParticleEmitter.i"
+	@echo "... ParticleEmitter.s"
 	@echo "... Quaternion.o"
 	@echo "... Quaternion.i"
 	@echo "... Quaternion.s"
@@ -1413,9 +1440,9 @@ help:
 	@echo "... Texture2D.o"
 	@echo "... Texture2D.i"
 	@echo "... Texture2D.s"
-	@echo "... TileMapLayer.o"
-	@echo "... TileMapLayer.i"
-	@echo "... TileMapLayer.s"
+	@echo "... TileMap.o"
+	@echo "... TileMap.i"
+	@echo "... TileMap.s"
 	@echo "... Time.o"
 	@echo "... Time.i"
 	@echo "... Time.s"

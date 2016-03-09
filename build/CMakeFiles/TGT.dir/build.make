@@ -56,15 +56,15 @@ CMakeFiles/TGT.dir/main.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/main.cpp.o: ../main.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/main.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/main.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/main.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/main.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/main.cpp
 
 CMakeFiles/TGT.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/main.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/main.cpp > CMakeFiles/TGT.dir/main.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/main.cpp > CMakeFiles/TGT.dir/main.cpp.i
 
 CMakeFiles/TGT.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/main.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/main.cpp -o CMakeFiles/TGT.dir/main.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/main.cpp -o CMakeFiles/TGT.dir/main.cpp.s
 
 CMakeFiles/TGT.dir/main.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/main.cpp.o.requires
@@ -79,15 +79,15 @@ CMakeFiles/TGT.dir/Window.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/Window.cpp.o: ../Window.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/Window.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Window.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Window.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Window.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Window.cpp
 
 CMakeFiles/TGT.dir/Window.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/Window.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Window.cpp > CMakeFiles/TGT.dir/Window.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Window.cpp > CMakeFiles/TGT.dir/Window.cpp.i
 
 CMakeFiles/TGT.dir/Window.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/Window.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Window.cpp -o CMakeFiles/TGT.dir/Window.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Window.cpp -o CMakeFiles/TGT.dir/Window.cpp.s
 
 CMakeFiles/TGT.dir/Window.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/Window.cpp.o.requires
@@ -102,15 +102,15 @@ CMakeFiles/TGT.dir/GameLoop.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/GameLoop.cpp.o: ../GameLoop.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/GameLoop.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/GameLoop.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/GameLoop.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/GameLoop.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/GameLoop.cpp
 
 CMakeFiles/TGT.dir/GameLoop.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/GameLoop.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/GameLoop.cpp > CMakeFiles/TGT.dir/GameLoop.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/GameLoop.cpp > CMakeFiles/TGT.dir/GameLoop.cpp.i
 
 CMakeFiles/TGT.dir/GameLoop.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/GameLoop.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/GameLoop.cpp -o CMakeFiles/TGT.dir/GameLoop.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/GameLoop.cpp -o CMakeFiles/TGT.dir/GameLoop.cpp.s
 
 CMakeFiles/TGT.dir/GameLoop.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/GameLoop.cpp.o.requires
@@ -125,15 +125,15 @@ CMakeFiles/TGT.dir/Time.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/Time.cpp.o: ../Time.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/Time.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Time.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Time.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Time.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Time.cpp
 
 CMakeFiles/TGT.dir/Time.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/Time.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Time.cpp > CMakeFiles/TGT.dir/Time.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Time.cpp > CMakeFiles/TGT.dir/Time.cpp.i
 
 CMakeFiles/TGT.dir/Time.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/Time.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Time.cpp -o CMakeFiles/TGT.dir/Time.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Time.cpp -o CMakeFiles/TGT.dir/Time.cpp.s
 
 CMakeFiles/TGT.dir/Time.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/Time.cpp.o.requires
@@ -148,15 +148,15 @@ CMakeFiles/TGT.dir/IUR.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/IUR.cpp.o: ../IUR.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/IUR.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/IUR.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/IUR.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/IUR.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/IUR.cpp
 
 CMakeFiles/TGT.dir/IUR.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/IUR.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/IUR.cpp > CMakeFiles/TGT.dir/IUR.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/IUR.cpp > CMakeFiles/TGT.dir/IUR.cpp.i
 
 CMakeFiles/TGT.dir/IUR.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/IUR.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/IUR.cpp -o CMakeFiles/TGT.dir/IUR.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/IUR.cpp -o CMakeFiles/TGT.dir/IUR.cpp.s
 
 CMakeFiles/TGT.dir/IUR.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/IUR.cpp.o.requires
@@ -171,15 +171,15 @@ CMakeFiles/TGT.dir/Matrix4.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/Matrix4.cpp.o: ../Matrix4.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/Matrix4.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Matrix4.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Matrix4.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Matrix4.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Matrix4.cpp
 
 CMakeFiles/TGT.dir/Matrix4.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/Matrix4.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Matrix4.cpp > CMakeFiles/TGT.dir/Matrix4.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Matrix4.cpp > CMakeFiles/TGT.dir/Matrix4.cpp.i
 
 CMakeFiles/TGT.dir/Matrix4.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/Matrix4.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Matrix4.cpp -o CMakeFiles/TGT.dir/Matrix4.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Matrix4.cpp -o CMakeFiles/TGT.dir/Matrix4.cpp.s
 
 CMakeFiles/TGT.dir/Matrix4.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/Matrix4.cpp.o.requires
@@ -194,15 +194,15 @@ CMakeFiles/TGT.dir/Quaternion.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/Quaternion.cpp.o: ../Quaternion.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/Quaternion.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Quaternion.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Quaternion.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Quaternion.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Quaternion.cpp
 
 CMakeFiles/TGT.dir/Quaternion.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/Quaternion.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Quaternion.cpp > CMakeFiles/TGT.dir/Quaternion.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Quaternion.cpp > CMakeFiles/TGT.dir/Quaternion.cpp.i
 
 CMakeFiles/TGT.dir/Quaternion.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/Quaternion.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Quaternion.cpp -o CMakeFiles/TGT.dir/Quaternion.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Quaternion.cpp -o CMakeFiles/TGT.dir/Quaternion.cpp.s
 
 CMakeFiles/TGT.dir/Quaternion.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/Quaternion.cpp.o.requires
@@ -217,15 +217,15 @@ CMakeFiles/TGT.dir/Vector.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/Vector.cpp.o: ../Vector.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_8)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/Vector.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Vector.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Vector.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Vector.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Vector.cpp
 
 CMakeFiles/TGT.dir/Vector.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/Vector.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Vector.cpp > CMakeFiles/TGT.dir/Vector.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Vector.cpp > CMakeFiles/TGT.dir/Vector.cpp.i
 
 CMakeFiles/TGT.dir/Vector.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/Vector.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Vector.cpp -o CMakeFiles/TGT.dir/Vector.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Vector.cpp -o CMakeFiles/TGT.dir/Vector.cpp.s
 
 CMakeFiles/TGT.dir/Vector.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/Vector.cpp.o.requires
@@ -240,15 +240,15 @@ CMakeFiles/TGT.dir/Color.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/Color.cpp.o: ../Color.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_9)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/Color.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Color.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Color.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Color.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Color.cpp
 
 CMakeFiles/TGT.dir/Color.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/Color.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Color.cpp > CMakeFiles/TGT.dir/Color.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Color.cpp > CMakeFiles/TGT.dir/Color.cpp.i
 
 CMakeFiles/TGT.dir/Color.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/Color.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Color.cpp -o CMakeFiles/TGT.dir/Color.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Color.cpp -o CMakeFiles/TGT.dir/Color.cpp.s
 
 CMakeFiles/TGT.dir/Color.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/Color.cpp.o.requires
@@ -263,15 +263,15 @@ CMakeFiles/TGT.dir/Rect.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/Rect.cpp.o: ../Rect.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_10)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/Rect.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Rect.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Rect.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Rect.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Rect.cpp
 
 CMakeFiles/TGT.dir/Rect.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/Rect.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Rect.cpp > CMakeFiles/TGT.dir/Rect.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Rect.cpp > CMakeFiles/TGT.dir/Rect.cpp.i
 
 CMakeFiles/TGT.dir/Rect.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/Rect.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Rect.cpp -o CMakeFiles/TGT.dir/Rect.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Rect.cpp -o CMakeFiles/TGT.dir/Rect.cpp.s
 
 CMakeFiles/TGT.dir/Rect.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/Rect.cpp.o.requires
@@ -286,15 +286,15 @@ CMakeFiles/TGT.dir/Texture2D.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/Texture2D.cpp.o: ../Texture2D.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_11)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/Texture2D.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Texture2D.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Texture2D.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Texture2D.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Texture2D.cpp
 
 CMakeFiles/TGT.dir/Texture2D.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/Texture2D.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Texture2D.cpp > CMakeFiles/TGT.dir/Texture2D.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Texture2D.cpp > CMakeFiles/TGT.dir/Texture2D.cpp.i
 
 CMakeFiles/TGT.dir/Texture2D.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/Texture2D.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Texture2D.cpp -o CMakeFiles/TGT.dir/Texture2D.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Texture2D.cpp -o CMakeFiles/TGT.dir/Texture2D.cpp.s
 
 CMakeFiles/TGT.dir/Texture2D.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/Texture2D.cpp.o.requires
@@ -309,15 +309,15 @@ CMakeFiles/TGT.dir/BaseGame.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/BaseGame.cpp.o: ../BaseGame.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_12)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/BaseGame.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/BaseGame.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/BaseGame.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/BaseGame.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/BaseGame.cpp
 
 CMakeFiles/TGT.dir/BaseGame.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/BaseGame.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/BaseGame.cpp > CMakeFiles/TGT.dir/BaseGame.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/BaseGame.cpp > CMakeFiles/TGT.dir/BaseGame.cpp.i
 
 CMakeFiles/TGT.dir/BaseGame.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/BaseGame.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/BaseGame.cpp -o CMakeFiles/TGT.dir/BaseGame.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/BaseGame.cpp -o CMakeFiles/TGT.dir/BaseGame.cpp.s
 
 CMakeFiles/TGT.dir/BaseGame.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/BaseGame.cpp.o.requires
@@ -332,15 +332,15 @@ CMakeFiles/TGT.dir/Input.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/Input.cpp.o: ../Input.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_13)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/Input.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Input.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Input.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Input.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Input.cpp
 
 CMakeFiles/TGT.dir/Input.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/Input.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Input.cpp > CMakeFiles/TGT.dir/Input.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Input.cpp > CMakeFiles/TGT.dir/Input.cpp.i
 
 CMakeFiles/TGT.dir/Input.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/Input.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Input.cpp -o CMakeFiles/TGT.dir/Input.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Input.cpp -o CMakeFiles/TGT.dir/Input.cpp.s
 
 CMakeFiles/TGT.dir/Input.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/Input.cpp.o.requires
@@ -355,15 +355,15 @@ CMakeFiles/TGT.dir/MessageNetwork.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/MessageNetwork.cpp.o: ../MessageNetwork.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_14)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/MessageNetwork.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/MessageNetwork.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/MessageNetwork.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/MessageNetwork.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/MessageNetwork.cpp
 
 CMakeFiles/TGT.dir/MessageNetwork.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/MessageNetwork.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/MessageNetwork.cpp > CMakeFiles/TGT.dir/MessageNetwork.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/MessageNetwork.cpp > CMakeFiles/TGT.dir/MessageNetwork.cpp.i
 
 CMakeFiles/TGT.dir/MessageNetwork.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/MessageNetwork.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/MessageNetwork.cpp -o CMakeFiles/TGT.dir/MessageNetwork.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/MessageNetwork.cpp -o CMakeFiles/TGT.dir/MessageNetwork.cpp.s
 
 CMakeFiles/TGT.dir/MessageNetwork.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/MessageNetwork.cpp.o.requires
@@ -378,15 +378,15 @@ CMakeFiles/TGT.dir/AnimatedSprite.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/AnimatedSprite.cpp.o: ../AnimatedSprite.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_15)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/AnimatedSprite.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/AnimatedSprite.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/AnimatedSprite.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/AnimatedSprite.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/AnimatedSprite.cpp
 
 CMakeFiles/TGT.dir/AnimatedSprite.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/AnimatedSprite.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/AnimatedSprite.cpp > CMakeFiles/TGT.dir/AnimatedSprite.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/AnimatedSprite.cpp > CMakeFiles/TGT.dir/AnimatedSprite.cpp.i
 
 CMakeFiles/TGT.dir/AnimatedSprite.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/AnimatedSprite.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/AnimatedSprite.cpp -o CMakeFiles/TGT.dir/AnimatedSprite.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/AnimatedSprite.cpp -o CMakeFiles/TGT.dir/AnimatedSprite.cpp.s
 
 CMakeFiles/TGT.dir/AnimatedSprite.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/AnimatedSprite.cpp.o.requires
@@ -401,15 +401,15 @@ CMakeFiles/TGT.dir/Node.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/Node.cpp.o: ../Node.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_16)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/Node.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Node.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Node.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Node.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Node.cpp
 
 CMakeFiles/TGT.dir/Node.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/Node.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Node.cpp > CMakeFiles/TGT.dir/Node.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Node.cpp > CMakeFiles/TGT.dir/Node.cpp.i
 
 CMakeFiles/TGT.dir/Node.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/Node.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Node.cpp -o CMakeFiles/TGT.dir/Node.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Node.cpp -o CMakeFiles/TGT.dir/Node.cpp.s
 
 CMakeFiles/TGT.dir/Node.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/Node.cpp.o.requires
@@ -424,15 +424,15 @@ CMakeFiles/TGT.dir/DebugDraw.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/DebugDraw.cpp.o: ../DebugDraw.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_17)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/DebugDraw.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/DebugDraw.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/DebugDraw.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/DebugDraw.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/DebugDraw.cpp
 
 CMakeFiles/TGT.dir/DebugDraw.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/DebugDraw.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/DebugDraw.cpp > CMakeFiles/TGT.dir/DebugDraw.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/DebugDraw.cpp > CMakeFiles/TGT.dir/DebugDraw.cpp.i
 
 CMakeFiles/TGT.dir/DebugDraw.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/DebugDraw.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/DebugDraw.cpp -o CMakeFiles/TGT.dir/DebugDraw.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/DebugDraw.cpp -o CMakeFiles/TGT.dir/DebugDraw.cpp.s
 
 CMakeFiles/TGT.dir/DebugDraw.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/DebugDraw.cpp.o.requires
@@ -447,15 +447,15 @@ CMakeFiles/TGT.dir/Button.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/Button.cpp.o: ../Button.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_18)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/Button.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Button.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Button.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Button.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Button.cpp
 
 CMakeFiles/TGT.dir/Button.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/Button.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Button.cpp > CMakeFiles/TGT.dir/Button.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Button.cpp > CMakeFiles/TGT.dir/Button.cpp.i
 
 CMakeFiles/TGT.dir/Button.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/Button.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Button.cpp -o CMakeFiles/TGT.dir/Button.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Button.cpp -o CMakeFiles/TGT.dir/Button.cpp.s
 
 CMakeFiles/TGT.dir/Button.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/Button.cpp.o.requires
@@ -470,15 +470,15 @@ CMakeFiles/TGT.dir/GUI.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/GUI.cpp.o: ../GUI.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_19)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/GUI.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/GUI.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/GUI.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/GUI.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/GUI.cpp
 
 CMakeFiles/TGT.dir/GUI.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/GUI.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/GUI.cpp > CMakeFiles/TGT.dir/GUI.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/GUI.cpp > CMakeFiles/TGT.dir/GUI.cpp.i
 
 CMakeFiles/TGT.dir/GUI.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/GUI.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/GUI.cpp -o CMakeFiles/TGT.dir/GUI.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/GUI.cpp -o CMakeFiles/TGT.dir/GUI.cpp.s
 
 CMakeFiles/TGT.dir/GUI.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/GUI.cpp.o.requires
@@ -493,15 +493,15 @@ CMakeFiles/TGT.dir/GUIGFX.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/GUIGFX.cpp.o: ../GUIGFX.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_20)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/GUIGFX.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/GUIGFX.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/GUIGFX.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/GUIGFX.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/GUIGFX.cpp
 
 CMakeFiles/TGT.dir/GUIGFX.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/GUIGFX.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/GUIGFX.cpp > CMakeFiles/TGT.dir/GUIGFX.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/GUIGFX.cpp > CMakeFiles/TGT.dir/GUIGFX.cpp.i
 
 CMakeFiles/TGT.dir/GUIGFX.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/GUIGFX.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/GUIGFX.cpp -o CMakeFiles/TGT.dir/GUIGFX.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/GUIGFX.cpp -o CMakeFiles/TGT.dir/GUIGFX.cpp.s
 
 CMakeFiles/TGT.dir/GUIGFX.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/GUIGFX.cpp.o.requires
@@ -516,15 +516,15 @@ CMakeFiles/TGT.dir/Label.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/Label.cpp.o: ../Label.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_21)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/Label.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Label.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Label.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Label.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Label.cpp
 
 CMakeFiles/TGT.dir/Label.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/Label.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Label.cpp > CMakeFiles/TGT.dir/Label.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Label.cpp > CMakeFiles/TGT.dir/Label.cpp.i
 
 CMakeFiles/TGT.dir/Label.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/Label.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Label.cpp -o CMakeFiles/TGT.dir/Label.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Label.cpp -o CMakeFiles/TGT.dir/Label.cpp.s
 
 CMakeFiles/TGT.dir/Label.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/Label.cpp.o.requires
@@ -539,15 +539,15 @@ CMakeFiles/TGT.dir/Widget.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/Widget.cpp.o: ../Widget.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_22)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/Widget.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Widget.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Widget.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Widget.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Widget.cpp
 
 CMakeFiles/TGT.dir/Widget.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/Widget.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Widget.cpp > CMakeFiles/TGT.dir/Widget.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Widget.cpp > CMakeFiles/TGT.dir/Widget.cpp.i
 
 CMakeFiles/TGT.dir/Widget.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/Widget.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Widget.cpp -o CMakeFiles/TGT.dir/Widget.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Widget.cpp -o CMakeFiles/TGT.dir/Widget.cpp.s
 
 CMakeFiles/TGT.dir/Widget.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/Widget.cpp.o.requires
@@ -562,15 +562,15 @@ CMakeFiles/TGT.dir/Entry.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/Entry.cpp.o: ../Entry.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_23)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/Entry.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Entry.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Entry.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Entry.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Entry.cpp
 
 CMakeFiles/TGT.dir/Entry.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/Entry.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Entry.cpp > CMakeFiles/TGT.dir/Entry.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Entry.cpp > CMakeFiles/TGT.dir/Entry.cpp.i
 
 CMakeFiles/TGT.dir/Entry.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/Entry.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Entry.cpp -o CMakeFiles/TGT.dir/Entry.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Entry.cpp -o CMakeFiles/TGT.dir/Entry.cpp.s
 
 CMakeFiles/TGT.dir/Entry.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/Entry.cpp.o.requires
@@ -585,15 +585,15 @@ CMakeFiles/TGT.dir/NumberEntry.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/NumberEntry.cpp.o: ../NumberEntry.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_24)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/NumberEntry.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/NumberEntry.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/NumberEntry.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/NumberEntry.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/NumberEntry.cpp
 
 CMakeFiles/TGT.dir/NumberEntry.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/NumberEntry.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/NumberEntry.cpp > CMakeFiles/TGT.dir/NumberEntry.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/NumberEntry.cpp > CMakeFiles/TGT.dir/NumberEntry.cpp.i
 
 CMakeFiles/TGT.dir/NumberEntry.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/NumberEntry.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/NumberEntry.cpp -o CMakeFiles/TGT.dir/NumberEntry.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/NumberEntry.cpp -o CMakeFiles/TGT.dir/NumberEntry.cpp.s
 
 CMakeFiles/TGT.dir/NumberEntry.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/NumberEntry.cpp.o.requires
@@ -608,15 +608,15 @@ CMakeFiles/TGT.dir/Boolean.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/Boolean.cpp.o: ../Boolean.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_25)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/Boolean.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Boolean.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Boolean.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Boolean.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Boolean.cpp
 
 CMakeFiles/TGT.dir/Boolean.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/Boolean.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Boolean.cpp > CMakeFiles/TGT.dir/Boolean.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Boolean.cpp > CMakeFiles/TGT.dir/Boolean.cpp.i
 
 CMakeFiles/TGT.dir/Boolean.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/Boolean.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Boolean.cpp -o CMakeFiles/TGT.dir/Boolean.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Boolean.cpp -o CMakeFiles/TGT.dir/Boolean.cpp.s
 
 CMakeFiles/TGT.dir/Boolean.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/Boolean.cpp.o.requires
@@ -631,15 +631,15 @@ CMakeFiles/TGT.dir/Slider.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/Slider.cpp.o: ../Slider.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_26)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/Slider.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Slider.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Slider.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Slider.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Slider.cpp
 
 CMakeFiles/TGT.dir/Slider.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/Slider.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Slider.cpp > CMakeFiles/TGT.dir/Slider.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Slider.cpp > CMakeFiles/TGT.dir/Slider.cpp.i
 
 CMakeFiles/TGT.dir/Slider.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/Slider.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Slider.cpp -o CMakeFiles/TGT.dir/Slider.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Slider.cpp -o CMakeFiles/TGT.dir/Slider.cpp.s
 
 CMakeFiles/TGT.dir/Slider.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/Slider.cpp.o.requires
@@ -654,15 +654,15 @@ CMakeFiles/TGT.dir/Box.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/Box.cpp.o: ../Box.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_27)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/Box.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Box.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Box.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Box.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Box.cpp
 
 CMakeFiles/TGT.dir/Box.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/Box.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Box.cpp > CMakeFiles/TGT.dir/Box.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Box.cpp > CMakeFiles/TGT.dir/Box.cpp.i
 
 CMakeFiles/TGT.dir/Box.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/Box.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Box.cpp -o CMakeFiles/TGT.dir/Box.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Box.cpp -o CMakeFiles/TGT.dir/Box.cpp.s
 
 CMakeFiles/TGT.dir/Box.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/Box.cpp.o.requires
@@ -677,15 +677,15 @@ CMakeFiles/TGT.dir/imgui.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/imgui.cpp.o: ../imgui.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_28)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/imgui.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/imgui.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/imgui.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui.cpp
 
 CMakeFiles/TGT.dir/imgui.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/imgui.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui.cpp > CMakeFiles/TGT.dir/imgui.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui.cpp > CMakeFiles/TGT.dir/imgui.cpp.i
 
 CMakeFiles/TGT.dir/imgui.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/imgui.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui.cpp -o CMakeFiles/TGT.dir/imgui.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui.cpp -o CMakeFiles/TGT.dir/imgui.cpp.s
 
 CMakeFiles/TGT.dir/imgui.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/imgui.cpp.o.requires
@@ -700,15 +700,15 @@ CMakeFiles/TGT.dir/imgui_demo.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/imgui_demo.cpp.o: ../imgui_demo.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_29)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/imgui_demo.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/imgui_demo.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui_demo.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/imgui_demo.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui_demo.cpp
 
 CMakeFiles/TGT.dir/imgui_demo.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/imgui_demo.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui_demo.cpp > CMakeFiles/TGT.dir/imgui_demo.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui_demo.cpp > CMakeFiles/TGT.dir/imgui_demo.cpp.i
 
 CMakeFiles/TGT.dir/imgui_demo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/imgui_demo.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui_demo.cpp -o CMakeFiles/TGT.dir/imgui_demo.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui_demo.cpp -o CMakeFiles/TGT.dir/imgui_demo.cpp.s
 
 CMakeFiles/TGT.dir/imgui_demo.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/imgui_demo.cpp.o.requires
@@ -723,15 +723,15 @@ CMakeFiles/TGT.dir/imgui_draw.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/imgui_draw.cpp.o: ../imgui_draw.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_30)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/imgui_draw.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/imgui_draw.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui_draw.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/imgui_draw.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui_draw.cpp
 
 CMakeFiles/TGT.dir/imgui_draw.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/imgui_draw.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui_draw.cpp > CMakeFiles/TGT.dir/imgui_draw.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui_draw.cpp > CMakeFiles/TGT.dir/imgui_draw.cpp.i
 
 CMakeFiles/TGT.dir/imgui_draw.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/imgui_draw.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui_draw.cpp -o CMakeFiles/TGT.dir/imgui_draw.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui_draw.cpp -o CMakeFiles/TGT.dir/imgui_draw.cpp.s
 
 CMakeFiles/TGT.dir/imgui_draw.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/imgui_draw.cpp.o.requires
@@ -746,15 +746,15 @@ CMakeFiles/TGT.dir/imgui_sdl.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/imgui_sdl.cpp.o: ../imgui_sdl.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_31)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/imgui_sdl.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/imgui_sdl.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui_sdl.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/imgui_sdl.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui_sdl.cpp
 
 CMakeFiles/TGT.dir/imgui_sdl.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/imgui_sdl.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui_sdl.cpp > CMakeFiles/TGT.dir/imgui_sdl.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui_sdl.cpp > CMakeFiles/TGT.dir/imgui_sdl.cpp.i
 
 CMakeFiles/TGT.dir/imgui_sdl.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/imgui_sdl.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui_sdl.cpp -o CMakeFiles/TGT.dir/imgui_sdl.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui_sdl.cpp -o CMakeFiles/TGT.dir/imgui_sdl.cpp.s
 
 CMakeFiles/TGT.dir/imgui_sdl.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/imgui_sdl.cpp.o.requires
@@ -769,15 +769,15 @@ CMakeFiles/TGT.dir/Shader.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/Shader.cpp.o: ../Shader.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_32)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/Shader.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Shader.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Shader.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Shader.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Shader.cpp
 
 CMakeFiles/TGT.dir/Shader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/Shader.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Shader.cpp > CMakeFiles/TGT.dir/Shader.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Shader.cpp > CMakeFiles/TGT.dir/Shader.cpp.i
 
 CMakeFiles/TGT.dir/Shader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/Shader.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Shader.cpp -o CMakeFiles/TGT.dir/Shader.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Shader.cpp -o CMakeFiles/TGT.dir/Shader.cpp.s
 
 CMakeFiles/TGT.dir/Shader.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/Shader.cpp.o.requires
@@ -792,15 +792,15 @@ CMakeFiles/TGT.dir/sig_gpu_builtin.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/sig_gpu_builtin.cpp.o: ../sig_gpu_builtin.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_33)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/sig_gpu_builtin.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/sig_gpu_builtin.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/sig_gpu_builtin.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/sig_gpu_builtin.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/sig_gpu_builtin.cpp
 
 CMakeFiles/TGT.dir/sig_gpu_builtin.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/sig_gpu_builtin.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/sig_gpu_builtin.cpp > CMakeFiles/TGT.dir/sig_gpu_builtin.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/sig_gpu_builtin.cpp > CMakeFiles/TGT.dir/sig_gpu_builtin.cpp.i
 
 CMakeFiles/TGT.dir/sig_gpu_builtin.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/sig_gpu_builtin.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/sig_gpu_builtin.cpp -o CMakeFiles/TGT.dir/sig_gpu_builtin.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/sig_gpu_builtin.cpp -o CMakeFiles/TGT.dir/sig_gpu_builtin.cpp.s
 
 CMakeFiles/TGT.dir/sig_gpu_builtin.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/sig_gpu_builtin.cpp.o.requires
@@ -815,15 +815,15 @@ CMakeFiles/TGT.dir/Resource.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/Resource.cpp.o: ../Resource.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_34)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/Resource.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Resource.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Resource.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Resource.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Resource.cpp
 
 CMakeFiles/TGT.dir/Resource.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/Resource.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Resource.cpp > CMakeFiles/TGT.dir/Resource.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Resource.cpp > CMakeFiles/TGT.dir/Resource.cpp.i
 
 CMakeFiles/TGT.dir/Resource.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/Resource.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Resource.cpp -o CMakeFiles/TGT.dir/Resource.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Resource.cpp -o CMakeFiles/TGT.dir/Resource.cpp.s
 
 CMakeFiles/TGT.dir/Resource.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/Resource.cpp.o.requires
@@ -838,15 +838,15 @@ CMakeFiles/TGT.dir/ResourceManager.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/ResourceManager.cpp.o: ../ResourceManager.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_35)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/ResourceManager.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/ResourceManager.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/ResourceManager.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/ResourceManager.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/ResourceManager.cpp
 
 CMakeFiles/TGT.dir/ResourceManager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/ResourceManager.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/ResourceManager.cpp > CMakeFiles/TGT.dir/ResourceManager.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/ResourceManager.cpp > CMakeFiles/TGT.dir/ResourceManager.cpp.i
 
 CMakeFiles/TGT.dir/ResourceManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/ResourceManager.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/ResourceManager.cpp -o CMakeFiles/TGT.dir/ResourceManager.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/ResourceManager.cpp -o CMakeFiles/TGT.dir/ResourceManager.cpp.s
 
 CMakeFiles/TGT.dir/ResourceManager.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/ResourceManager.cpp.o.requires
@@ -861,15 +861,15 @@ CMakeFiles/TGT.dir/AudioClip.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/AudioClip.cpp.o: ../AudioClip.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_36)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/AudioClip.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/AudioClip.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/AudioClip.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/AudioClip.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/AudioClip.cpp
 
 CMakeFiles/TGT.dir/AudioClip.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/AudioClip.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/AudioClip.cpp > CMakeFiles/TGT.dir/AudioClip.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/AudioClip.cpp > CMakeFiles/TGT.dir/AudioClip.cpp.i
 
 CMakeFiles/TGT.dir/AudioClip.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/AudioClip.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/AudioClip.cpp -o CMakeFiles/TGT.dir/AudioClip.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/AudioClip.cpp -o CMakeFiles/TGT.dir/AudioClip.cpp.s
 
 CMakeFiles/TGT.dir/AudioClip.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/AudioClip.cpp.o.requires
@@ -884,15 +884,15 @@ CMakeFiles/TGT.dir/SoundSystem.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/SoundSystem.cpp.o: ../SoundSystem.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_37)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/SoundSystem.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/SoundSystem.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/SoundSystem.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/SoundSystem.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/SoundSystem.cpp
 
 CMakeFiles/TGT.dir/SoundSystem.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/SoundSystem.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/SoundSystem.cpp > CMakeFiles/TGT.dir/SoundSystem.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/SoundSystem.cpp > CMakeFiles/TGT.dir/SoundSystem.cpp.i
 
 CMakeFiles/TGT.dir/SoundSystem.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/SoundSystem.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/SoundSystem.cpp -o CMakeFiles/TGT.dir/SoundSystem.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/SoundSystem.cpp -o CMakeFiles/TGT.dir/SoundSystem.cpp.s
 
 CMakeFiles/TGT.dir/SoundSystem.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/SoundSystem.cpp.o.requires
@@ -903,42 +903,42 @@ CMakeFiles/TGT.dir/SoundSystem.cpp.o.provides: CMakeFiles/TGT.dir/SoundSystem.cp
 
 CMakeFiles/TGT.dir/SoundSystem.cpp.o.provides.build: CMakeFiles/TGT.dir/SoundSystem.cpp.o
 
-CMakeFiles/TGT.dir/TileMapLayer.cpp.o: CMakeFiles/TGT.dir/flags.make
-CMakeFiles/TGT.dir/TileMapLayer.cpp.o: ../TileMapLayer.cpp
+CMakeFiles/TGT.dir/TileMap.cpp.o: CMakeFiles/TGT.dir/flags.make
+CMakeFiles/TGT.dir/TileMap.cpp.o: ../TileMap.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_38)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/TileMapLayer.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/TileMapLayer.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/TileMapLayer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/TileMap.cpp.o"
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/TileMap.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/TileMap.cpp
 
-CMakeFiles/TGT.dir/TileMapLayer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/TileMapLayer.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/TileMapLayer.cpp > CMakeFiles/TGT.dir/TileMapLayer.cpp.i
+CMakeFiles/TGT.dir/TileMap.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/TileMap.cpp.i"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/TileMap.cpp > CMakeFiles/TGT.dir/TileMap.cpp.i
 
-CMakeFiles/TGT.dir/TileMapLayer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/TileMapLayer.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/TileMapLayer.cpp -o CMakeFiles/TGT.dir/TileMapLayer.cpp.s
+CMakeFiles/TGT.dir/TileMap.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/TileMap.cpp.s"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/TileMap.cpp -o CMakeFiles/TGT.dir/TileMap.cpp.s
 
-CMakeFiles/TGT.dir/TileMapLayer.cpp.o.requires:
-.PHONY : CMakeFiles/TGT.dir/TileMapLayer.cpp.o.requires
+CMakeFiles/TGT.dir/TileMap.cpp.o.requires:
+.PHONY : CMakeFiles/TGT.dir/TileMap.cpp.o.requires
 
-CMakeFiles/TGT.dir/TileMapLayer.cpp.o.provides: CMakeFiles/TGT.dir/TileMapLayer.cpp.o.requires
-	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/TileMapLayer.cpp.o.provides.build
-.PHONY : CMakeFiles/TGT.dir/TileMapLayer.cpp.o.provides
+CMakeFiles/TGT.dir/TileMap.cpp.o.provides: CMakeFiles/TGT.dir/TileMap.cpp.o.requires
+	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/TileMap.cpp.o.provides.build
+.PHONY : CMakeFiles/TGT.dir/TileMap.cpp.o.provides
 
-CMakeFiles/TGT.dir/TileMapLayer.cpp.o.provides.build: CMakeFiles/TGT.dir/TileMapLayer.cpp.o
+CMakeFiles/TGT.dir/TileMap.cpp.o.provides.build: CMakeFiles/TGT.dir/TileMap.cpp.o
 
 CMakeFiles/TGT.dir/Camera2D.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/Camera2D.cpp.o: ../Camera2D.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_39)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/Camera2D.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Camera2D.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Camera2D.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Camera2D.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Camera2D.cpp
 
 CMakeFiles/TGT.dir/Camera2D.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/Camera2D.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Camera2D.cpp > CMakeFiles/TGT.dir/Camera2D.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Camera2D.cpp > CMakeFiles/TGT.dir/Camera2D.cpp.i
 
 CMakeFiles/TGT.dir/Camera2D.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/Camera2D.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Camera2D.cpp -o CMakeFiles/TGT.dir/Camera2D.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Camera2D.cpp -o CMakeFiles/TGT.dir/Camera2D.cpp.s
 
 CMakeFiles/TGT.dir/Camera2D.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/Camera2D.cpp.o.requires
@@ -953,15 +953,15 @@ CMakeFiles/TGT.dir/LightNode.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/LightNode.cpp.o: ../LightNode.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_40)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/LightNode.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/LightNode.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/LightNode.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/LightNode.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/LightNode.cpp
 
 CMakeFiles/TGT.dir/LightNode.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/LightNode.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/LightNode.cpp > CMakeFiles/TGT.dir/LightNode.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/LightNode.cpp > CMakeFiles/TGT.dir/LightNode.cpp.i
 
 CMakeFiles/TGT.dir/LightNode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/LightNode.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/LightNode.cpp -o CMakeFiles/TGT.dir/LightNode.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/LightNode.cpp -o CMakeFiles/TGT.dir/LightNode.cpp.s
 
 CMakeFiles/TGT.dir/LightNode.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/LightNode.cpp.o.requires
@@ -976,15 +976,15 @@ CMakeFiles/TGT.dir/SpriteBatch.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/SpriteBatch.cpp.o: ../SpriteBatch.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_41)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/SpriteBatch.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/SpriteBatch.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/SpriteBatch.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/SpriteBatch.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/SpriteBatch.cpp
 
 CMakeFiles/TGT.dir/SpriteBatch.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/SpriteBatch.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/SpriteBatch.cpp > CMakeFiles/TGT.dir/SpriteBatch.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/SpriteBatch.cpp > CMakeFiles/TGT.dir/SpriteBatch.cpp.i
 
 CMakeFiles/TGT.dir/SpriteBatch.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/SpriteBatch.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/SpriteBatch.cpp -o CMakeFiles/TGT.dir/SpriteBatch.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/SpriteBatch.cpp -o CMakeFiles/TGT.dir/SpriteBatch.cpp.s
 
 CMakeFiles/TGT.dir/SpriteBatch.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/SpriteBatch.cpp.o.requires
@@ -999,15 +999,15 @@ CMakeFiles/TGT.dir/Component.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/Component.cpp.o: ../Component.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_42)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/Component.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Component.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Component.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Component.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Component.cpp
 
 CMakeFiles/TGT.dir/Component.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/Component.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Component.cpp > CMakeFiles/TGT.dir/Component.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Component.cpp > CMakeFiles/TGT.dir/Component.cpp.i
 
 CMakeFiles/TGT.dir/Component.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/Component.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Component.cpp -o CMakeFiles/TGT.dir/Component.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Component.cpp -o CMakeFiles/TGT.dir/Component.cpp.s
 
 CMakeFiles/TGT.dir/Component.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/Component.cpp.o.requires
@@ -1022,15 +1022,15 @@ CMakeFiles/TGT.dir/Sprite.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/Sprite.cpp.o: ../Sprite.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_43)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/Sprite.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Sprite.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Sprite.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Sprite.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Sprite.cpp
 
 CMakeFiles/TGT.dir/Sprite.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/Sprite.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Sprite.cpp > CMakeFiles/TGT.dir/Sprite.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Sprite.cpp > CMakeFiles/TGT.dir/Sprite.cpp.i
 
 CMakeFiles/TGT.dir/Sprite.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/Sprite.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Sprite.cpp -o CMakeFiles/TGT.dir/Sprite.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Sprite.cpp -o CMakeFiles/TGT.dir/Sprite.cpp.s
 
 CMakeFiles/TGT.dir/Sprite.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/Sprite.cpp.o.requires
@@ -1045,15 +1045,15 @@ CMakeFiles/TGT.dir/Scene.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/Scene.cpp.o: ../Scene.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_44)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/Scene.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Scene.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Scene.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Scene.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Scene.cpp
 
 CMakeFiles/TGT.dir/Scene.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/Scene.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Scene.cpp > CMakeFiles/TGT.dir/Scene.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Scene.cpp > CMakeFiles/TGT.dir/Scene.cpp.i
 
 CMakeFiles/TGT.dir/Scene.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/Scene.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Scene.cpp -o CMakeFiles/TGT.dir/Scene.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Scene.cpp -o CMakeFiles/TGT.dir/Scene.cpp.s
 
 CMakeFiles/TGT.dir/Scene.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/Scene.cpp.o.requires
@@ -1068,15 +1068,15 @@ CMakeFiles/TGT.dir/Editor.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/Editor.cpp.o: ../Editor.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_45)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/Editor.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Editor.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Editor.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/Editor.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Editor.cpp
 
 CMakeFiles/TGT.dir/Editor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/Editor.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Editor.cpp > CMakeFiles/TGT.dir/Editor.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Editor.cpp > CMakeFiles/TGT.dir/Editor.cpp.i
 
 CMakeFiles/TGT.dir/Editor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/Editor.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Editor.cpp -o CMakeFiles/TGT.dir/Editor.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Editor.cpp -o CMakeFiles/TGT.dir/Editor.cpp.s
 
 CMakeFiles/TGT.dir/Editor.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/Editor.cpp.o.requires
@@ -1091,15 +1091,15 @@ CMakeFiles/TGT.dir/ComponentEditor.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/ComponentEditor.cpp.o: ../ComponentEditor.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_46)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/ComponentEditor.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/ComponentEditor.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/ComponentEditor.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/ComponentEditor.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/ComponentEditor.cpp
 
 CMakeFiles/TGT.dir/ComponentEditor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/ComponentEditor.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/ComponentEditor.cpp > CMakeFiles/TGT.dir/ComponentEditor.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/ComponentEditor.cpp > CMakeFiles/TGT.dir/ComponentEditor.cpp.i
 
 CMakeFiles/TGT.dir/ComponentEditor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/ComponentEditor.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/ComponentEditor.cpp -o CMakeFiles/TGT.dir/ComponentEditor.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/ComponentEditor.cpp -o CMakeFiles/TGT.dir/ComponentEditor.cpp.s
 
 CMakeFiles/TGT.dir/ComponentEditor.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/ComponentEditor.cpp.o.requires
@@ -1114,15 +1114,15 @@ CMakeFiles/TGT.dir/SpriteEditor.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/SpriteEditor.cpp.o: ../SpriteEditor.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_47)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/SpriteEditor.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/SpriteEditor.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/SpriteEditor.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/SpriteEditor.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/SpriteEditor.cpp
 
 CMakeFiles/TGT.dir/SpriteEditor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/SpriteEditor.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/SpriteEditor.cpp > CMakeFiles/TGT.dir/SpriteEditor.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/SpriteEditor.cpp > CMakeFiles/TGT.dir/SpriteEditor.cpp.i
 
 CMakeFiles/TGT.dir/SpriteEditor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/SpriteEditor.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/SpriteEditor.cpp -o CMakeFiles/TGT.dir/SpriteEditor.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/SpriteEditor.cpp -o CMakeFiles/TGT.dir/SpriteEditor.cpp.s
 
 CMakeFiles/TGT.dir/SpriteEditor.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/SpriteEditor.cpp.o.requires
@@ -1137,15 +1137,15 @@ CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.o: ../AnimatedSpriteEditor.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_48)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/AnimatedSpriteEditor.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/AnimatedSpriteEditor.cpp
 
 CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/AnimatedSpriteEditor.cpp > CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/AnimatedSpriteEditor.cpp > CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.i
 
 CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/AnimatedSpriteEditor.cpp -o CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/AnimatedSpriteEditor.cpp -o CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.s
 
 CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.o.requires
@@ -1160,15 +1160,15 @@ CMakeFiles/TGT.dir/LuaEngine.cpp.o: CMakeFiles/TGT.dir/flags.make
 CMakeFiles/TGT.dir/LuaEngine.cpp.o: ../LuaEngine.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_49)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/LuaEngine.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -o CMakeFiles/TGT.dir/LuaEngine.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/LuaEngine.cpp
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/LuaEngine.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/LuaEngine.cpp
 
 CMakeFiles/TGT.dir/LuaEngine.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/LuaEngine.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/LuaEngine.cpp > CMakeFiles/TGT.dir/LuaEngine.cpp.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/LuaEngine.cpp > CMakeFiles/TGT.dir/LuaEngine.cpp.i
 
 CMakeFiles/TGT.dir/LuaEngine.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/LuaEngine.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O0 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/LuaEngine.cpp -o CMakeFiles/TGT.dir/LuaEngine.cpp.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/LuaEngine.cpp -o CMakeFiles/TGT.dir/LuaEngine.cpp.s
 
 CMakeFiles/TGT.dir/LuaEngine.cpp.o.requires:
 .PHONY : CMakeFiles/TGT.dir/LuaEngine.cpp.o.requires
@@ -1178,6 +1178,29 @@ CMakeFiles/TGT.dir/LuaEngine.cpp.o.provides: CMakeFiles/TGT.dir/LuaEngine.cpp.o.
 .PHONY : CMakeFiles/TGT.dir/LuaEngine.cpp.o.provides
 
 CMakeFiles/TGT.dir/LuaEngine.cpp.o.provides.build: CMakeFiles/TGT.dir/LuaEngine.cpp.o
+
+CMakeFiles/TGT.dir/ParticleEmitter.cpp.o: CMakeFiles/TGT.dir/flags.make
+CMakeFiles/TGT.dir/ParticleEmitter.cpp.o: ../ParticleEmitter.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles $(CMAKE_PROGRESS_50)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/TGT.dir/ParticleEmitter.cpp.o"
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -o CMakeFiles/TGT.dir/ParticleEmitter.cpp.o -c /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/ParticleEmitter.cpp
+
+CMakeFiles/TGT.dir/ParticleEmitter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TGT.dir/ParticleEmitter.cpp.i"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -E /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/ParticleEmitter.cpp > CMakeFiles/TGT.dir/ParticleEmitter.cpp.i
+
+CMakeFiles/TGT.dir/ParticleEmitter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TGT.dir/ParticleEmitter.cpp.s"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS)  -g -O2 -Wall -std=c++11 -S /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/ParticleEmitter.cpp -o CMakeFiles/TGT.dir/ParticleEmitter.cpp.s
+
+CMakeFiles/TGT.dir/ParticleEmitter.cpp.o.requires:
+.PHONY : CMakeFiles/TGT.dir/ParticleEmitter.cpp.o.requires
+
+CMakeFiles/TGT.dir/ParticleEmitter.cpp.o.provides: CMakeFiles/TGT.dir/ParticleEmitter.cpp.o.requires
+	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/ParticleEmitter.cpp.o.provides.build
+.PHONY : CMakeFiles/TGT.dir/ParticleEmitter.cpp.o.provides
+
+CMakeFiles/TGT.dir/ParticleEmitter.cpp.o.provides.build: CMakeFiles/TGT.dir/ParticleEmitter.cpp.o
 
 # Object files for target TGT
 TGT_OBJECTS = \
@@ -1218,7 +1241,7 @@ TGT_OBJECTS = \
 "CMakeFiles/TGT.dir/ResourceManager.cpp.o" \
 "CMakeFiles/TGT.dir/AudioClip.cpp.o" \
 "CMakeFiles/TGT.dir/SoundSystem.cpp.o" \
-"CMakeFiles/TGT.dir/TileMapLayer.cpp.o" \
+"CMakeFiles/TGT.dir/TileMap.cpp.o" \
 "CMakeFiles/TGT.dir/Camera2D.cpp.o" \
 "CMakeFiles/TGT.dir/LightNode.cpp.o" \
 "CMakeFiles/TGT.dir/SpriteBatch.cpp.o" \
@@ -1229,7 +1252,8 @@ TGT_OBJECTS = \
 "CMakeFiles/TGT.dir/ComponentEditor.cpp.o" \
 "CMakeFiles/TGT.dir/SpriteEditor.cpp.o" \
 "CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.o" \
-"CMakeFiles/TGT.dir/LuaEngine.cpp.o"
+"CMakeFiles/TGT.dir/LuaEngine.cpp.o" \
+"CMakeFiles/TGT.dir/ParticleEmitter.cpp.o"
 
 # External object files for target TGT
 TGT_EXTERNAL_OBJECTS =
@@ -1271,7 +1295,7 @@ TGT: CMakeFiles/TGT.dir/Resource.cpp.o
 TGT: CMakeFiles/TGT.dir/ResourceManager.cpp.o
 TGT: CMakeFiles/TGT.dir/AudioClip.cpp.o
 TGT: CMakeFiles/TGT.dir/SoundSystem.cpp.o
-TGT: CMakeFiles/TGT.dir/TileMapLayer.cpp.o
+TGT: CMakeFiles/TGT.dir/TileMap.cpp.o
 TGT: CMakeFiles/TGT.dir/Camera2D.cpp.o
 TGT: CMakeFiles/TGT.dir/LightNode.cpp.o
 TGT: CMakeFiles/TGT.dir/SpriteBatch.cpp.o
@@ -1283,6 +1307,7 @@ TGT: CMakeFiles/TGT.dir/ComponentEditor.cpp.o
 TGT: CMakeFiles/TGT.dir/SpriteEditor.cpp.o
 TGT: CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.o
 TGT: CMakeFiles/TGT.dir/LuaEngine.cpp.o
+TGT: CMakeFiles/TGT.dir/ParticleEmitter.cpp.o
 TGT: CMakeFiles/TGT.dir/build.make
 TGT: /usr/lib/x86_64-linux-gnu/libGLEW.so
 TGT: ../dependencies/Box2D/lib/libBox2D.a
@@ -1338,7 +1363,7 @@ CMakeFiles/TGT.dir/requires: CMakeFiles/TGT.dir/Resource.cpp.o.requires
 CMakeFiles/TGT.dir/requires: CMakeFiles/TGT.dir/ResourceManager.cpp.o.requires
 CMakeFiles/TGT.dir/requires: CMakeFiles/TGT.dir/AudioClip.cpp.o.requires
 CMakeFiles/TGT.dir/requires: CMakeFiles/TGT.dir/SoundSystem.cpp.o.requires
-CMakeFiles/TGT.dir/requires: CMakeFiles/TGT.dir/TileMapLayer.cpp.o.requires
+CMakeFiles/TGT.dir/requires: CMakeFiles/TGT.dir/TileMap.cpp.o.requires
 CMakeFiles/TGT.dir/requires: CMakeFiles/TGT.dir/Camera2D.cpp.o.requires
 CMakeFiles/TGT.dir/requires: CMakeFiles/TGT.dir/LightNode.cpp.o.requires
 CMakeFiles/TGT.dir/requires: CMakeFiles/TGT.dir/SpriteBatch.cpp.o.requires
@@ -1350,6 +1375,7 @@ CMakeFiles/TGT.dir/requires: CMakeFiles/TGT.dir/ComponentEditor.cpp.o.requires
 CMakeFiles/TGT.dir/requires: CMakeFiles/TGT.dir/SpriteEditor.cpp.o.requires
 CMakeFiles/TGT.dir/requires: CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.o.requires
 CMakeFiles/TGT.dir/requires: CMakeFiles/TGT.dir/LuaEngine.cpp.o.requires
+CMakeFiles/TGT.dir/requires: CMakeFiles/TGT.dir/ParticleEmitter.cpp.o.requires
 .PHONY : CMakeFiles/TGT.dir/requires
 
 CMakeFiles/TGT.dir/clean:
