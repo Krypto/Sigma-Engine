@@ -3,5 +3,11 @@ compiler:
 - gcc
 os:
 - linux
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y libglew-dev libsdl2-dev libvorbis-dev libvorbisfile3 libopenal1 libopenal-dev
 script:
+- mkdir -p build
+- cd build
+- cmake .. -DCMAKE_BUILD_TYPE=Release
 - make -j2
