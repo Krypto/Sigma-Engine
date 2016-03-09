@@ -28,3 +28,4 @@ build-debug
 build-release
 build
 /build
+/build/.*
