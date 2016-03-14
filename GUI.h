@@ -12,6 +12,7 @@ using namespace std;
 
 namespace sig
 {
+
 	class Boolean;
 	class NumberEntry;
 	class Entry;
@@ -28,21 +29,24 @@ namespace sig
 		GUI();
 		~GUI();
 		
-		Widget* CreateWidget(const string &name, Widget *w);
-		Label* CreateLabel(const string &name, const string &text, float font_scale=0.27f, float char_spacing=-22.0f);
-		Button* CreateButton(const string &name, const string &text, float font_scale=0.27f, float char_spacing=-22.0f);
-		Entry* CreateEntry(const string &name, const string &text, float font_scale=0.27f, float char_spacing=-26.0f);
-		NumberEntry* CreateNumberEntry(const string &name, float font_scale=0.27f, float char_spacing=-26.0f);
-		Slider* CreateSlider(const string &name, float _min, float _max, float font_scale=0.27f, float char_spacing=-26.0f);
-		Boolean* CreateBoolean(const string &name, float font_scale=0.27f, float char_spacing=-26.0f);
-		Box* CreateBox(const string &name);
-		
-		Box* BeginBox(const Rect &rect);
-		void RangeProperty(const string &title, function<float()> getter, function<void(float)> setter, float _min, float _max);
-		void VectorProperty(const string &title, function<Vector2()> getter, function<void(Vector2)> setter);
+		void AddWidget(Widget *w);
+
+		void AddLabel(const string& text);
+		Button* AddButton(const string& text);
+		void AddSeparator();
+		void AddParam(const string& text, int *value, int vmin, int vmax);
+		void AddParam(const string& text, float *value, float vmin, float vmax, float increment=0.1f);
+		void AddParam(const string& text, Color *value, const Color& col=Color::WHITE);
+		void AddParam(const string& text, string *value, bool masked=false);
+		void AddParam(const string& text, bool *value);
+		void AddParam(const string& text, float *value);
+		void AddParam(const string& text, Vector2 *value);
+
+		void BeginBox(const Rect& bounds);
 		void EndBox();
-		
-		Widget* GetFocused() {return m_focused;}
+
+		Widget* GetFocused() { return m_focused; }
+		Box* GetCurrentBox() { return m_currentBox; }
 		
 		void Initialize();
 		void Update(float dt);
@@ -51,14 +55,14 @@ namespace sig
 		static Texture2D *DEFAULT_FONT;
 	protected:
 		static int zindex;
-		static bool WidgetComparator(Widget *a, Widget *b);
-		
+
 		bool m_focusblur, m_enterleave;
 		bool m_clickHandle, m_keyHandle, handled;
 		Widget *m_focused;
-		vector<Widget*> m_widgets;
-		Box *m_currentBox;
-		int pid;
+		WidgetList m_widgets;
+		vector<Box*> m_boxStack;
+		Box *m_currentBox, *m_prevBox;
+		int box_id;
 	};
 
 }

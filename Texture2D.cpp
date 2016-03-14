@@ -39,7 +39,7 @@ sig::Texture2D::Texture2D(const string& fileName)
 {
 	if (!fileName.empty()) {
 		int w, h, comp;
-		unsigned char *data = stbi_load(fileName.c_str(), &w, &h, &comp, STBI_rgb_alpha);
+		Byte *data = stbi_load(fileName.c_str(), &w, &h, &comp, STBI_rgb_alpha);
 		
 		if (data == nullptr) {
 			SIG_LOG_ERROR("Could NOT load this image: " << fileName);

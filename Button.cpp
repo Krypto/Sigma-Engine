@@ -6,37 +6,38 @@ sig::Button::Button()
 	:	Label()
 {
 	m_state = ButtonState::NORMAL;
-	m_bounds.width = 120;
-	m_align = ALIGN_CENTER;
+	m_bounds.width = 90;
+	m_bounds.height = 12;
+	m_backColor = Color::DARK_GRAY;
 }
 
 void sig::Button::Render()
 {
-	GFX::SetFillColor(m_backColor.Brightness(0.2f));
-	Rect r = Rect(GetBounds().x-1, GetBounds().y-1, GetBounds().width+2, GetBounds().height+3);
-	GFX::DrawRectangle(r);
-	
+	Rect r = GetBounds().Inflated(-1, -1);
+	Color fcol = m_backColor;
+
 	switch (m_state) {
-		case RELEASED:
-		case NORMAL:
-			GFX::SetFillColor(m_backColor);
+		case ButtonState::RELEASED:
+		case ButtonState::NORMAL:
+			fcol = m_backColor;
 			break;
-		case HOVERED:
-			GFX::SetFillColor(m_backColor.Brightness(1.2f));
+		case ButtonState::HOVERED:
+			fcol = m_backColor.Brightness(1.2f);
 			break;
-		case CLICKED:
-			GFX::SetFillColor(m_backColor.Brightness(0.7f));
+		case ButtonState::CLICKED:
+			fcol = m_backColor.Brightness(0.8f);
 			break;
 	}
-	GFX::DrawRectangle(GetBounds());
+	GFX::SetFillColor(fcol);
+	GFX::DrawRectangle(r);
 	
 	Label::Render();
 }
 
 void sig::Button::OnMouseUp(MouseEvent e)
 {
-	if (m_state == CLICKED) {
-		m_state = HOVERED;
+	if (m_state == ButtonState::CLICKED) {
+		m_state = ButtonState::HOVERED;
 		if (m_clickCallback) {
 			m_clickCallback();
 		}
@@ -45,17 +46,17 @@ void sig::Button::OnMouseUp(MouseEvent e)
 
 void sig::Button::OnMouseDown(MouseEvent e)
 {
-	if (m_state == HOVERED) {
-		m_state = CLICKED;
+	if (m_state == ButtonState::HOVERED) {
+		m_state = ButtonState::CLICKED;
 	}
 }
 
 void sig::Button::OnMouseEnter()
 {
-	m_state = HOVERED;
+	m_state = ButtonState::HOVERED;
 }
 
 void sig::Button::OnMouseLeave()
 {
-	m_state = NORMAL;
+	m_state = ButtonState::NORMAL;
 }

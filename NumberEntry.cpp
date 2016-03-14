@@ -34,24 +34,22 @@ void sig::NumberEntry::OnBlur(MouseEvent e)
 
 void sig::NumberEntry::SendToText()
 {
-	m_text = ToString<float>(m_value);
+	SetText(ToString<float>(m_value));
 }
 
 void sig::NumberEntry::SendToValue()
 {
-	SetValue(ToNumber<float>(m_text));
+	SetValue(ToNumber<float>(GetText()));
 	SendToText();
 }
 
-sig::NumberEntry* sig::NumberEntry::SetValue(const float& value)
+void sig::NumberEntry::SetValue(float value)
 {
 	if (value != m_value) {
-		this->m_value = value;
-		if (m_changeCallback) {
-			m_changeCallback(m_value);
+		m_value = value;
+		if (m_valueCallback) {
+			m_valueCallback();
 		}
 	}
 	SendToText();
-	
-	return this;
 }

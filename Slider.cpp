@@ -9,19 +9,20 @@ sig::Slider::Slider()
 	m_max = 10;
 	m_value = 0;
 	m_increment = 1;
-	m_showValue = true;
+	m_showValue = false;
 	m_x = 0;
 
-	m_bounds.height = 18;
+	m_bounds.height = 10;
 	m_bounds.width = 120;
 	m_align = ALIGN_CENTER;
 	m_textMargin = 0;
 
 	m_orientation = HORIZONTAL;
 
-	m_prefix = "%";
-}
+	m_suffix = "";
 
+	m_barColor = Color::YELLOW;
+}
 
 void sig::Slider::OnMouseUp(MouseEvent e)
 {
@@ -59,31 +60,34 @@ void sig::Slider::OnMouseMove(MouseEvent e)
 
 void sig::Slider::Render()
 {
+	Rect b_infl = GetBounds().Inflated(-1, -1);
+
 	GFX::SetFillColor(Color::BLACK);
-	GFX::DrawRectangle(GetBounds().Inflated(1, 1));
+	GFX::DrawRectangle(GetBounds());
 
 	GFX::SetFillColor(m_backColor.Brightness(0.6f));
-	GFX::DrawRectangle(GetBounds());
+	GFX::DrawRectangle(b_infl);
 
 	Rect vr;
 	if (m_orientation == VERTICAL) {
-		float m_y = GetBounds().height - m_x;
-		vr = Rect(GetBounds().x, GetBounds().y+m_y, GetBounds().width, m_x);
+		float m_y = b_infl.height - m_x;
+		vr = Rect(b_infl.x, b_infl.y+m_y, b_infl.width, m_x);
 	} else {
-		vr = Rect(GetBounds().x, GetBounds().y, m_x, GetBounds().height);
+		vr = Rect(b_infl.x, b_infl.y, m_x, b_infl.height);
 	}
-	GFX::SetFillColor(m_backColor.Brightness(1.6f));
+
+	GFX::SetFillColor(m_barColor);
 	GFX::DrawRectangle(vr);
 
 	if (m_showValue) {
 		if (drag) {
-			m_text = ToString<float>(m_value) + m_prefix;
+			m_text = ToString<float>(m_value) + m_suffix;
 			Label::Render();
 		}
 	}
 }
 
-sig::Slider* sig::Slider::SetValue(float value)
+void sig::Slider::SetValue(float value)
 {
 	if (value != this->m_value) {
 		this->m_value = value;
@@ -91,5 +95,4 @@ sig::Slider* sig::Slider::SetValue(float value)
 			m_changeCallback();
 		}
 	}
-	return this;
 }

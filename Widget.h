@@ -12,6 +12,8 @@
 #include <map>
 using namespace std;
 
+#define WIDGET_TYPE(type) virtual WType GetType() const { return type; }
+
 namespace sig
 {
 	using namespace math;
@@ -32,29 +34,33 @@ namespace sig
 		friend class GUI;
 		friend class Box;
 	public:
-		enum WType {
+		enum class WType {
 			NUMBER,
-			STRING,
+			ENTRY,
 			BOOLEAN,
 			NUMBER_RANGE,
 			WINDOW,
 			BOX,
+			GROUPBOX,
 			BUTTON,
+			LABEL,
 			EMPTY
 		};
+
+		WIDGET_TYPE(WType::EMPTY)
 		
 		Widget();
 		virtual ~Widget();
 		
-		Widget* SetBackColor(const Color& backColor) {this->m_backColor = backColor; return this;}
-		Widget* SetBounds(const Rect& bounds) {this->m_bounds = bounds; return this;}
-		Widget* SetName(const string& name) {this->m_name = name; return this;}
-		Widget* SetTextColor(const Color& textColor) {this->m_textColor = textColor; return this;}
+		void SetBackColor(const Color& backColor) {this->m_backColor = backColor;}
+		void SetBounds(const Rect& bounds) {this->m_bounds = bounds;}
+		void SetTextColor(const Color& textColor) {this->m_textColor = textColor;}
+
 		const Color& GetBackColor() const {return m_backColor;}
 		Rect GetBounds();
-		const string& GetName() const {return m_name;}
 		Widget* GetParent() {return m_parent;}
 		const Color& GetTextColor() const {return m_textColor;}
+		int GetZIndex() const { return m_zindex; }
 		
 		void SetWidth(float w) {
 			Rect b = GetBounds();
@@ -69,11 +75,8 @@ namespace sig
 		}
 		
 		bool IsActive() const { return m_active; }
-		Widget* SetActive(bool active) { m_active = active; return this; }
-		
+		Widget* SetActive(bool active) { m_active = active; return this; }		
 		bool IsFocused() const { return m_focused; }
-		
-		virtual WType GetType() { return WType::EMPTY; }
 		virtual bool IsSensitive() { return true; }
 		
 		GUI* GetGUIManager() { return m_guiManager; }
@@ -93,7 +96,6 @@ namespace sig
 		virtual void Render();
 	protected:
 		int m_zindex;
-		string m_name;
 		
 		Rect m_bounds;
 		
@@ -111,7 +113,7 @@ namespace sig
 		int l_order;
 		bool enter, focus, click, key;
 	};
-
+	typedef vector<Widget*> WidgetList;
 }
 
 #endif // SIGMA_WIDGET

@@ -35,8 +35,6 @@ void sig::Input::Update()
 	}
 
 	while (SDL_PollEvent(&evt)) {
-		ImGui_ImplSdl_ProcessEvent(&evt);
-		
 		if (evt.type == SDL_QUIT) {
 			CLOSE_REQUESTED = true;
 		}

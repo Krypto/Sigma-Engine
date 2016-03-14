@@ -575,6 +575,8 @@ Box2D/Box2D.h
 /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Boolean.h
 Label.h
 /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Label.h
+functional
+-
 
 /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Box.h
 Widget.h
@@ -615,6 +617,8 @@ vector
 -
 string
 -
+functional
+-
 
 /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/EscapeColors.h
 
@@ -645,8 +649,6 @@ Vector.h
 /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Vector.h
 SDL2/SDL.h
 -
-imgui_sdl.h
-/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui_sdl.h
 map
 -
 string
@@ -717,8 +719,6 @@ Box2D/Box2D.h
 /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/NumberEntry.h
 Entry.h
 /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Entry.h
-functional
--
 
 /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/ParticleEmitter.h
 Color.h
@@ -793,6 +793,8 @@ Camera2D.h
 /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Camera2D.h
 Color.h
 /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Color.h
+GUI.h
+/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/GUI.h
 IUR.h
 /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/IUR.h
 vector
@@ -879,8 +881,6 @@ LuaEngine.h
 /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/LuaEngine.h
 SIG_Utilities.h
 /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/SIG_Utilities.h
-imgui.h
-/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui.h
 cmath
 -
 
@@ -1004,30 +1004,6 @@ Color.h
 SDL2/SDL.h
 -
 string
--
-
-/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imconfig.h
-
-/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui.h
-imconfig.h
-/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imconfig.h
-float.h
--
-stdarg.h
--
-stddef.h
--
-string.h
--
-assert.h
--
-imgui_user.h
-/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui_user.h
-
-/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui_sdl.h
-imgui.h
-/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui.h
-SDL2/SDL.h
 -
 
 /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/main.cpp

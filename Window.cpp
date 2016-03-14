@@ -64,7 +64,6 @@ void sig::Window::Close()
 		
 		SDL_GL_DeleteContext(m_context);
 		SDL_DestroyWindow(m_sdl_window);
-		ImGui_ImplSdl_Shutdown();
 		SDL_Quit();
 	}
 }

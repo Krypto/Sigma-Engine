@@ -51,7 +51,6 @@
 
 #include "LuaEngine.h"
 #include "SIG_Utilities.h"
-#include "imgui.h"
 #include <cmath>
 
 #endif // SIGMA_ENGINE

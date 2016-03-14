@@ -1,66 +1,78 @@
 #include "Box.h"
 #include "GUIGFX.h"
 
+#include <algorithm>
+
 sig::Box::Box()
 {
 	l_order = 0;
 	m_padding = 4;
-	m_spacing = 4;
+	m_spacing = 2;
 	m_orientation = ORIENTATION_VERTICAL;
+	m_backColor = Color::BLACK;
+	m_backColor.a = 0.4f;
+	m_tab_left = false;
 }
 
 void sig::Box::AddWidget(Widget* widget)
 {
-	if (widget == nullptr) {
+	if (widget == nullptr || widget == this) {
 		return;
 	}
 
-	l_order++;
-	widget->l_order = l_order;
-	widget->m_parent = this;
-
-	m_widgets.push_back(widget);
-}
-
-void sig::Box::Render()
-{
-	sig::Widget::Render();
-
-	GFX::SetFillColor(m_backColor.Brightness(0.2f));
-	Rect r = Rect(GetBounds().x-1, GetBounds().y-1, GetBounds().width+2, GetBounds().height+3);
-	GFX::DrawRectangle(r);
-
-	GFX::SetFillColor(m_backColor);
-	GFX::DrawRectangle(GetBounds());
+	auto pos = std::find(m_widgets.begin(), m_widgets.end(), widget);
+	if (pos == m_widgets.end()) {
+		l_order++;
+		widget->l_order = l_order;
+		widget->m_parent = this;
+		m_widgets.push_back(widget);
+	}
 }
 
 void sig::Box::Update(float dt)
 {
-	int py = 0;
-	int h = 0;
+	int current_widget_pos = 0;
+	int size = 0;
 	for (auto it = m_widgets.begin(); it != m_widgets.end(); ++it) {
 		Widget *w = (*it);
 		if (m_orientation == ORIENTATION_VERTICAL) {
-			h += w->m_bounds.height + m_spacing;
+			size += w->m_bounds.height + m_spacing;
 		} else {
-			h += w->m_bounds.width + m_spacing;
+			size += w->m_bounds.width + m_spacing;
 		}
+	}
+
+	size += m_padding * 2;
+	if (m_orientation == ORIENTATION_VERTICAL) {
+		m_bounds.height = size;
+	} else {
+		m_bounds.width = size;
 	}
 
 	for (auto it = m_widgets.begin(); it != m_widgets.end(); ++it) {
 		Widget *w = (*it);
 		if (m_orientation == ORIENTATION_VERTICAL) {
-			w->m_bounds.y = (m_padding + py) + (m_bounds.height/2-h/2);
+			w->m_bounds.y = m_padding + current_widget_pos;
 			w->m_bounds.x = m_padding;
 			w->m_bounds.width = m_bounds.width - m_padding * 2;
+			if (m_tab_left) {
+				w->m_bounds.x += BOX_TAB_SIZE;
+				w->m_bounds.width -= BOX_TAB_SIZE;
+			}
 
-			py += w->m_bounds.height + m_spacing;
+			current_widget_pos += w->m_bounds.height + m_spacing;
 		} else {
 			w->m_bounds.y = m_padding;
-			w->m_bounds.x = (m_padding + py) + (m_bounds.width/2-h/2);
+			w->m_bounds.x = m_padding + current_widget_pos;
 			w->m_bounds.height = m_bounds.height - m_padding * 2;
 
-			py += w->m_bounds.width + m_spacing;
+			current_widget_pos += w->m_bounds.width + m_spacing;
 		}
 	}
+}
+
+void sig::Box::Render()
+{
+	GFX::SetFillColor(m_backColor);
+	GFX::DrawRectangle(GetBounds());
 }

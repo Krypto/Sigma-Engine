@@ -10,8 +10,6 @@
 #include "sig_gpu_builtin.h"
 #include "GUIGFX.h"
 
-#include "imgui_sdl.h"
-
 #include <cmath>
 
 sig::GameLoop::GameLoop()
@@ -79,23 +77,21 @@ int sig::GameLoop::SIG_MainLoop(float fps)
 		m_game->SIG_Init(m_window);
 	}
 
-	ImGui_ImplSdl_Init(m_game->GetWindow()->GetSDLWindow());
-
-	SIG_LOG("Sigma-Project Engine Started...");
+	SIG_LOG("Sigma Engine Started...");
 	
 	while (!m_window->IsClosing()) {
 		LogicStep(dt);
-		ImGui_ImplSdl_NewFrame(m_game->GetWindow()->GetSDLWindow());
 
-		m_window->Clear(Color::BLACK, GL_COLOR_BUFFER_BIT);
+		Color bg = Color::BLACK;
+		if (m_game && m_game->GetCurrentScene()) {
+			bg = m_game->GetCurrentScene()->GetBackground();
+		}
+		m_window->Clear(bg, GL_COLOR_BUFFER_BIT);
 
 		if (m_game != nullptr) {
 			m_game->SIG_Render();
-			m_game->OnGUI();
 		}
-		
-		ImGui::Render();
-		
+
 		m_window->SwapBuffers();
 		m_window->Update(0);
 
@@ -107,7 +103,7 @@ int sig::GameLoop::SIG_MainLoop(float fps)
 	GPUShaders::Free();
 	m_window->Close();
 
-	SIG_LOG("Sigma-Project Engine Finished...");
+	SIG_LOG("Sigma Engine Finished...");
 
 	return SIG_FINISHED;
 }

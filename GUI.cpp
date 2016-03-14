@@ -14,12 +14,17 @@
 sig::Texture2D* sig::GUI::DEFAULT_FONT = 0;
 int sig::GUI::zindex = 0;
 
+static bool WidgetComparator(sig::Widget* a, sig::Widget* b)
+{
+	return a->GetZIndex() < b->GetZIndex();
+}
+
 sig::GUI::GUI()
 {
 	m_clickHandle = m_keyHandle = false;
 	m_focused = nullptr;
 	handled = false;
-	DEFAULT_FONT = new Texture2D("mono.png");
+	DEFAULT_FONT = nullptr;
 	m_currentBox = nullptr;
 }
 
@@ -62,163 +67,238 @@ void sig::GUI::Render()
 	glPopMatrix();
 }
 
-sig::Widget* sig::GUI::CreateWidget(const string &name, Widget *w)
-{
-	w->m_guiManager = this;
-	w->m_name = name;
-	w->m_zindex = zindex;
-	
-	m_widgets.push_back(w);
+void sig::GUI::AddWidget(Widget *w)
+{	
+	auto pos = std::find(m_widgets.begin(), m_widgets.end(), w);
+	if (pos == m_widgets.end()) {
+		w->m_guiManager = this;
+		w->m_zindex = zindex;
 
-	zindex++;
-	return w;
+		m_widgets.push_back(w);
+
+		if (m_currentBox) {
+			m_currentBox->AddWidget(w);
+		}
+
+		zindex++;
+	}
 }
 
-sig::Label* sig::GUI::CreateLabel(const string &name, const string &text, float font_scale, float char_spacing)
+void sig::GUI::AddLabel(const string &text)
 {
-	Label *l = new Label();
-	l->SetText(text);
-	l->SetCharSpacing(char_spacing);
-	l->SetFontScale(font_scale);
+	Label *lbl = new Label();
+	lbl->SetText(text);
+	lbl->Fit();
 
-	return (Label*)CreateWidget(name, (Widget*) l);
+	AddWidget(dynamic_cast<Widget*>(lbl));
 }
 
-sig::Button* sig::GUI::CreateButton(const string &name, const string& text, float font_scale, float char_spacing)
+sig::Button *sig::GUI::AddButton(const string &text)
 {
 	Button *btn = new Button();
 	btn->SetText(text);
-	btn->SetCharSpacing(char_spacing);
-	btn->SetFontScale(font_scale);
+	btn->Fit();
 
-	return (Button*)CreateWidget(name, (Widget*) btn);
+	AddWidget(dynamic_cast<Widget*>(btn));
+
+	return btn;
 }
 
-sig::Box* sig::GUI::CreateBox(const string &name)
+void sig::GUI::AddSeparator()
 {
-	Box* b = new Box();
-	return (Box*)CreateWidget(name, (Widget*) b);
+	//TODO: Create proper Separator class
+	Widget *w = new Widget();
+	Rect b = w->GetBounds();
+	b.height = b.width = 1;
+	w->SetBounds(b);
+
+	AddWidget(w);
 }
 
-sig::Entry* sig::GUI::CreateEntry(const string &name, const string& text, float font_scale, float char_spacing)
+void sig::GUI::AddParam(const string &text, int *value, int vmin, int vmax)
 {
-	Entry *e = new Entry();
-	e->SetText(text);
-	e->SetCharSpacing(char_spacing);
-	e->SetFontScale(font_scale);
+	AddLabel(text);
 
-	return (Entry*)CreateWidget(name, (Widget*) e);
-}
+	Slider *sld = new Slider();
+	sld->SetIncrement(1.0f);
+	sld->SetValue(*value);
+	sld->SetMin(vmin);
+	sld->SetMax(vmax);
 
-sig::NumberEntry* sig::GUI::CreateNumberEntry(const string &name, float font_scale, float char_spacing)
-{
-	NumberEntry *e = new NumberEntry();
-	e->SetCharSpacing(char_spacing);
-	e->SetFontScale(font_scale);
-
-	return (NumberEntry*)CreateWidget(name, (Widget*) e);
-}
-
-sig::Boolean* sig::GUI::CreateBoolean(const string& name, float font_scale, float char_spacing)
-{
-	Boolean* b = new Boolean();
-	b->SetCharSpacing(char_spacing);
-	b->SetFontScale(font_scale);
-	
-	return (Boolean*)CreateWidget(name, (Widget*) b);
-}
-
-sig::Slider* sig::GUI::CreateSlider(const string& name, float _min, float _max, float font_scale, float char_spacing)
-{
-	Slider* s = new Slider();
-	s->SetCharSpacing(char_spacing);
-	s->SetFontScale(font_scale);
-	s->SetMin(_min);
-	s->SetMax(_max);
-	
-	return (Slider*)CreateWidget(name, (Widget*) s);
-}
-
-sig::Box* sig::GUI::BeginBox(const Rect &rect)
-{
-	m_currentBox = CreateBox(string("_box") + ToString(pid));
-	m_currentBox->m_zindex = 999+pid;
-	m_currentBox->SetBounds(rect);
-	
-	pid++;
-	return m_currentBox;
-}
-
-void sig::GUI::RangeProperty(const string& title, function<float()> getter, function<void(float)> setter, float _min, float _max)
-{
-	if (m_currentBox == nullptr) { return; }
-
-	Slider *range = CreateSlider(string("_range") + ToString(pid) + string("_") + title, _min, _max);
-	range->SetValue(getter ? getter() : 0);
-	range->SetIncrement(0.05f);
-	range->SetPrefix("");
-	
-	range->SetCallback([setter, range]() {
-		if (setter) {
-			setter(range->GetValue());
-		}
+	sld->SetCallback([sld, value]() {
+		*value = sld->GetValue();
 	});
-	
-	Label *ltitle = CreateLabel("_label_title_" + ToString(pid) + title, title);
-	ltitle->Fit();
 
-	m_currentBox->AddWidget(ltitle);
-	m_currentBox->AddWidget(range);
+	AddWidget(dynamic_cast<Widget*>(sld));
 }
 
-void sig::GUI::VectorProperty(const string& title, function<Vector2()> getter, function<void(Vector2)> setter)
+void sig::GUI::AddParam(const string &text, float *value, float vmin, float vmax, float increment)
 {
-	if (m_currentBox == nullptr) { return; }
-	
-	NumberEntry *x = CreateNumberEntry(string("_number_entry_x_") + ToString(pid) + title);
-	x->SetWidth(60);
-	NumberEntry *y = CreateNumberEntry(string("_number_entry_y_") + ToString(pid) + title);
-	y->SetWidth(60);
-	
-	x->SetCallback([getter, setter](float val) {
-		if (setter) {
-			Vector2 v = getter ? getter() : Vector2(0.0f);
-			v.SetX(val);
-			setter(v);
-		}
+	AddLabel(text);
+
+	Slider *sld = new Slider();
+	sld->SetIncrement(increment);
+	sld->SetValue(*value);
+	sld->SetMin(vmin);
+	sld->SetMax(vmax);
+
+	sld->SetCallback([sld, value]() {
+		*value = sld->GetValue();
 	});
-	y->SetCallback([getter, setter](float val) {
-		if (setter) {
-			Vector2 v = getter ? getter() : Vector2(0.0f);
-			v.SetY(val);
-			setter(v);
-		}
+
+	AddWidget(dynamic_cast<Widget*>(sld));
+}
+
+void sig::GUI::AddParam(const string &text, sig::Color *value, const sig::Color &col)
+{
+	AddLabel(text);
+
+	Color v = *value;
+
+	Slider *sr = new Slider();
+	sr->SetMin(0.0f);
+	sr->SetMax(1.0f);
+	sr->SetIncrement(0.1f);
+	sr->SetValue(v.r);
+	sr->SetCallback([&v, sr, value]() {
+		v.r = sr->GetValue();
+		*value = v;
 	});
-	
-	Label *ltitle = CreateLabel("_label_title_" + ToString(pid) + title, title);
-	ltitle->Fit();
-	
-	Box *inner = CreateBox("_box_" + ToString(pid) + title);
-	inner->SetPadding(2);
-	inner->SetOrientation(Box::ORIENTATION_HORIZONTAL);
-	
-	Rect b = inner->GetBounds();
-	b.height = 22;
-	inner->SetBounds(b);
-	
-	inner->AddWidget(x);
-	inner->AddWidget(y);
-	
-	m_currentBox->AddWidget(ltitle);
-	m_currentBox->AddWidget(inner);
+
+	Slider *sg = new Slider();
+	sg->SetMin(0.0f);
+	sg->SetMax(1.0f);
+	sg->SetIncrement(0.1f);
+	sg->SetValue(v.g);
+	sr->SetCallback([&v, sg, value]() {
+		v.g = sg->GetValue();
+		*value = v;
+	});
+
+	Slider *sb = new Slider();
+	sb->SetMin(0.0f);
+	sb->SetMax(1.0f);
+	sb->SetIncrement(0.1f);
+	sb->SetValue(v.b);
+	sr->SetCallback([&v, sb, value]() {
+		v.b = sb->GetValue();
+		*value = v;
+	});
+
+	Slider *sa = new Slider();
+	sa->SetMin(0.0f);
+	sa->SetMax(1.0f);
+	sa->SetIncrement(0.1f);
+	sa->SetValue(v.a);
+	sr->SetCallback([&v, sa, value]() {
+		v.a = sa->GetValue();
+		*value = v;
+	});
+
+	Box *colBox = new Box();
+	colBox->AddWidget(sr);
+	colBox->AddWidget(sg);
+	colBox->AddWidget(sb);
+	colBox->AddWidget(sa);
+
+	AddWidget(dynamic_cast<Widget*>(colBox));
+}
+
+void sig::GUI::AddParam(const string &text, string *value, bool masked)
+{
+	AddLabel(text);
+
+	Entry *txt = new Entry();
+	txt->SetMasked(masked);
+	txt->SetText(*value);
+	txt->SetCallback([txt, value]() {
+		*value = txt->GetText();
+	});
+
+	AddWidget(dynamic_cast<Widget*>(txt));
+}
+
+void sig::GUI::AddParam(const string &text, bool *value)
+{
+	Boolean *bol = new Boolean();
+	bol->SetSelected(*value);
+	bol->SetText(text);
+	bol->Fit();
+
+	bol->SetCallback([bol, value]() {
+		*value = bol->IsSelected();
+	});
+
+	AddWidget(dynamic_cast<Widget*>(bol));
+}
+
+void sig::GUI::AddParam(const string &text, float *value)
+{
+	AddLabel(text);
+
+	NumberEntry *ent = new NumberEntry();
+	ent->SetValue(*value);
+	ent->Fit();
+
+	ent->SetValueCallback([ent, value]() {
+		*value = ent->GetValue();
+	});
+
+	AddWidget(dynamic_cast<Widget*>(ent));
+}
+
+void sig::GUI::AddParam(const string &text, sig::math::Vector2 *value)
+{
+	Vector2 val = *value;
+
+	AddLabel(text);
+
+	BeginBox(Rect(0, 0, 0, 0));
+	GetCurrentBox()->SetTabWidgets(true);
+
+	AddLabel("x");
+	NumberEntry *x = new NumberEntry();
+	x->SetValue(val.X());
+	x->Fit();
+	x->SetValueCallback([x, value, &val]() {
+		val.SetX(x->GetValue());
+		*value = val;
+	});
+	AddWidget(dynamic_cast<Widget*>(x));
+
+	AddLabel("y");
+	NumberEntry *y = new NumberEntry();
+	y->SetValue(val.Y());
+	y->Fit();
+	y->SetValueCallback([y, value, &val]() {
+		val.SetY(y->GetValue());
+		*value = val;
+	});
+	AddWidget(dynamic_cast<Widget*>(y));
+
+	EndBox();
+}
+
+void sig::GUI::BeginBox(const sig::Rect &bounds)
+{
+	Box *b = new Box();
+	b->m_zindex = 999 + box_id;
+	b->SetBounds(bounds);
+
+	m_boxStack.push_back(b);
+
+	AddWidget(dynamic_cast<Widget*>(b));
+
+	m_currentBox = b;
+	box_id++;
 }
 
 void sig::GUI::EndBox()
 {
-	m_currentBox = nullptr;
-}
-
-bool sig::GUI::WidgetComparator(Widget* a, Widget* b)
-{
-	return a->m_zindex > b->m_zindex;
+	if (m_boxStack.size() > 0) {
+		m_boxStack.pop_back();
+		m_currentBox = m_boxStack.back();
+	} else {
+		m_currentBox = nullptr;
+	}
 }

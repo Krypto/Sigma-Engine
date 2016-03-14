@@ -1,7 +1,7 @@
 #ifndef SIGMA_GUI_BUTTON
 #define SIGMA_GUI_BUTTON
 
-#include "Label.h" // Base class: sig::Label
+#include "Label.h"
 #include <functional>
 
 namespace sig
@@ -10,7 +10,7 @@ namespace sig
 	class Button : public Label
 	{
 	public:
-		enum ButtonState {
+		enum class ButtonState {
 			RELEASED,
 			CLICKED,
 			HOVERED,
@@ -28,7 +28,7 @@ namespace sig
 		
 		void SetCallback(function<void()> callback) { m_clickCallback = callback; }
 		
-		WType GetType() { return WType::BUTTON; }
+		WIDGET_TYPE(WType::BUTTON)
 	private:
 		ButtonState m_state;
 		

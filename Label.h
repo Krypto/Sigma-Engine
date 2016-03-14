@@ -18,25 +18,30 @@ namespace sig
 		
 		Label();
 		
-		Label* SetText(const string& text) {this->m_text = text; return this;}
-		const string& GetText() const {return m_text;}
-		Label* SetCharSpacing(float charSpacing) {this->m_charSpacing = charSpacing; return this;}
-		Label* SetFontScale(float fontScale) {this->m_fontScale = fontScale; return this;}
-		float GetCharSpacing() const {return m_charSpacing;}
-		float GetFontScale() const {return m_fontScale;}
-		Label* SetAlign(int align) {this->m_align = align; return this;}
-		int GetAlign() const {return m_align;}
-		Label* SetTextMargin(float textMargin) {this->m_textMargin = textMargin; return this;}
-		float GetTextMargin() const {return m_textMargin;}
+		virtual void SetText(const string& text) { this->m_text = text; }
+		const string& GetText() const { return m_text; }
+
+		void SetCharSpacing(float charSpacing) { this->m_charSpacing = charSpacing; }
+		void SetFontScale(float fontScale) { this->m_fontScale = fontScale; }
+		float GetCharSpacing() const { return m_charSpacing; }
+		float GetFontScale() const { return m_fontScale; }
+
+		void SetAlign(int align) { this->m_align = align; }
+		int GetAlign() const { return m_align; }
+
+		void SetTextMargin(float textMargin) { this->m_textMargin = textMargin; }
+		float GetTextMargin() const { return m_textMargin; }
 		
 		Vector2 Measure(const string& text);
-		void Fit() {
+		void Fit(int padding = 1) {
 			Vector2 m = Measure(m_text);
-			m_bounds.width = m.X();
-			m_bounds.height = m.Y()+4;
+			m_bounds.width = m.X()+padding;
+			m_bounds.height = m.Y()+padding;
 		}
 		
 		void Render();
+
+		WIDGET_TYPE(WType::LABEL)
 	protected:
 		string m_text;
 		float m_fontScale;

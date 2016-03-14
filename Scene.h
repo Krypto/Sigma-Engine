@@ -5,6 +5,7 @@
 #include "Node.h"
 #include "Camera2D.h"
 #include "Color.h"
+#include "GUI.h"
 #include "IUR.h"
 
 #include <vector>
@@ -58,7 +59,7 @@ namespace sig
 		
 		b2World* GetPhysicsWorld() { return m_physicsWorld; }
 		
-		Scene* SetPixelsPerMeter(float pixelsPerMeter) {this->m_pixelsPerMeter = pixelsPerMeter; return this;}
+		void SetPixelsPerMeter(float pixelsPerMeter) { this->m_pixelsPerMeter = pixelsPerMeter; }
 		float GetPixelsPerMeter() const {return m_pixelsPerMeter;}
 		
 		void SetAmbient(const Color& ambient) {this->m_ambient = ambient;}
@@ -77,10 +78,14 @@ namespace sig
 		}
 		
 		BaseGame* GetGame() { return m_game; }
+
+		GUI* GetGUI() { return m_gui; }
+		void SetGUI(GUI *gui) { m_gui = gui; }
 	private:
 		Color m_ambient, m_background;
 		Node *m_root;
 		BaseGame *m_game;
+		GUI *m_gui;
 		
 		// Physics
 		b2World *m_physicsWorld;

@@ -9,6 +9,7 @@
 #include <initializer_list>
 #include <cstdlib>
 
+#define HEX(v) static_cast<unsigned int>(v)
 #define SIG_FREE(x) 		if (x != 0) { delete x; x = 0; }
 #define SIG_LOG(msg) 		std::cout << COLOR_WHITE_NORMAL << msg << COLOR_NORMAL << std::endl;
 #define SIG_LOG_DETAIL(msg) SIG_LOG(COLOR_YELLOW_NORMAL << "(" << __FILE__ << ":" << __LINE__ << "): " << COLOR_WHITE_NORMAL << msg)

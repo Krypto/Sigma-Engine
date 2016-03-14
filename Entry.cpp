@@ -116,8 +116,20 @@ void sig::Entry::OnKeyPress(int e)
 		m_caretx++;
 	}
 	
+	if (m_changeCallback) {
+		m_changeCallback();
+	}
+
 	m_blink = true;
 	m_btime = 0;
+}
+
+void sig::Entry::SetText(const string &text)
+{
+	Label::SetText(text);
+	if (m_caretx > m_text.size()) {
+		m_caretx = m_text.size();
+	}
 }
 
 void sig::Entry::Render()
@@ -125,17 +137,16 @@ void sig::Entry::Render()
 	sig::Widget::Render();
 	
 	GFX::SetFillColor(Color::BLACK);
-	Rect r = Rect(GetBounds().x-1, GetBounds().y-1, GetBounds().width+2, GetBounds().height+3);
-	GFX::DrawRectangle(r);
+	Rect r = GetBounds().Inflated(-1, -1);
+	GFX::DrawRectangle(GetBounds());
 	
 	GFX::SetFillColor(m_backColor);
-	GFX::DrawRectangle(GetBounds());
+	GFX::DrawRectangle(r);
 	GFX::SetFillColor(m_textColor);
 	
 	if (!m_text.empty()) {
 		float xpos = 0;
 		for (u32 i = 0; i < m_text.size(); i++) {
-			
 			char c = m_text[i];
 			string charS(1, c);
 			
@@ -146,9 +157,8 @@ void sig::Entry::Render()
 			if (m_masked) {
 				charS = "*";
 			}
-			
-			float cy = GetBounds().height/2 - cs.Y();
-			GFX::DrawText(charS, Vector2(GetBounds().x+xpos, GetBounds().y+cy), 
+
+			GFX::DrawText(charS, Vector2(GetBounds().x+xpos, GetBounds().y),
 							m_font, m_fontScale, m_charSpacing);
 			
 			xpos += cs.X();
@@ -157,17 +167,14 @@ void sig::Entry::Render()
 	
 	if (m_focused && m_blink) {
 		float cw = (float(m_font->GetWidth()) / 16.0f);
-		float ch = (float(m_font->GetHeight()) / 16.0f);
 		
-		float sz = (cw+m_charSpacing) * m_fontScale;
-		float szh = (ch+m_charSpacing) * m_fontScale;
+		float sz = (cw + m_charSpacing) * m_fontScale;
 		float tsz = sz * m_caretx;
-		float csz = m_fontScale * abs(m_charSpacing/2);
-		float m = tsz - csz;
+		float m = tsz - sz/2;
 		float cursorPos = GetBounds().x + m;
 		
 		if (cursorPos-sz < GetBounds().x+GetBounds().width) {
-			GFX::DrawText("|", Vector2(GetBounds().x + m, GetBounds().y-szh/4), 
+			GFX::DrawText("|", Vector2(GetBounds().x + m, GetBounds().y),
 							m_font, m_fontScale, m_charSpacing);
 		}
 	}

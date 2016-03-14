@@ -14,7 +14,6 @@ using namespace std;
 
 namespace sig
 {
-	class GUI;
 	class GameLoop;
 	class Lua;
 	class Window;
@@ -28,7 +27,6 @@ namespace sig
 		virtual void Initialize();
 		virtual void Update(float dt);
 		virtual void Render();
-		virtual void OnGUI() {}
 		virtual void OnNodeHover(Node *node, float mx, float my) {}
 		
 		SoundSystem* GetSoundSystem();

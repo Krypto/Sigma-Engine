@@ -82,8 +82,6 @@
       </Build>
       <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/AnimatedSprite.cpp">
       </Unit>
-      <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/AnimatedSpriteEditor.cpp">
-      </Unit>
       <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/AudioClip.cpp">
       </Unit>
       <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/BaseGame.cpp">
@@ -100,11 +98,7 @@
       </Unit>
       <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Component.cpp">
       </Unit>
-      <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/ComponentEditor.cpp">
-      </Unit>
       <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/DebugDraw.cpp">
-      </Unit>
-      <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Editor.cpp">
       </Unit>
       <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Entry.cpp">
       </Unit>
@@ -113,6 +107,8 @@
       <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/GUIGFX.cpp">
       </Unit>
       <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/GameLoop.cpp">
+      </Unit>
+      <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/GroupBox.cpp">
       </Unit>
       <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/IUR.cpp">
       </Unit>
@@ -154,8 +150,6 @@
       </Unit>
       <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/SpriteBatch.cpp">
       </Unit>
-      <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/SpriteEditor.cpp">
-      </Unit>
       <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Texture2D.cpp">
       </Unit>
       <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/TileMap.cpp">
@@ -168,21 +162,11 @@
       </Unit>
       <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Window.cpp">
       </Unit>
-      <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui.cpp">
-      </Unit>
-      <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui_demo.cpp">
-      </Unit>
-      <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui_draw.cpp">
-      </Unit>
-      <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui_sdl.cpp">
-      </Unit>
       <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/main.cpp">
       </Unit>
       <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/sig_gpu_builtin.cpp">
       </Unit>
       <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/AnimatedSprite.h">
-      </Unit>
-      <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/AnimatedSpriteEditor.h">
       </Unit>
       <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/AudioClip.h">
       </Unit>
@@ -200,11 +184,7 @@
       </Unit>
       <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Component.h">
       </Unit>
-      <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/ComponentEditor.h">
-      </Unit>
       <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/DebugDraw.h">
-      </Unit>
-      <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Editor.h">
       </Unit>
       <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Entry.h">
       </Unit>
@@ -215,6 +195,8 @@
       <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/GameExample.h">
       </Unit>
       <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/GameLoop.h">
+      </Unit>
+      <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/GroupBox.h">
       </Unit>
       <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/IUR.h">
       </Unit>
@@ -260,8 +242,6 @@
       </Unit>
       <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/SpriteBatch.h">
       </Unit>
-      <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/SpriteEditor.h">
-      </Unit>
       <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Texture2D.h">
       </Unit>
       <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/TileMap.h">
@@ -273,10 +253,6 @@
       <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Widget.h">
       </Unit>
       <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/Window.h">
-      </Unit>
-      <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui.h">
-      </Unit>
-      <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/imgui_sdl.h">
       </Unit>
       <Unit filename="/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/sig_gpu_builtin.h">
       </Unit>

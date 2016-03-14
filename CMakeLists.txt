@@ -65,11 +65,7 @@ set( CXX_SRCS
     NumberEntry.cpp
     Boolean.cpp
     Slider.cpp
-    Box.cpp
-    imgui.cpp
-    imgui_demo.cpp
-    imgui_draw.cpp
-    imgui_sdl.cpp
+	Box.cpp
     Shader.cpp
     sig_gpu_builtin.cpp
     Resource.cpp
@@ -82,11 +78,7 @@ set( CXX_SRCS
     SpriteBatch.cpp
     Component.cpp
     Sprite.cpp
-    Scene.cpp
-    Editor.cpp
-    ComponentEditor.cpp
-    SpriteEditor.cpp
-    AnimatedSpriteEditor.cpp
+	Scene.cpp
 	LuaEngine.cpp
 	SigmaTypeReg.h
 	Sigma.h

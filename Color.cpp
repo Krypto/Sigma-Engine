@@ -30,8 +30,8 @@ sig::Color::Color(unsigned int hex, float alpha)
 {
 	a = SIG_CLAMPF(alpha);
 	
-	r = SIG_CLAMPF(float(((hex >> 16) 	& 0xFF) / 255.0));
-	g = SIG_CLAMPF(float(((hex >> 	8) 	& 0xFF) / 255.0));
+	r = SIG_CLAMPF(float(((hex >> 16)	& 0xFF) / 255.0));
+	g = SIG_CLAMPF(float(((hex >> 8)	& 0xFF) / 255.0));
 	b = SIG_CLAMPF(float(( hex 			& 0xFF) / 255.0));
 }
 

@@ -54,8 +54,8 @@ void sig::SpriteBatch::Draw(Glyph* glyph)
 
 void sig::SpriteBatch::Draw(const math::Matrix4& transform, Sprite* sprite)
 {
-	float w 		= sprite->GetTexture() != nullptr ? sprite->GetTexture()->GetWidth() : 10;
-	float h 		= sprite->GetTexture() != nullptr ? sprite->GetTexture()->GetHeight() : 10;
+	float w = sprite->GetTexture() != nullptr ? sprite->GetTexture()->GetWidth() : 10;
+	float h = sprite->GetTexture() != nullptr ? sprite->GetTexture()->GetHeight() : 10;
 	
 	w *= sprite->GetUVRectangle().width;
 	h *= sprite->GetUVRectangle().height;
@@ -251,8 +251,8 @@ void sig::SpriteBatch::Draw(float x, float y, float scalex, float scaley, Sprite
 
 void sig::SpriteBatch::Draw(float x, float y, float scalex, float scaley, float orix, float oriy, float rot, Sprite* sprite)
 {
-	float w 		= sprite->GetTexture() != nullptr ? sprite->GetTexture()->GetWidth() : 1;
-	float h 		= sprite->GetTexture() != nullptr ? sprite->GetTexture()->GetHeight() : 1;
+	float w = sprite->GetTexture() != nullptr ? sprite->GetTexture()->GetWidth() : 1;
+	float h = sprite->GetTexture() != nullptr ? sprite->GetTexture()->GetHeight() : 1;
 	
 	Matrix4 pos = Matrix4::MakeTranslation(Vector3(x, y, 0));
 	Matrix4 rotm = Matrix4::MakeRotation(rot, Vector3(0, 0, 1));
@@ -308,8 +308,8 @@ void sig::SpriteBatch::Draw(float x, float y, float scalex, float scaley, float 
 
 void sig::SpriteBatch::Draw(int order, float x, float y, float scalex, float scaley, float orix, float oriy, float rot, const sig::Rect &uv, sig::Sprite *sprite)
 {
-	float w 		= sprite->GetTexture() != nullptr ? sprite->GetTexture()->GetWidth() : 1;
-	float h 		= sprite->GetTexture() != nullptr ? sprite->GetTexture()->GetHeight() : 1;
+	float w = sprite->GetTexture() != nullptr ? sprite->GetTexture()->GetWidth() : 1;
+	float h = sprite->GetTexture() != nullptr ? sprite->GetTexture()->GetHeight() : 1;
 	w *= uv.width;
 	h *= uv.height;
 

@@ -25,13 +25,13 @@ sig::Resource::~Resource()
 			break;
 		}
 		case RESOURCE_TEXTURE: {
-			delete ((Texture2D*) data); break;
+			delete static_cast<Texture2D*>(data); break;
 		}
 		case RESOURCE_TEXT: {
-			delete ((char*) data); break;
+			delete static_cast<std::string*>(data); break;
 		}
 		case RESOURCE_AUDIO: {
-			delete ((AudioClip*) data); break;
+			delete static_cast<AudioClip*>(data); break;
 		}
 	}
 	data = nullptr;

@@ -7,9 +7,8 @@
 
 sig::Widget::Widget()
 {
-	m_name = "widget";
 	m_active = true;
-	m_backColor = Color::FromColorAlpha(Color::DARK_GRAY, 0.8f);
+	m_backColor = Color::FromColorAlpha(Color::BLACK, 0.5f);
 	m_textColor = Color::WHITE;
 	m_bounds = Rect(0, 0, 25, 25);
 	m_parent = nullptr;
@@ -54,33 +53,31 @@ void sig::Widget::Update(float dt)
 				m_guiManager->m_focused->m_focused = false;
 				m_guiManager->m_focused->OnBlur(e);
 			}
-			if (!focus) {
+			if (!m_focused) {
 				OnFocus(e);
-				focus = true;
+				m_focused = true;
+				m_guiManager->m_focused = this;
 			}
-			
-			m_focused = true;
-			m_guiManager->m_focused = this;
-			
-			e.button = SDL_BUTTON_LEFT;
-		} else if (Input::GetMouseButtonDown(SDL_BUTTON_RIGHT)) {
-			e.button = SDL_BUTTON_RIGHT;
-		} else if (Input::GetMouseButtonDown(SDL_BUTTON_MIDDLE)) {
-			e.button = SDL_BUTTON_MIDDLE;
 		}
 
-		if (Input::GetMouseButtonUp(SDL_BUTTON_LEFT)) {
+		if (Input::GetMouseButtonUp(SDL_BUTTON_LEFT) ||
+			Input::GetMouseButtonDown(SDL_BUTTON_LEFT))
+		{
 			e.button = SDL_BUTTON_LEFT;
-		} else if (Input::GetMouseButtonUp(SDL_BUTTON_RIGHT)) {
+		} else if (Input::GetMouseButtonUp(SDL_BUTTON_RIGHT) ||
+				   Input::GetMouseButtonDown(SDL_BUTTON_RIGHT))
+		{
 			e.button = SDL_BUTTON_RIGHT;
-		} else if (Input::GetMouseButtonUp(SDL_BUTTON_MIDDLE)) {
+		} else if (Input::GetMouseButtonUp(SDL_BUTTON_MIDDLE) ||
+				   Input::GetMouseButtonDown(SDL_BUTTON_MIDDLE))
+		{
 			e.button = SDL_BUTTON_MIDDLE;
 		}
 
 		if (!m_guiManager->handled) {
 			if (Input::GetMouseButtonDown(SDL_BUTTON_LEFT)		||
 			    Input::GetMouseButtonDown(SDL_BUTTON_RIGHT)		||
-			    Input::GetMouseButtonDown(SDL_BUTTON_MIDDLE)) {
+				Input::GetMouseButtonDown(SDL_BUTTON_MIDDLE)) {
 				if (!click) {
 					OnMouseDown(e);
 					click = true;
@@ -90,8 +87,8 @@ void sig::Widget::Update(float dt)
 		}
 
 		if (Input::GetMouseButtonUp(SDL_BUTTON_LEFT)	||
-		    Input::GetMouseButtonUp(SDL_BUTTON_RIGHT)	||
-		    Input::GetMouseButtonUp(SDL_BUTTON_MIDDLE)) {
+			Input::GetMouseButtonUp(SDL_BUTTON_RIGHT)	||
+			Input::GetMouseButtonUp(SDL_BUTTON_MIDDLE)) {
 			if (click) {
 				OnMouseUp(e);
 				click = false;
@@ -104,7 +101,7 @@ void sig::Widget::Update(float dt)
 			enter = false;
 			focus = false;
 		}
-		
+
 //		if (Input::GetMouseButtonDown(SDL_BUTTON_LEFT)) {
 //			if (m_guiManager->m_focused != nullptr) {
 //				m_guiManager->m_focused->m_focused = false;
@@ -112,7 +109,7 @@ void sig::Widget::Update(float dt)
 //			}
 //			m_guiManager->m_focused = nullptr;
 //		}
-		
+
 		m_guiManager->handled = false;
 	}
 	
@@ -129,9 +126,6 @@ void sig::Widget::Update(float dt)
 
 void sig::Widget::Render()
 {
-	glUseProgram(0);
-	glBindTexture(GL_TEXTURE_2D, 0);
-//
-//	GFX::SetFillColor(m_backColor);
-//	GFX::DrawRectangle(m_bounds);
+	GFX::SetFillColor(m_backColor);
+	GFX::DrawRectangle(GetBounds());
 }

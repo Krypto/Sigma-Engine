@@ -33,11 +33,11 @@ void sig::Scene::BeginContact(b2Contact* contact)
 	b2Manifold *mf = contact->GetManifold();
 	
 	Collision col;
-	col.hitNode = (Node*) contact->GetFixtureB()->GetBody()->GetUserData();
+	col.hitNode = static_cast<Node*>(contact->GetFixtureB()->GetBody()->GetUserData());
 	col.hitNormal = Vector2(mf->localNormal.x, mf->localNormal.y);
 	col.hitPosition = Vector2(mf->localPoint.x, mf->localPoint.y);
 	
-	Node *to = (Node*) userData;
+	Node *to = static_cast<Node*>(userData);
 	
 	if (to) {
 		vector<Component*> bvs = to->GetComponents();
@@ -54,11 +54,11 @@ void sig::Scene::EndContact(b2Contact* contact)
 	b2Manifold *mf = contact->GetManifold();
 	
 	Collision col;
-	col.hitNode = (Node*) contact->GetFixtureB()->GetBody()->GetUserData();
+	col.hitNode = static_cast<Node*>(contact->GetFixtureB()->GetBody()->GetUserData());
 	col.hitNormal = Vector2(mf->localNormal.x, mf->localNormal.y);
 	col.hitPosition = Vector2(mf->localPoint.x, mf->localPoint.y);
 	
-	Node *to = (Node*) userData;
+	Node *to = static_cast<Node*>(userData);
 	
 	if (to) {
 		vector<Component*> bvs = to->GetComponents();
@@ -90,6 +90,10 @@ void sig::Scene::Initialize()
 	}
 	
 	GetRoot()->Initialize();
+
+	if (m_gui) {
+		m_gui->Initialize();
+	}
 }
 
 void sig::Scene::Render()
@@ -111,6 +115,9 @@ void sig::Scene::Render()
 	}
 	
 	GetRoot()->Render(GetGame()->GetSpriteBatch());
+	if (m_gui) {
+		m_gui->Render();
+	}
 }
 
 void sig::Scene::Update(float dt)
@@ -118,6 +125,9 @@ void sig::Scene::Update(float dt)
 	m_physicsWorld->Step(dt, 6, 2);
 	
 	GetRoot()->Update(dt);
+	if (m_gui) {
+		m_gui->Update(dt);
+	}
 }
 
 void sig::Scene::Finalize()

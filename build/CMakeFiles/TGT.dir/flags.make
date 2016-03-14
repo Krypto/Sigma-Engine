@@ -60,14 +60,6 @@ CXX_DEFINES =
 
 # Custom flags: CMakeFiles/TGT.dir/Box.cpp.o_FLAGS =  -g -O2 -Wall -std=c++11
 
-# Custom flags: CMakeFiles/TGT.dir/imgui.cpp.o_FLAGS =  -g -O2 -Wall -std=c++11
-
-# Custom flags: CMakeFiles/TGT.dir/imgui_demo.cpp.o_FLAGS =  -g -O2 -Wall -std=c++11
-
-# Custom flags: CMakeFiles/TGT.dir/imgui_draw.cpp.o_FLAGS =  -g -O2 -Wall -std=c++11
-
-# Custom flags: CMakeFiles/TGT.dir/imgui_sdl.cpp.o_FLAGS =  -g -O2 -Wall -std=c++11
-
 # Custom flags: CMakeFiles/TGT.dir/Shader.cpp.o_FLAGS =  -g -O2 -Wall -std=c++11
 
 # Custom flags: CMakeFiles/TGT.dir/sig_gpu_builtin.cpp.o_FLAGS =  -g -O2 -Wall -std=c++11
@@ -93,14 +85,6 @@ CXX_DEFINES =
 # Custom flags: CMakeFiles/TGT.dir/Sprite.cpp.o_FLAGS =  -g -O2 -Wall -std=c++11
 
 # Custom flags: CMakeFiles/TGT.dir/Scene.cpp.o_FLAGS =  -g -O2 -Wall -std=c++11
-
-# Custom flags: CMakeFiles/TGT.dir/Editor.cpp.o_FLAGS =  -g -O2 -Wall -std=c++11
-
-# Custom flags: CMakeFiles/TGT.dir/ComponentEditor.cpp.o_FLAGS =  -g -O2 -Wall -std=c++11
-
-# Custom flags: CMakeFiles/TGT.dir/SpriteEditor.cpp.o_FLAGS =  -g -O2 -Wall -std=c++11
-
-# Custom flags: CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.o_FLAGS =  -g -O2 -Wall -std=c++11
 
 # Custom flags: CMakeFiles/TGT.dir/LuaEngine.cpp.o_FLAGS =  -g -O2 -Wall -std=c++11
 

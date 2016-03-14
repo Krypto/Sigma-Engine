@@ -17,28 +17,6 @@ CMakeFiles/TGT.dir/AnimatedSprite.cpp.o: ../Texture2D.h
 CMakeFiles/TGT.dir/AnimatedSprite.cpp.o: ../Vector.h
 CMakeFiles/TGT.dir/AnimatedSprite.cpp.o: ../sig_gpu_builtin.h
 
-CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.o: ../AnimatedSprite.h
-CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.o: ../AnimatedSpriteEditor.cpp
-CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.o: ../AnimatedSpriteEditor.h
-CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.o: ../Color.h
-CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.o: ../Component.h
-CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.o: ../Editor.h
-CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.o: ../EscapeColors.h
-CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.o: ../IUR.h
-CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.o: ../Matrix4.h
-CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.o: ../Rect.h
-CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.o: ../SIG_OpenGL.h
-CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.o: ../SIG_Utilities.h
-CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.o: ../Shader.h
-CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.o: ../Sprite.h
-CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.o: ../Texture2D.h
-CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.o: ../Vector.h
-CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.o: ../imconfig.h
-CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.o: ../imgui.h
-CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.o: ../imgui_internal.h
-CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.o: ../sig_gpu_builtin.h
-CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.o: ../stb_textedit.h
-
 CMakeFiles/TGT.dir/AudioClip.cpp.o: ../dependencies/OAL/include/AL/al.h
 CMakeFiles/TGT.dir/AudioClip.cpp.o: ../dependencies/OAL/include/AL/alc.h
 CMakeFiles/TGT.dir/AudioClip.cpp.o: ../dependencies/OAL/include/AL/alext.h
@@ -155,6 +133,7 @@ CMakeFiles/TGT.dir/BaseGame.cpp.o: ../Camera2D.h
 CMakeFiles/TGT.dir/BaseGame.cpp.o: ../Color.h
 CMakeFiles/TGT.dir/BaseGame.cpp.o: ../Component.h
 CMakeFiles/TGT.dir/BaseGame.cpp.o: ../EscapeColors.h
+CMakeFiles/TGT.dir/BaseGame.cpp.o: ../GUI.h
 CMakeFiles/TGT.dir/BaseGame.cpp.o: ../GameLoop.h
 CMakeFiles/TGT.dir/BaseGame.cpp.o: ../IUR.h
 CMakeFiles/TGT.dir/BaseGame.cpp.o: ../Input.h
@@ -175,10 +154,8 @@ CMakeFiles/TGT.dir/BaseGame.cpp.o: ../Sprite.h
 CMakeFiles/TGT.dir/BaseGame.cpp.o: ../SpriteBatch.h
 CMakeFiles/TGT.dir/BaseGame.cpp.o: ../Texture2D.h
 CMakeFiles/TGT.dir/BaseGame.cpp.o: ../Vector.h
+CMakeFiles/TGT.dir/BaseGame.cpp.o: ../Widget.h
 CMakeFiles/TGT.dir/BaseGame.cpp.o: ../Window.h
-CMakeFiles/TGT.dir/BaseGame.cpp.o: ../imconfig.h
-CMakeFiles/TGT.dir/BaseGame.cpp.o: ../imgui.h
-CMakeFiles/TGT.dir/BaseGame.cpp.o: ../imgui_sdl.h
 CMakeFiles/TGT.dir/BaseGame.cpp.o: ../sig_gpu_builtin.h
 CMakeFiles/TGT.dir/BaseGame.cpp.o: /usr/include/lua5.2/lauxlib.h
 CMakeFiles/TGT.dir/BaseGame.cpp.o: /usr/include/lua5.2/lua.h
@@ -323,15 +300,6 @@ CMakeFiles/TGT.dir/Component.cpp.o: ../Rect.h
 CMakeFiles/TGT.dir/Component.cpp.o: ../SIG_OpenGL.h
 CMakeFiles/TGT.dir/Component.cpp.o: ../Vector.h
 
-CMakeFiles/TGT.dir/ComponentEditor.cpp.o: ../Component.h
-CMakeFiles/TGT.dir/ComponentEditor.cpp.o: ../ComponentEditor.cpp
-CMakeFiles/TGT.dir/ComponentEditor.cpp.o: ../ComponentEditor.h
-CMakeFiles/TGT.dir/ComponentEditor.cpp.o: ../Editor.h
-CMakeFiles/TGT.dir/ComponentEditor.cpp.o: ../IUR.h
-CMakeFiles/TGT.dir/ComponentEditor.cpp.o: ../Vector.h
-CMakeFiles/TGT.dir/ComponentEditor.cpp.o: ../imconfig.h
-CMakeFiles/TGT.dir/ComponentEditor.cpp.o: ../imgui.h
-
 CMakeFiles/TGT.dir/DebugDraw.cpp.o: ../dependencies/Box2D/include/Box2D/Box2D.h
 CMakeFiles/TGT.dir/DebugDraw.cpp.o: ../dependencies/Box2D/include/Box2D/Collision/Shapes/b2ChainShape.h
 CMakeFiles/TGT.dir/DebugDraw.cpp.o: ../dependencies/Box2D/include/Box2D/Collision/Shapes/b2CircleShape.h
@@ -373,14 +341,6 @@ CMakeFiles/TGT.dir/DebugDraw.cpp.o: ../DebugDraw.cpp
 CMakeFiles/TGT.dir/DebugDraw.cpp.o: ../DebugDraw.h
 CMakeFiles/TGT.dir/DebugDraw.cpp.o: ../SIG_OpenGL.h
 
-CMakeFiles/TGT.dir/Editor.cpp.o: ../Component.h
-CMakeFiles/TGT.dir/Editor.cpp.o: ../Editor.cpp
-CMakeFiles/TGT.dir/Editor.cpp.o: ../Editor.h
-CMakeFiles/TGT.dir/Editor.cpp.o: ../IUR.h
-CMakeFiles/TGT.dir/Editor.cpp.o: ../Vector.h
-CMakeFiles/TGT.dir/Editor.cpp.o: ../imconfig.h
-CMakeFiles/TGT.dir/Editor.cpp.o: ../imgui.h
-
 CMakeFiles/TGT.dir/Entry.cpp.o: ../Color.h
 CMakeFiles/TGT.dir/Entry.cpp.o: ../Entry.cpp
 CMakeFiles/TGT.dir/Entry.cpp.o: ../Entry.h
@@ -394,9 +354,6 @@ CMakeFiles/TGT.dir/Entry.cpp.o: ../SIG_Utilities.h
 CMakeFiles/TGT.dir/Entry.cpp.o: ../Texture2D.h
 CMakeFiles/TGT.dir/Entry.cpp.o: ../Vector.h
 CMakeFiles/TGT.dir/Entry.cpp.o: ../Widget.h
-CMakeFiles/TGT.dir/Entry.cpp.o: ../imconfig.h
-CMakeFiles/TGT.dir/Entry.cpp.o: ../imgui.h
-CMakeFiles/TGT.dir/Entry.cpp.o: ../imgui_sdl.h
 
 CMakeFiles/TGT.dir/GUI.cpp.o: ../Boolean.h
 CMakeFiles/TGT.dir/GUI.cpp.o: ../Box.h
@@ -417,9 +374,6 @@ CMakeFiles/TGT.dir/GUI.cpp.o: ../Slider.h
 CMakeFiles/TGT.dir/GUI.cpp.o: ../Texture2D.h
 CMakeFiles/TGT.dir/GUI.cpp.o: ../Vector.h
 CMakeFiles/TGT.dir/GUI.cpp.o: ../Widget.h
-CMakeFiles/TGT.dir/GUI.cpp.o: ../imconfig.h
-CMakeFiles/TGT.dir/GUI.cpp.o: ../imgui.h
-CMakeFiles/TGT.dir/GUI.cpp.o: ../imgui_sdl.h
 
 CMakeFiles/TGT.dir/GUIGFX.cpp.o: ../Color.h
 CMakeFiles/TGT.dir/GUIGFX.cpp.o: ../EscapeColors.h
@@ -498,6 +452,7 @@ CMakeFiles/TGT.dir/GameLoop.cpp.o: ../Camera2D.h
 CMakeFiles/TGT.dir/GameLoop.cpp.o: ../Color.h
 CMakeFiles/TGT.dir/GameLoop.cpp.o: ../Component.h
 CMakeFiles/TGT.dir/GameLoop.cpp.o: ../EscapeColors.h
+CMakeFiles/TGT.dir/GameLoop.cpp.o: ../GUI.h
 CMakeFiles/TGT.dir/GameLoop.cpp.o: ../GUIGFX.h
 CMakeFiles/TGT.dir/GameLoop.cpp.o: ../GameLoop.cpp
 CMakeFiles/TGT.dir/GameLoop.cpp.o: ../GameLoop.h
@@ -516,10 +471,8 @@ CMakeFiles/TGT.dir/GameLoop.cpp.o: ../SpriteBatch.h
 CMakeFiles/TGT.dir/GameLoop.cpp.o: ../Texture2D.h
 CMakeFiles/TGT.dir/GameLoop.cpp.o: ../Time.h
 CMakeFiles/TGT.dir/GameLoop.cpp.o: ../Vector.h
+CMakeFiles/TGT.dir/GameLoop.cpp.o: ../Widget.h
 CMakeFiles/TGT.dir/GameLoop.cpp.o: ../Window.h
-CMakeFiles/TGT.dir/GameLoop.cpp.o: ../imconfig.h
-CMakeFiles/TGT.dir/GameLoop.cpp.o: ../imgui.h
-CMakeFiles/TGT.dir/GameLoop.cpp.o: ../imgui_sdl.h
 CMakeFiles/TGT.dir/GameLoop.cpp.o: ../sig_gpu_builtin.h
 
 CMakeFiles/TGT.dir/IUR.cpp.o: ../IUR.cpp
@@ -571,9 +524,6 @@ CMakeFiles/TGT.dir/Input.cpp.o: ../Matrix4.h
 CMakeFiles/TGT.dir/Input.cpp.o: ../Node.h
 CMakeFiles/TGT.dir/Input.cpp.o: ../Rect.h
 CMakeFiles/TGT.dir/Input.cpp.o: ../Vector.h
-CMakeFiles/TGT.dir/Input.cpp.o: ../imconfig.h
-CMakeFiles/TGT.dir/Input.cpp.o: ../imgui.h
-CMakeFiles/TGT.dir/Input.cpp.o: ../imgui_sdl.h
 
 CMakeFiles/TGT.dir/Label.cpp.o: ../Color.h
 CMakeFiles/TGT.dir/Label.cpp.o: ../EscapeColors.h
@@ -780,6 +730,7 @@ CMakeFiles/TGT.dir/MessageNetwork.cpp.o: ../Camera2D.h
 CMakeFiles/TGT.dir/MessageNetwork.cpp.o: ../Color.h
 CMakeFiles/TGT.dir/MessageNetwork.cpp.o: ../Component.h
 CMakeFiles/TGT.dir/MessageNetwork.cpp.o: ../EscapeColors.h
+CMakeFiles/TGT.dir/MessageNetwork.cpp.o: ../GUI.h
 CMakeFiles/TGT.dir/MessageNetwork.cpp.o: ../IUR.h
 CMakeFiles/TGT.dir/MessageNetwork.cpp.o: ../Matrix4.h
 CMakeFiles/TGT.dir/MessageNetwork.cpp.o: ../MessageNetwork.cpp
@@ -795,6 +746,7 @@ CMakeFiles/TGT.dir/MessageNetwork.cpp.o: ../Sprite.h
 CMakeFiles/TGT.dir/MessageNetwork.cpp.o: ../SpriteBatch.h
 CMakeFiles/TGT.dir/MessageNetwork.cpp.o: ../Texture2D.h
 CMakeFiles/TGT.dir/MessageNetwork.cpp.o: ../Vector.h
+CMakeFiles/TGT.dir/MessageNetwork.cpp.o: ../Widget.h
 CMakeFiles/TGT.dir/MessageNetwork.cpp.o: ../sig_gpu_builtin.h
 
 CMakeFiles/TGT.dir/Node.cpp.o: ../dependencies/Box2D/include/Box2D/Box2D.h
@@ -862,6 +814,7 @@ CMakeFiles/TGT.dir/Node.cpp.o: ../Camera2D.h
 CMakeFiles/TGT.dir/Node.cpp.o: ../Color.h
 CMakeFiles/TGT.dir/Node.cpp.o: ../Component.h
 CMakeFiles/TGT.dir/Node.cpp.o: ../EscapeColors.h
+CMakeFiles/TGT.dir/Node.cpp.o: ../GUI.h
 CMakeFiles/TGT.dir/Node.cpp.o: ../IUR.h
 CMakeFiles/TGT.dir/Node.cpp.o: ../Input.h
 CMakeFiles/TGT.dir/Node.cpp.o: ../Matrix4.h
@@ -878,9 +831,7 @@ CMakeFiles/TGT.dir/Node.cpp.o: ../Sprite.h
 CMakeFiles/TGT.dir/Node.cpp.o: ../SpriteBatch.h
 CMakeFiles/TGT.dir/Node.cpp.o: ../Texture2D.h
 CMakeFiles/TGT.dir/Node.cpp.o: ../Vector.h
-CMakeFiles/TGT.dir/Node.cpp.o: ../imconfig.h
-CMakeFiles/TGT.dir/Node.cpp.o: ../imgui.h
-CMakeFiles/TGT.dir/Node.cpp.o: ../imgui_sdl.h
+CMakeFiles/TGT.dir/Node.cpp.o: ../Widget.h
 CMakeFiles/TGT.dir/Node.cpp.o: ../sig_gpu_builtin.h
 
 CMakeFiles/TGT.dir/NumberEntry.cpp.o: ../Color.h
@@ -896,9 +847,6 @@ CMakeFiles/TGT.dir/NumberEntry.cpp.o: ../SIG_Utilities.h
 CMakeFiles/TGT.dir/NumberEntry.cpp.o: ../Texture2D.h
 CMakeFiles/TGT.dir/NumberEntry.cpp.o: ../Vector.h
 CMakeFiles/TGT.dir/NumberEntry.cpp.o: ../Widget.h
-CMakeFiles/TGT.dir/NumberEntry.cpp.o: ../imconfig.h
-CMakeFiles/TGT.dir/NumberEntry.cpp.o: ../imgui.h
-CMakeFiles/TGT.dir/NumberEntry.cpp.o: ../imgui_sdl.h
 
 CMakeFiles/TGT.dir/ParticleEmitter.cpp.o: ../dependencies/Box2D/include/Box2D/Box2D.h
 CMakeFiles/TGT.dir/ParticleEmitter.cpp.o: ../dependencies/Box2D/include/Box2D/Collision/Shapes/b2ChainShape.h
@@ -1075,6 +1023,7 @@ CMakeFiles/TGT.dir/Scene.cpp.o: ../Camera2D.h
 CMakeFiles/TGT.dir/Scene.cpp.o: ../Color.h
 CMakeFiles/TGT.dir/Scene.cpp.o: ../Component.h
 CMakeFiles/TGT.dir/Scene.cpp.o: ../EscapeColors.h
+CMakeFiles/TGT.dir/Scene.cpp.o: ../GUI.h
 CMakeFiles/TGT.dir/Scene.cpp.o: ../IUR.h
 CMakeFiles/TGT.dir/Scene.cpp.o: ../Matrix4.h
 CMakeFiles/TGT.dir/Scene.cpp.o: ../Node.h
@@ -1089,6 +1038,7 @@ CMakeFiles/TGT.dir/Scene.cpp.o: ../Sprite.h
 CMakeFiles/TGT.dir/Scene.cpp.o: ../SpriteBatch.h
 CMakeFiles/TGT.dir/Scene.cpp.o: ../Texture2D.h
 CMakeFiles/TGT.dir/Scene.cpp.o: ../Vector.h
+CMakeFiles/TGT.dir/Scene.cpp.o: ../Widget.h
 CMakeFiles/TGT.dir/Scene.cpp.o: ../Window.h
 CMakeFiles/TGT.dir/Scene.cpp.o: ../sig_gpu_builtin.h
 
@@ -1113,9 +1063,6 @@ CMakeFiles/TGT.dir/Slider.cpp.o: ../Slider.h
 CMakeFiles/TGT.dir/Slider.cpp.o: ../Texture2D.h
 CMakeFiles/TGT.dir/Slider.cpp.o: ../Vector.h
 CMakeFiles/TGT.dir/Slider.cpp.o: ../Widget.h
-CMakeFiles/TGT.dir/Slider.cpp.o: ../imconfig.h
-CMakeFiles/TGT.dir/Slider.cpp.o: ../imgui.h
-CMakeFiles/TGT.dir/Slider.cpp.o: ../imgui_sdl.h
 
 CMakeFiles/TGT.dir/SoundSystem.cpp.o: ../dependencies/OAL/include/AL/al.h
 CMakeFiles/TGT.dir/SoundSystem.cpp.o: ../dependencies/OAL/include/AL/alc.h
@@ -1216,25 +1163,6 @@ CMakeFiles/TGT.dir/SpriteBatch.cpp.o: ../Texture2D.h
 CMakeFiles/TGT.dir/SpriteBatch.cpp.o: ../Vector.h
 CMakeFiles/TGT.dir/SpriteBatch.cpp.o: ../sig_gpu_builtin.h
 
-CMakeFiles/TGT.dir/SpriteEditor.cpp.o: ../Color.h
-CMakeFiles/TGT.dir/SpriteEditor.cpp.o: ../Component.h
-CMakeFiles/TGT.dir/SpriteEditor.cpp.o: ../Editor.h
-CMakeFiles/TGT.dir/SpriteEditor.cpp.o: ../EscapeColors.h
-CMakeFiles/TGT.dir/SpriteEditor.cpp.o: ../IUR.h
-CMakeFiles/TGT.dir/SpriteEditor.cpp.o: ../Matrix4.h
-CMakeFiles/TGT.dir/SpriteEditor.cpp.o: ../Rect.h
-CMakeFiles/TGT.dir/SpriteEditor.cpp.o: ../SIG_OpenGL.h
-CMakeFiles/TGT.dir/SpriteEditor.cpp.o: ../SIG_Utilities.h
-CMakeFiles/TGT.dir/SpriteEditor.cpp.o: ../Shader.h
-CMakeFiles/TGT.dir/SpriteEditor.cpp.o: ../Sprite.h
-CMakeFiles/TGT.dir/SpriteEditor.cpp.o: ../SpriteEditor.cpp
-CMakeFiles/TGT.dir/SpriteEditor.cpp.o: ../SpriteEditor.h
-CMakeFiles/TGT.dir/SpriteEditor.cpp.o: ../Texture2D.h
-CMakeFiles/TGT.dir/SpriteEditor.cpp.o: ../Vector.h
-CMakeFiles/TGT.dir/SpriteEditor.cpp.o: ../imconfig.h
-CMakeFiles/TGT.dir/SpriteEditor.cpp.o: ../imgui.h
-CMakeFiles/TGT.dir/SpriteEditor.cpp.o: ../sig_gpu_builtin.h
-
 CMakeFiles/TGT.dir/Texture2D.cpp.o: ../EscapeColors.h
 CMakeFiles/TGT.dir/Texture2D.cpp.o: ../SIG_OpenGL.h
 CMakeFiles/TGT.dir/Texture2D.cpp.o: ../SIG_Utilities.h
@@ -1309,6 +1237,7 @@ CMakeFiles/TGT.dir/TileMap.cpp.o: ../Camera2D.h
 CMakeFiles/TGT.dir/TileMap.cpp.o: ../Color.h
 CMakeFiles/TGT.dir/TileMap.cpp.o: ../Component.h
 CMakeFiles/TGT.dir/TileMap.cpp.o: ../EscapeColors.h
+CMakeFiles/TGT.dir/TileMap.cpp.o: ../GUI.h
 CMakeFiles/TGT.dir/TileMap.cpp.o: ../GUIGFX.h
 CMakeFiles/TGT.dir/TileMap.cpp.o: ../IUR.h
 CMakeFiles/TGT.dir/TileMap.cpp.o: ../Matrix4.h
@@ -1325,6 +1254,7 @@ CMakeFiles/TGT.dir/TileMap.cpp.o: ../Texture2D.h
 CMakeFiles/TGT.dir/TileMap.cpp.o: ../TileMap.cpp
 CMakeFiles/TGT.dir/TileMap.cpp.o: ../TileMap.h
 CMakeFiles/TGT.dir/TileMap.cpp.o: ../Vector.h
+CMakeFiles/TGT.dir/TileMap.cpp.o: ../Widget.h
 CMakeFiles/TGT.dir/TileMap.cpp.o: ../picojson.h
 CMakeFiles/TGT.dir/TileMap.cpp.o: ../sig_gpu_builtin.h
 
@@ -1348,9 +1278,6 @@ CMakeFiles/TGT.dir/Widget.cpp.o: ../Texture2D.h
 CMakeFiles/TGT.dir/Widget.cpp.o: ../Vector.h
 CMakeFiles/TGT.dir/Widget.cpp.o: ../Widget.cpp
 CMakeFiles/TGT.dir/Widget.cpp.o: ../Widget.h
-CMakeFiles/TGT.dir/Widget.cpp.o: ../imconfig.h
-CMakeFiles/TGT.dir/Widget.cpp.o: ../imgui.h
-CMakeFiles/TGT.dir/Widget.cpp.o: ../imgui_sdl.h
 
 CMakeFiles/TGT.dir/Window.cpp.o: ../Color.h
 CMakeFiles/TGT.dir/Window.cpp.o: ../EscapeColors.h
@@ -1361,36 +1288,6 @@ CMakeFiles/TGT.dir/Window.cpp.o: ../SIG_Utilities.h
 CMakeFiles/TGT.dir/Window.cpp.o: ../Vector.h
 CMakeFiles/TGT.dir/Window.cpp.o: ../Window.cpp
 CMakeFiles/TGT.dir/Window.cpp.o: ../Window.h
-CMakeFiles/TGT.dir/Window.cpp.o: ../imconfig.h
-CMakeFiles/TGT.dir/Window.cpp.o: ../imgui.h
-CMakeFiles/TGT.dir/Window.cpp.o: ../imgui_sdl.h
-
-CMakeFiles/TGT.dir/imgui.cpp.o: ../imconfig.h
-CMakeFiles/TGT.dir/imgui.cpp.o: ../imgui.cpp
-CMakeFiles/TGT.dir/imgui.cpp.o: ../imgui.h
-CMakeFiles/TGT.dir/imgui.cpp.o: ../imgui_internal.h
-CMakeFiles/TGT.dir/imgui.cpp.o: ../stb_textedit.h
-
-CMakeFiles/TGT.dir/imgui_demo.cpp.o: ../imconfig.h
-CMakeFiles/TGT.dir/imgui_demo.cpp.o: ../imgui.h
-CMakeFiles/TGT.dir/imgui_demo.cpp.o: ../imgui_demo.cpp
-
-CMakeFiles/TGT.dir/imgui_draw.cpp.o: ../imconfig.h
-CMakeFiles/TGT.dir/imgui_draw.cpp.o: ../imgui.h
-CMakeFiles/TGT.dir/imgui_draw.cpp.o: ../imgui_draw.cpp
-CMakeFiles/TGT.dir/imgui_draw.cpp.o: ../imgui_internal.h
-CMakeFiles/TGT.dir/imgui_draw.cpp.o: ../stb_rect_pack.h
-CMakeFiles/TGT.dir/imgui_draw.cpp.o: ../stb_textedit.h
-CMakeFiles/TGT.dir/imgui_draw.cpp.o: ../stb_truetype.h
-
-CMakeFiles/TGT.dir/imgui_sdl.cpp.o: ../EscapeColors.h
-CMakeFiles/TGT.dir/imgui_sdl.cpp.o: ../SIG_OpenGL.h
-CMakeFiles/TGT.dir/imgui_sdl.cpp.o: ../SIG_Utilities.h
-CMakeFiles/TGT.dir/imgui_sdl.cpp.o: ../Texture2D.h
-CMakeFiles/TGT.dir/imgui_sdl.cpp.o: ../imconfig.h
-CMakeFiles/TGT.dir/imgui_sdl.cpp.o: ../imgui.h
-CMakeFiles/TGT.dir/imgui_sdl.cpp.o: ../imgui_sdl.cpp
-CMakeFiles/TGT.dir/imgui_sdl.cpp.o: ../imgui_sdl.h
 
 CMakeFiles/TGT.dir/main.cpp.o: ../dependencies/Box2D/include/Box2D/Box2D.h
 CMakeFiles/TGT.dir/main.cpp.o: ../dependencies/Box2D/include/Box2D/Collision/Shapes/b2ChainShape.h
@@ -1513,9 +1410,6 @@ CMakeFiles/TGT.dir/main.cpp.o: ../TileMap.h
 CMakeFiles/TGT.dir/main.cpp.o: ../Vector.h
 CMakeFiles/TGT.dir/main.cpp.o: ../Widget.h
 CMakeFiles/TGT.dir/main.cpp.o: ../Window.h
-CMakeFiles/TGT.dir/main.cpp.o: ../imconfig.h
-CMakeFiles/TGT.dir/main.cpp.o: ../imgui.h
-CMakeFiles/TGT.dir/main.cpp.o: ../imgui_sdl.h
 CMakeFiles/TGT.dir/main.cpp.o: ../main.cpp
 CMakeFiles/TGT.dir/main.cpp.o: ../picojson.h
 CMakeFiles/TGT.dir/main.cpp.o: ../sig_gpu_builtin.h

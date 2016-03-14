@@ -3,6 +3,8 @@
 
 #include "Widget.h" // Base class: sig::Widget
 
+#define BOX_TAB_SIZE 16
+
 namespace sig
 {
 	class Box : public Widget
@@ -16,27 +18,31 @@ namespace sig
 		Box();
 
 		void AddWidget(Widget* widget);
-		
-		void Update(float dt);
-		void Render();
 		bool IsSensitive() { return false; }
 		
-		Box* SetPadding(int padding) {this->m_padding = padding; return this;}
+		void SetPadding(int padding) { this->m_padding = padding; }
 		int GetPadding() const {return m_padding;}
 		
-		Box* SetSpacing(int spacing) {this->m_spacing = spacing; return this;}
+		void SetSpacing(int spacing) { this->m_spacing = spacing; }
 		int GetSpacing() const {return m_spacing;}
 		
-		Box* SetOrientation(int orientation) {this->m_orientation = orientation; return this;}
-		int GetOrientation() const {return m_orientation;}
-				
-		WType GetType() { return WType::BOX; }
+		void SetOrientation(int orientation) { this->m_orientation = orientation; }
+		int GetOrientation() const { return m_orientation; }
+
+		void SetTabWidgets(bool tl) { m_tab_left = tl; }
+		bool IsTabbingWidgets() const { return m_tab_left; }
+
+		void Update(float dt);
+		void Render();
+
+		WIDGET_TYPE(WType::BOX)
 	private:
 		int m_padding, m_spacing;
 		int l_order;
 		int m_orientation;
+		bool m_tab_left;
 		
-		vector<Widget*> m_widgets;
+		WidgetList m_widgets;
 	};
 
 }

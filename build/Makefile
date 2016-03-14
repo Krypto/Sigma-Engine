@@ -138,30 +138,6 @@ AnimatedSprite.cpp.s:
 	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/AnimatedSprite.cpp.s
 .PHONY : AnimatedSprite.cpp.s
 
-AnimatedSpriteEditor.o: AnimatedSpriteEditor.cpp.o
-.PHONY : AnimatedSpriteEditor.o
-
-# target to build an object file
-AnimatedSpriteEditor.cpp.o:
-	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.o
-.PHONY : AnimatedSpriteEditor.cpp.o
-
-AnimatedSpriteEditor.i: AnimatedSpriteEditor.cpp.i
-.PHONY : AnimatedSpriteEditor.i
-
-# target to preprocess a source file
-AnimatedSpriteEditor.cpp.i:
-	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.i
-.PHONY : AnimatedSpriteEditor.cpp.i
-
-AnimatedSpriteEditor.s: AnimatedSpriteEditor.cpp.s
-.PHONY : AnimatedSpriteEditor.s
-
-# target to generate assembly for a file
-AnimatedSpriteEditor.cpp.s:
-	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/AnimatedSpriteEditor.cpp.s
-.PHONY : AnimatedSpriteEditor.cpp.s
-
 AudioClip.o: AudioClip.cpp.o
 .PHONY : AudioClip.o
 
@@ -354,30 +330,6 @@ Component.cpp.s:
 	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/Component.cpp.s
 .PHONY : Component.cpp.s
 
-ComponentEditor.o: ComponentEditor.cpp.o
-.PHONY : ComponentEditor.o
-
-# target to build an object file
-ComponentEditor.cpp.o:
-	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/ComponentEditor.cpp.o
-.PHONY : ComponentEditor.cpp.o
-
-ComponentEditor.i: ComponentEditor.cpp.i
-.PHONY : ComponentEditor.i
-
-# target to preprocess a source file
-ComponentEditor.cpp.i:
-	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/ComponentEditor.cpp.i
-.PHONY : ComponentEditor.cpp.i
-
-ComponentEditor.s: ComponentEditor.cpp.s
-.PHONY : ComponentEditor.s
-
-# target to generate assembly for a file
-ComponentEditor.cpp.s:
-	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/ComponentEditor.cpp.s
-.PHONY : ComponentEditor.cpp.s
-
 DebugDraw.o: DebugDraw.cpp.o
 .PHONY : DebugDraw.o
 
@@ -401,30 +353,6 @@ DebugDraw.s: DebugDraw.cpp.s
 DebugDraw.cpp.s:
 	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/DebugDraw.cpp.s
 .PHONY : DebugDraw.cpp.s
-
-Editor.o: Editor.cpp.o
-.PHONY : Editor.o
-
-# target to build an object file
-Editor.cpp.o:
-	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/Editor.cpp.o
-.PHONY : Editor.cpp.o
-
-Editor.i: Editor.cpp.i
-.PHONY : Editor.i
-
-# target to preprocess a source file
-Editor.cpp.i:
-	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/Editor.cpp.i
-.PHONY : Editor.cpp.i
-
-Editor.s: Editor.cpp.s
-.PHONY : Editor.s
-
-# target to generate assembly for a file
-Editor.cpp.s:
-	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/Editor.cpp.s
-.PHONY : Editor.cpp.s
 
 Entry.o: Entry.cpp.o
 .PHONY : Entry.o
@@ -1002,30 +930,6 @@ SpriteBatch.cpp.s:
 	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/SpriteBatch.cpp.s
 .PHONY : SpriteBatch.cpp.s
 
-SpriteEditor.o: SpriteEditor.cpp.o
-.PHONY : SpriteEditor.o
-
-# target to build an object file
-SpriteEditor.cpp.o:
-	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/SpriteEditor.cpp.o
-.PHONY : SpriteEditor.cpp.o
-
-SpriteEditor.i: SpriteEditor.cpp.i
-.PHONY : SpriteEditor.i
-
-# target to preprocess a source file
-SpriteEditor.cpp.i:
-	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/SpriteEditor.cpp.i
-.PHONY : SpriteEditor.cpp.i
-
-SpriteEditor.s: SpriteEditor.cpp.s
-.PHONY : SpriteEditor.s
-
-# target to generate assembly for a file
-SpriteEditor.cpp.s:
-	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/SpriteEditor.cpp.s
-.PHONY : SpriteEditor.cpp.s
-
 Texture2D.o: Texture2D.cpp.o
 .PHONY : Texture2D.o
 
@@ -1170,102 +1074,6 @@ Window.cpp.s:
 	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/Window.cpp.s
 .PHONY : Window.cpp.s
 
-imgui.o: imgui.cpp.o
-.PHONY : imgui.o
-
-# target to build an object file
-imgui.cpp.o:
-	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/imgui.cpp.o
-.PHONY : imgui.cpp.o
-
-imgui.i: imgui.cpp.i
-.PHONY : imgui.i
-
-# target to preprocess a source file
-imgui.cpp.i:
-	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/imgui.cpp.i
-.PHONY : imgui.cpp.i
-
-imgui.s: imgui.cpp.s
-.PHONY : imgui.s
-
-# target to generate assembly for a file
-imgui.cpp.s:
-	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/imgui.cpp.s
-.PHONY : imgui.cpp.s
-
-imgui_demo.o: imgui_demo.cpp.o
-.PHONY : imgui_demo.o
-
-# target to build an object file
-imgui_demo.cpp.o:
-	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/imgui_demo.cpp.o
-.PHONY : imgui_demo.cpp.o
-
-imgui_demo.i: imgui_demo.cpp.i
-.PHONY : imgui_demo.i
-
-# target to preprocess a source file
-imgui_demo.cpp.i:
-	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/imgui_demo.cpp.i
-.PHONY : imgui_demo.cpp.i
-
-imgui_demo.s: imgui_demo.cpp.s
-.PHONY : imgui_demo.s
-
-# target to generate assembly for a file
-imgui_demo.cpp.s:
-	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/imgui_demo.cpp.s
-.PHONY : imgui_demo.cpp.s
-
-imgui_draw.o: imgui_draw.cpp.o
-.PHONY : imgui_draw.o
-
-# target to build an object file
-imgui_draw.cpp.o:
-	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/imgui_draw.cpp.o
-.PHONY : imgui_draw.cpp.o
-
-imgui_draw.i: imgui_draw.cpp.i
-.PHONY : imgui_draw.i
-
-# target to preprocess a source file
-imgui_draw.cpp.i:
-	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/imgui_draw.cpp.i
-.PHONY : imgui_draw.cpp.i
-
-imgui_draw.s: imgui_draw.cpp.s
-.PHONY : imgui_draw.s
-
-# target to generate assembly for a file
-imgui_draw.cpp.s:
-	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/imgui_draw.cpp.s
-.PHONY : imgui_draw.cpp.s
-
-imgui_sdl.o: imgui_sdl.cpp.o
-.PHONY : imgui_sdl.o
-
-# target to build an object file
-imgui_sdl.cpp.o:
-	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/imgui_sdl.cpp.o
-.PHONY : imgui_sdl.cpp.o
-
-imgui_sdl.i: imgui_sdl.cpp.i
-.PHONY : imgui_sdl.i
-
-# target to preprocess a source file
-imgui_sdl.cpp.i:
-	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/imgui_sdl.cpp.i
-.PHONY : imgui_sdl.cpp.i
-
-imgui_sdl.s: imgui_sdl.cpp.s
-.PHONY : imgui_sdl.s
-
-# target to generate assembly for a file
-imgui_sdl.cpp.s:
-	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/imgui_sdl.cpp.s
-.PHONY : imgui_sdl.cpp.s
-
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -1326,9 +1134,6 @@ help:
 	@echo "... AnimatedSprite.o"
 	@echo "... AnimatedSprite.i"
 	@echo "... AnimatedSprite.s"
-	@echo "... AnimatedSpriteEditor.o"
-	@echo "... AnimatedSpriteEditor.i"
-	@echo "... AnimatedSpriteEditor.s"
 	@echo "... AudioClip.o"
 	@echo "... AudioClip.i"
 	@echo "... AudioClip.s"
@@ -1353,15 +1158,9 @@ help:
 	@echo "... Component.o"
 	@echo "... Component.i"
 	@echo "... Component.s"
-	@echo "... ComponentEditor.o"
-	@echo "... ComponentEditor.i"
-	@echo "... ComponentEditor.s"
 	@echo "... DebugDraw.o"
 	@echo "... DebugDraw.i"
 	@echo "... DebugDraw.s"
-	@echo "... Editor.o"
-	@echo "... Editor.i"
-	@echo "... Editor.s"
 	@echo "... Entry.o"
 	@echo "... Entry.i"
 	@echo "... Entry.s"
@@ -1434,9 +1233,6 @@ help:
 	@echo "... SpriteBatch.o"
 	@echo "... SpriteBatch.i"
 	@echo "... SpriteBatch.s"
-	@echo "... SpriteEditor.o"
-	@echo "... SpriteEditor.i"
-	@echo "... SpriteEditor.s"
 	@echo "... Texture2D.o"
 	@echo "... Texture2D.i"
 	@echo "... Texture2D.s"
@@ -1455,18 +1251,6 @@ help:
 	@echo "... Window.o"
 	@echo "... Window.i"
 	@echo "... Window.s"
-	@echo "... imgui.o"
-	@echo "... imgui.i"
-	@echo "... imgui.s"
-	@echo "... imgui_demo.o"
-	@echo "... imgui_demo.i"
-	@echo "... imgui_demo.s"
-	@echo "... imgui_draw.o"
-	@echo "... imgui_draw.i"
-	@echo "... imgui_draw.s"
-	@echo "... imgui_sdl.o"
-	@echo "... imgui_sdl.i"
-	@echo "... imgui_sdl.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
