@@ -20,6 +20,9 @@ namespace sig
 	class Button;
 	class Box;
 	class Slider;
+	class Image;
+	class ListView;
+	class ListViewItem;
 	
 	using namespace math;
 	class GUI
@@ -36,11 +39,13 @@ namespace sig
 		void AddSeparator();
 		void AddParam(const string& text, int *value, int vmin, int vmax);
 		void AddParam(const string& text, float *value, float vmin, float vmax, float increment=0.1f);
-		void AddParam(const string& text, Color *value, const Color& col=Color::WHITE);
+		void AddParam(const string& text, Color *value);
 		void AddParam(const string& text, string *value, bool masked=false);
 		void AddParam(const string& text, bool *value);
 		void AddParam(const string& text, float *value);
 		void AddParam(const string& text, Vector2 *value);
+		Image* AddParam(const string& text, Texture2D *img);
+		ListView* AddParam(const string& text, int *selected);
 
 		void BeginBox(const Rect& bounds);
 		void EndBox();

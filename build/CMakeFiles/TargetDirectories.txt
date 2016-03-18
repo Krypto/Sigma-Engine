@@ -1,1 +1,1 @@
-/home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles/TGT.dir
+/home/twisterge/Projects/Sigma/build/CMakeFiles/TGT.dir

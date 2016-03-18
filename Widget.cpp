@@ -8,7 +8,7 @@
 sig::Widget::Widget()
 {
 	m_active = true;
-	m_backColor = Color::FromColorAlpha(Color::BLACK, 0.5f);
+	m_backColor = Color::FromColorAlpha(Color::DARK_BLUE, 0.5f);
 	m_textColor = Color::WHITE;
 	m_bounds = Rect(0, 0, 25, 25);
 	m_parent = nullptr;

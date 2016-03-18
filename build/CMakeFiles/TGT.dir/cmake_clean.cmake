@@ -41,6 +41,8 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/TGT.dir/Scene.cpp.o"
   "CMakeFiles/TGT.dir/LuaEngine.cpp.o"
   "CMakeFiles/TGT.dir/ParticleEmitter.cpp.o"
+  "CMakeFiles/TGT.dir/Image.cpp.o"
+  "CMakeFiles/TGT.dir/ListView.cpp.o"
   "TGT.pdb"
   "TGT"
 )

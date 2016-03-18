@@ -39,13 +39,13 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
+CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit
+CMAKE_SOURCE_DIR = /home/twisterge/Projects/Sigma
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build
+CMAKE_BINARY_DIR = /home/twisterge/Projects/Sigma/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -53,7 +53,7 @@ CMAKE_BINARY_DIR = /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -72,9 +72,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/twisterge/Projects/Sigma/build/CMakeFiles /home/twisterge/Projects/Sigma/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/twisterge/Projects/Cplusplus/TwisterGamesToolkit/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/twisterge/Projects/Sigma/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -474,6 +474,30 @@ IUR.cpp.s:
 	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/IUR.cpp.s
 .PHONY : IUR.cpp.s
 
+Image.o: Image.cpp.o
+.PHONY : Image.o
+
+# target to build an object file
+Image.cpp.o:
+	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/Image.cpp.o
+.PHONY : Image.cpp.o
+
+Image.i: Image.cpp.i
+.PHONY : Image.i
+
+# target to preprocess a source file
+Image.cpp.i:
+	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/Image.cpp.i
+.PHONY : Image.cpp.i
+
+Image.s: Image.cpp.s
+.PHONY : Image.s
+
+# target to generate assembly for a file
+Image.cpp.s:
+	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/Image.cpp.s
+.PHONY : Image.cpp.s
+
 Input.o: Input.cpp.o
 .PHONY : Input.o
 
@@ -545,6 +569,30 @@ LightNode.s: LightNode.cpp.s
 LightNode.cpp.s:
 	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/LightNode.cpp.s
 .PHONY : LightNode.cpp.s
+
+ListView.o: ListView.cpp.o
+.PHONY : ListView.o
+
+# target to build an object file
+ListView.cpp.o:
+	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/ListView.cpp.o
+.PHONY : ListView.cpp.o
+
+ListView.i: ListView.cpp.i
+.PHONY : ListView.i
+
+# target to preprocess a source file
+ListView.cpp.i:
+	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/ListView.cpp.i
+.PHONY : ListView.cpp.i
+
+ListView.s: ListView.cpp.s
+.PHONY : ListView.s
+
+# target to generate assembly for a file
+ListView.cpp.s:
+	$(MAKE) -f CMakeFiles/TGT.dir/build.make CMakeFiles/TGT.dir/ListView.cpp.s
+.PHONY : ListView.cpp.s
 
 LuaEngine.o: LuaEngine.cpp.o
 .PHONY : LuaEngine.o
@@ -1176,6 +1224,9 @@ help:
 	@echo "... IUR.o"
 	@echo "... IUR.i"
 	@echo "... IUR.s"
+	@echo "... Image.o"
+	@echo "... Image.i"
+	@echo "... Image.s"
 	@echo "... Input.o"
 	@echo "... Input.i"
 	@echo "... Input.s"
@@ -1185,6 +1236,9 @@ help:
 	@echo "... LightNode.o"
 	@echo "... LightNode.i"
 	@echo "... LightNode.s"
+	@echo "... ListView.o"
+	@echo "... ListView.i"
+	@echo "... ListView.s"
 	@echo "... LuaEngine.o"
 	@echo "... LuaEngine.i"
 	@echo "... LuaEngine.s"

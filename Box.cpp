@@ -9,8 +9,7 @@ sig::Box::Box()
 	m_padding = 4;
 	m_spacing = 2;
 	m_orientation = ORIENTATION_VERTICAL;
-	m_backColor = Color::BLACK;
-	m_backColor.a = 0.4f;
+	m_backColor = Color::FromColorAlpha(Color::DARK_BLUE, 0.4f);
 	m_tab_left = false;
 }
 

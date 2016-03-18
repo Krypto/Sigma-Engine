@@ -9,6 +9,7 @@ namespace sig
 
 	class Slider : public Label
 	{
+		friend class ListView;
 	public:
 		enum {
 			VERTICAL = 2,
@@ -48,7 +49,7 @@ namespace sig
 		void SetCallback(function<void()> callback) { m_changeCallback = callback; }
 
 		WIDGET_TYPE(WType::NUMBER_RANGE)
-	private:
+	protected:
 		float m_min, m_max, m_value;
 		float m_x, m_increment;
 		bool m_showValue, drag;

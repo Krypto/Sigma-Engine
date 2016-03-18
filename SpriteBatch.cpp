@@ -213,6 +213,7 @@ void sig::SpriteBatch::Render()
 		}
 
 		glDrawArrays(GL_TRIANGLES, b.offset, b.numVertices);
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 		glDisable(GL_BLEND);
 		glPopMatrix();
 		

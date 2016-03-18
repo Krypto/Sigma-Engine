@@ -43,6 +43,8 @@ namespace sig
 		 * @brief Process and load the Resource queue
 		 */
 		void LoadAll();
+
+		map<RID, Resource*> GetResources() const { return m_resources; }
 	private:
 		static RID currentRID;
 		

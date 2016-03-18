@@ -41,10 +41,10 @@ void sig::Slider::OnMouseDown(MouseEvent e)
 void sig::Slider::OnMouseMove(MouseEvent e)
 {
 	if (drag) {
-		float w = m_orientation == HORIZONTAL ? GetBounds().width : GetBounds().height;
+		float w = m_orientation == HORIZONTAL ? GetBounds().width-2 : GetBounds().height-2;
 		float px = m_orientation == HORIZONTAL ? e.position.X() : w-e.position.Y();
 
-		m_x = abs(((m_min + m_value) / (m_min + m_max)) * (w + 0.0001f));
+		m_x = abs(((m_min + m_value) / (m_min + m_max)) * w) - 1;
 
 		if (px <= 0) {
 			px = 0;
@@ -70,10 +70,9 @@ void sig::Slider::Render()
 
 	Rect vr;
 	if (m_orientation == VERTICAL) {
-		float m_y = b_infl.height - m_x;
-		vr = Rect(b_infl.x, b_infl.y+m_y, b_infl.width, m_x);
+		vr = Rect(b_infl.x, b_infl.y + m_x, b_infl.width, 2);
 	} else {
-		vr = Rect(b_infl.x, b_infl.y, m_x, b_infl.height);
+		vr = Rect(b_infl.x + m_x, b_infl.y, 2, b_infl.height);
 	}
 
 	GFX::SetFillColor(m_barColor);
@@ -91,8 +90,8 @@ void sig::Slider::SetValue(float value)
 {
 	if (value != this->m_value) {
 		this->m_value = value;
-		if (m_changeCallback) {
-			m_changeCallback();
-		}
+	}
+	if (m_changeCallback) {
+		m_changeCallback();
 	}
 }

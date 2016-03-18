@@ -83,6 +83,8 @@ set( CXX_SRCS
 	SigmaTypeReg.h
 	Sigma.h
 	ParticleEmitter.cpp
+	Image.cpp
+	ListView.cpp
 )
 
 set_source_files_properties(

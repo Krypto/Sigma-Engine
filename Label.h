@@ -33,7 +33,7 @@ namespace sig
 		float GetTextMargin() const { return m_textMargin; }
 		
 		Vector2 Measure(const string& text);
-		void Fit(int padding = 1) {
+		void Fit(int padding = -2) {
 			Vector2 m = Measure(m_text);
 			m_bounds.width = m.X()+padding;
 			m_bounds.height = m.Y()+padding;

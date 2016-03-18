@@ -8,7 +8,7 @@ sig::Button::Button()
 	m_state = ButtonState::NORMAL;
 	m_bounds.width = 90;
 	m_bounds.height = 12;
-	m_backColor = Color::DARK_GRAY;
+	m_backColor = Color::DARK_BLUE;
 }
 
 void sig::Button::Render()

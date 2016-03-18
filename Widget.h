@@ -39,11 +39,11 @@ namespace sig
 			ENTRY,
 			BOOLEAN,
 			NUMBER_RANGE,
-			WINDOW,
 			BOX,
-			GROUPBOX,
 			BUTTON,
 			LABEL,
+			IMAGE,
+			LIST,
 			EMPTY
 		};
 

@@ -15,6 +15,7 @@
 #define GetResourceText(name) *((std::string*)GetResource(name)->GetData())
 // Creates a new resource with the specified name, file name and ResourceType
 #define NewResource(name, filename, rtype) Resources->AddResource(name, filename, rtype)
+#define GetResources() Resources->GetResources()
 
 #include "Resource.h"
 
@@ -40,6 +41,8 @@
 #include "Input.h"
 
 #include "GUI.h"
+#include "ListView.h"
+#include "Image.h"
 #include "Entry.h"
 #include "NumberEntry.h"
 #include "Boolean.h"
