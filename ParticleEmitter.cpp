@@ -1,6 +1,7 @@
 #include "ParticleEmitter.h"
 #include "Node.h"
 #include "SpriteBatch.h"
+#include "SIG_Utilities.h"
 
 #include <cmath>
 #include <cstdlib>
@@ -43,7 +44,8 @@ void sig::ParticleEmitter::Update(float dt)
 		}
 	}
 
-	for (auto it = m_particlePool.begin(); it != m_particlePool.end(); ++it) {
+	SIG_FOREACH(it, m_particlePool)
+	{
 		Particle *current = (*it);
 		if (!current->is_dead) {
 			current->Update(dt);
@@ -55,7 +57,8 @@ void sig::ParticleEmitter::Render(sig::SpriteBatch *batch)
 {
 	if (batch == nullptr) { return; }
 	if (batch->IsDrawing()) {
-		for (auto it = m_particlePool.begin(); it != m_particlePool.end(); ++it) {
+		SIG_FOREACH(it, m_particlePool)
+		{
 			Particle *current = (*it);
 			if (!current->is_dead) {
 				batch->Draw(int(current->position.Y()),
@@ -76,7 +79,8 @@ void sig::ParticleEmitter::EmitParticle()
 	Particle *p = nullptr;
 
 	// Get the first dead particle
-	for (auto it = m_particlePool.begin(); it != m_particlePool.end(); ++it) {
+	SIG_FOREACH(it, m_particlePool)
+	{
 		Particle *current = (*it);
 		if (current->is_dead) {
 			p = current;
@@ -110,7 +114,7 @@ void sig::ParticleEmitter::EmitParticle()
 		p->position = p->position + m_posFun(p->angle, life);
 	}
 
-	p->accel = m_particleAccel;
+	p->accel = Vector2(m_particleAccel.X(), -m_particleAccel.Y());
 
 	float speed = m_particleSpeed - RandRange<float>(0.0f, 0.2f);
 	p->velocity = Vector2(

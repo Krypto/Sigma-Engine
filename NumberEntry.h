@@ -14,8 +14,8 @@ namespace sig
 		void OnKeyPress(int e);		
 		void OnBlur(MouseEvent e);
 		
-		void SetValue(float value);
 		float GetValue() const { return m_value; }
+		void SetValue(float value);
 
 		void Update(float dt) { Entry::Update(dt); }
 

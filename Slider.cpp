@@ -9,7 +9,7 @@ sig::Slider::Slider()
 	m_max = 10;
 	m_value = 0;
 	m_increment = 1;
-	m_showValue = false;
+	init = m_showValue = false;
 	m_x = 0;
 
 	m_bounds.height = 10;
@@ -83,6 +83,18 @@ void sig::Slider::Render()
 			m_text = ToString<float>(m_value) + m_suffix;
 			Label::Render();
 		}
+	}
+}
+
+void sig::Slider::Update(float dt)
+{
+	Label::Update(dt);
+
+	if (!init) {
+		init = true;
+
+		float w = m_orientation == HORIZONTAL ? GetBounds().width-2 : GetBounds().height-2;
+		m_x = abs(((m_min + m_value) / (m_min + m_max)) * w) - 1;
 	}
 }
 

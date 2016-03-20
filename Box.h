@@ -23,14 +23,20 @@ namespace sig
 		void SetPadding(int padding) { this->m_padding = padding; }
 		int GetPadding() const {return m_padding;}
 		
-		void SetSpacing(int spacing) { this->m_spacing = spacing; }
 		int GetSpacing() const {return m_spacing;}
-		
-		void SetOrientation(int orientation) { this->m_orientation = orientation; }
-		int GetOrientation() const { return m_orientation; }
+		void SetSpacing(int spacing) { this->m_spacing = spacing; }
 
-		void SetTabWidgets(bool tl) { m_tab_left = tl; }
+		int GetOrientation() const { return m_orientation; }
+		void SetOrientation(int orientation) { this->m_orientation = orientation; }
+
 		bool IsTabbingWidgets() const { return m_tab_left; }
+		void SetTabWidgets(bool tl) { m_tab_left = tl; }
+
+		bool IsFitting() const { return m_fit; }
+		void SetFitWidgets(bool fi) { m_fit = fi; }
+
+		bool IsDrawingBackground() const { return m_draw_background; }
+		void SetDrawBackground(bool db) { m_draw_background = db; }
 
 		void Update(float dt);
 		void Render();
@@ -40,7 +46,7 @@ namespace sig
 		int m_padding, m_spacing;
 		int l_order;
 		int m_orientation;
-		bool m_tab_left;
+		bool m_tab_left, m_fit, m_draw_background;
 		
 		WidgetList m_widgets;
 	};

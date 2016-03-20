@@ -20,7 +20,6 @@ const string SIG_GPU_VERT_SPRITEDEFAULT = STR(
 
 const string SIG_GPU_FRAG_SPRITEDEFAULT = STR(
 			uniform sampler2D tex0;
-			
 			varying vec4 color;
 			void main() {
 				vec4 finalColor = color * texture2D(tex0, gl_TexCoord[0].st);				

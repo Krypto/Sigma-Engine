@@ -7,6 +7,7 @@
 #include "Vector.h"
 
 #include <vector>
+#include <stack>
 #include <functional>
 using namespace std;
 
@@ -34,7 +35,7 @@ namespace sig
 		
 		void AddWidget(Widget *w);
 
-		void AddLabel(const string& text);
+		Label* AddLabel(const string& text);
 		Button* AddButton(const string& text);
 		void AddSeparator();
 		void AddParam(const string& text, int *value, int vmin, int vmax);
@@ -52,6 +53,7 @@ namespace sig
 
 		Widget* GetFocused() { return m_focused; }
 		Box* GetCurrentBox() { return m_currentBox; }
+		Rect GetWindowDimensions();
 		
 		void Initialize();
 		void Update(float dt);
@@ -65,7 +67,7 @@ namespace sig
 		bool m_clickHandle, m_keyHandle, handled;
 		Widget *m_focused;
 		WidgetList m_widgets;
-		vector<Box*> m_boxStack;
+		stack<Box*> m_boxStack;
 		Box *m_currentBox, *m_prevBox;
 		int box_id;
 	};

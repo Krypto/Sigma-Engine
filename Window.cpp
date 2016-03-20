@@ -37,7 +37,6 @@ void sig::Window::Open(bool fullscreen)
 	SDL_GL_SetAttribute(SDL_GL_GREEN_SIZE, 		8);
 	SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE, 		8);
 	SDL_GL_SetAttribute(SDL_GL_ALPHA_SIZE,		8);
-	SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 		16);
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 	1);
 	
 	m_sdl_window = SDL_CreateWindow(m_title.c_str(), SDL_WINDOWPOS_CENTERED,

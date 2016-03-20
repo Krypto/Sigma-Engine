@@ -11,11 +11,10 @@ public:
 	GameExample() : BaseGame() {
 		NewResource("font", "font2.png", ResourceType::RESOURCE_TEXTURE);
 		NewResource("particle", "particle.png", ResourceType::RESOURCE_TEXTURE);
-		NewResource("fire", "fire.png", ResourceType::RESOURCE_TEXTURE);
-		NewResource("tree", "tree.png", ResourceType::RESOURCE_TEXTURE);
 	}
 	
 	void Initialize() {
+		GetCurrentScene()->SetBackground(Color(HEX(0x8A6132), 1));
 		GUI::DEFAULT_FONT = GetResourceData(Texture2D*, "font");
 
 		p = GetCurrentScene()->CreateNode("p");
@@ -27,31 +26,32 @@ public:
 		g = new GUI();
 		GetCurrentScene()->SetGUI(g);
 
-		g->BeginBox(Rect(10, 10, 120, 100));
+		g->BeginBox(Rect(10, 10, 150, 100));
+		g->GetCurrentBox()->SetDockDirection(DockDirection::DOCK_LEFT);
 
 		g->AddLabel("Particle Emitter");
 		g->AddSeparator();
 
-		ItemList items;
-		for (auto it = GetResources().begin();
-			it != GetResources().end(); ++it)
-		{
-			Resource* res = it->second;
-			if (res->GetType() == ResourceType::RESOURCE_TEXTURE) {
-				items.push_back(new Texture2DItem(static_cast<Texture2D*>(res->GetData())));
-			}
-		}
+		g->AddParam("Start Color", &e->GetStartColor());
+		g->AddParam("End Color", &e->GetEndColor());
+		g->AddParam("Acceleration", &e->GetParticleAcceleration());
+		g->AddParam("Spread", &e->GetParticleSpread(), 0.0f, PI);
+		g->AddParam("Life (s)", &e->GetParticleLife());
+		g->AddParam("E. Rate (s)", &e->GetEmitRate());
+		g->AddParam("Speed", &e->GetParticleSpeed());
+		g->AddParam("Start Size", &e->GetParticleStartSize());
+		g->AddParam("End Size", &e->GetParticleEndSize());
+		g->AddParam("Enabled", &e->IsEnabled());
 
-		tex_list = g->AddParam("Textures", &selected_texture);
-		tex_list->SetItems(items);
+		g->EndBox();
 
-		g->AddButton("Set Texture")->SetCallback([this]() {
-			ListViewItem *sel = tex_list->GetItem(selected_texture);
-			if (sel != nullptr) {
-				Texture2DItem *tex_item = dynamic_cast<Texture2DItem*>(sel);
-				e->SetTexture(tex_item->GetData());
-			}
-		});
+		g->BeginBox(Rect(0, 0, 120, 200));
+		g->GetCurrentBox()->SetDockDirection(DockDirection::DOCK_RIGHT);
+
+		g->AddLabel("Scene");
+		g->AddSeparator();
+
+		g->AddParam("Background Color", &GetCurrentScene()->GetBackground());
 
 		g->EndBox();
 

@@ -18,20 +18,21 @@ namespace sig
 		
 		Label();
 		
-		virtual void SetText(const string& text) { this->m_text = text; }
 		const string& GetText() const { return m_text; }
+		virtual void SetText(const string& text) { this->m_text = text; }
 
-		void SetCharSpacing(float charSpacing) { this->m_charSpacing = charSpacing; }
-		void SetFontScale(float fontScale) { this->m_fontScale = fontScale; }
 		float GetCharSpacing() const { return m_charSpacing; }
+		void SetCharSpacing(float charSpacing) { this->m_charSpacing = charSpacing; }
+
 		float GetFontScale() const { return m_fontScale; }
+		void SetFontScale(float fontScale) { this->m_fontScale = fontScale; }
 
-		void SetAlign(int align) { this->m_align = align; }
 		int GetAlign() const { return m_align; }
+		void SetAlign(int align) { this->m_align = align; }
 
-		void SetTextMargin(float textMargin) { this->m_textMargin = textMargin; }
 		float GetTextMargin() const { return m_textMargin; }
-		
+		void SetTextMargin(float textMargin) { this->m_textMargin = textMargin; }
+
 		Vector2 Measure(const string& text);
 		void Fit(int padding = -2) {
 			Vector2 m = Measure(m_text);

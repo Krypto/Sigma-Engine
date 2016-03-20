@@ -28,6 +28,9 @@
 	std::cout << std::endl;\
 }
 
+#define SIG_FOREACH(var, iterable) \
+	for(auto var = (iterable).begin(); var != (iterable).end(); ++var)
+
 #define SIG_ISINSTANCE(x, y) dynamic_cast<x>(y) != 0
 
 #define PI 3.141592654

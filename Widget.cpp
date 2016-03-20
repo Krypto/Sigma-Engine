@@ -14,6 +14,7 @@ sig::Widget::Widget()
 	m_parent = nullptr;
 	m_font = GUI::DEFAULT_FONT;
 	m_focused = false;
+	m_dockDir = DockDirection::DOCK_NONE;
 }
 
 sig::Widget::~Widget()
@@ -29,13 +30,53 @@ sig::Rect sig::Widget::GetBounds()
 
 	return Rect(m_bounds.x + parentRect.x,
 	            m_bounds.y + parentRect.y,
-	            m_bounds.width, m_bounds.height);
+				m_bounds.width, m_bounds.height);
 }
 
 void sig::Widget::Update(float dt)
 {
-	Vector2 mp = Input::GetMousePosition();
 	Rect b = GetBounds();
+
+	if (m_dockDir != DockDirection::DOCK_NONE) {
+		Rect parentRect;
+		if (m_parent != nullptr) {
+			parentRect = m_parent->GetBounds();
+		} else {
+			parentRect = m_guiManager->GetWindowDimensions();
+		}
+		switch (m_dockDir) {
+			case DockDirection::DOCK_LEFT: {
+				b.y = 0;
+				b.x = 0;
+				b.height = parentRect.height;
+			} break;
+			case DockDirection::DOCK_RIGHT: {
+				b.y = 0;
+				b.x = parentRect.width - b.width;
+				b.height = parentRect.height;
+			} break;
+			case DockDirection::DOCK_TOP: {
+				b.y = 0;
+				b.x = 0;
+				b.width = parentRect.width;
+			} break;
+			case DockDirection::DOCK_BOTTOM: {
+				b.y = parentRect.height - b.height;
+				b.x = 0;
+				b.width = parentRect.width;
+			} break;
+			case DockDirection::DOCK_FILL: {
+				b.y = 0;
+				b.x = 0;
+				b.height = parentRect.height;
+				b.width = parentRect.width;
+			} break;
+			case DockDirection::DOCK_NONE: break;
+		}
+		SetBounds(b);
+	}
+
+	Vector2 mp = Input::GetMousePosition();
 
 	MouseEvent e;
 

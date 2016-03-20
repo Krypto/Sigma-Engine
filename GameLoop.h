@@ -25,8 +25,8 @@ namespace sig
 		 */
 		void LogicStep(double dt);
 		
-		GameLoop* SetGame(BaseGame* game) { this->m_game = game; return this; }
 		BaseGame* GetGame() { return m_game; }
+		GameLoop* SetGame(BaseGame* game) { this->m_game = game; return this; }
 		
 		int GetFPS() { return m_frames; }
 	private:

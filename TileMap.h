@@ -55,20 +55,27 @@ namespace sig
 		
 		void Render(SpriteBatch *batch);
 		
-		void SetMapHeight(int mapHeight) {this->m_mapHeight = mapHeight;}
-		void SetMapWidth(int mapWidth) {this->m_mapWidth = mapWidth;}
-		void SetTexture(Texture2D* texture) {this->m_texture = texture;}
-		void SetTileHeight(int tileHeight) {this->m_tileHeight = tileHeight;}
-		void SetTileWidth(int tileWidth) {this->m_tileWidth = tileWidth;}
-		const map<int, vector<int>>& GetMap() const {return m_map;}
-		int GetMapHeight() const {return m_mapHeight;}
-		int GetMapWidth() const {return m_mapWidth;}
-		Texture2D* GetTexture() {return m_texture;}
-		int GetTileHeight() const {return m_tileHeight;}
-		int GetTileWidth() const {return m_tileWidth;}
+		int GetMapHeight() const { return m_mapHeight; }
+		void SetMapHeight(int mapHeight) { this->m_mapHeight = mapHeight; }
+
+		int GetMapWidth() const { return m_mapWidth; }
+		void SetMapWidth(int mapWidth) { this->m_mapWidth = mapWidth; }
+
+		Texture2D* GetTexture() { return m_texture; }
+		void SetTexture(Texture2D* texture) { this->m_texture = texture; }
+
+		int GetTileHeight() const { return m_tileHeight; }
+		void SetTileHeight(int tileHeight) { this->m_tileHeight = tileHeight; }
+
+		int GetTileWidth() const { return m_tileWidth; }
+		void SetTileWidth(int tileWidth) { this->m_tileWidth = tileWidth; }
+
+		const map<int, vector<int>>& GetMap() const { return m_map; }
+
 		u32 GetProjection() const;
 		void SetProjection(const u32 &projection);
 
+		COMPONENT_NAME("TileMap")
 	private:
 		int m_tileWidth, m_tileHeight;
 		int m_mapWidth, m_mapHeight;

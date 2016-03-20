@@ -1,6 +1,7 @@
 #include "Scene.h"
 #include "BaseGame.h"
 #include "SIG_OpenGL.h"
+#include "SIG_Utilities.h"
 #include "Window.h"
 
 sig::Scene::Scene(BaseGame *game)
@@ -41,7 +42,8 @@ void sig::Scene::BeginContact(b2Contact* contact)
 	
 	if (to) {
 		vector<Component*> bvs = to->GetComponents();
-		for (auto it = bvs.begin(); it != bvs.end(); ++it) {
+		SIG_FOREACH(it, bvs)
+		{
 			Component *b = (*it);
 			b->CollisionEnter(col);
 		}
@@ -62,7 +64,8 @@ void sig::Scene::EndContact(b2Contact* contact)
 	
 	if (to) {
 		vector<Component*> bvs = to->GetComponents();
-		for (auto it = bvs.begin(); it != bvs.end(); ++it) {
+		SIG_FOREACH(it, bvs)
+		{
 			Component *b = (*it);
 			b->CollisionExit(col);
 		}
@@ -140,7 +143,8 @@ vector<sig::Node*> sig::Scene::GetAllNodes(Node* r)
 	vector<Node*> nodes;
 
 	if (r->GetChildren().size() > 0) {
-		for (auto it = r->GetChildren().begin(); it != r->GetChildren().end(); ++it) {
+		SIG_FOREACH(it, r->GetChildren())
+		{
 			nodes.push_back(*it);
 
 			vector<Node*> subn = GetAllNodes(*it);

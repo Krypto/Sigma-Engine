@@ -123,7 +123,8 @@ void sig::AnimatedSprite::SetAnimation(string name)
 
 sig::Animation* sig::AnimatedSprite::GetAnim(string name)
 {
-	for (auto it = m_animations.begin(); it != m_animations.end(); ++it) {
+	SIG_FOREACH(it, m_animations)
+	{
 		if ((*it)->name == name) {
 			return (*it);
 		}

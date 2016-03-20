@@ -20,7 +20,9 @@ void sig::Label::Render()
 			xa = GetBounds().width / 2 - Measure(m_text).X() / 2;
 			break;
 		case ALIGN_RIGHT:
-			xa = (GetBounds().width - Measure(m_text).X()) - m_textMargin;
+			float m = (float(m_font->GetWidth()) / 16.0f);
+			float xp = (m + m_charSpacing) * m_fontScale;
+			xa = (GetBounds().width - Measure(m_text).X()) - (m_textMargin + xp);
 			break;
 	}
 	float ya = GetBounds().height / 2 - Measure(m_text).Y() / 2;

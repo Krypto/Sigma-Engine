@@ -38,7 +38,8 @@ namespace sig
 		 * @param loop Animation loop
 		 * @param frames Animation frame indices
 		 */
-		Animation* AddAnimation(string name, float speed, bool loop, std::initializer_list<int> frames);
+		Animation* AddAnimation(string name, float speed, bool loop,
+								std::initializer_list<int> frames);
 		
 		/**
 		 * @brief Sets the frame of the current animation
@@ -59,14 +60,14 @@ namespace sig
 		 */
 		void Configure(int rows, int cols);
 		
-		int GetCols() const {return m_cols;}
-		int GetRows() const {return m_rows;}
+		int GetCols() const { return m_cols; }
+		int GetRows() const { return m_rows; }
 		
-		void SetStatic(bool _static) {this->m_static = _static;}
-		bool IsStatic() const {return m_static;}
+		void SetStatic(bool _static) { this->m_static = _static; }
+		bool IsStatic() const { return m_static; }
 		
-		Animation* GetCurrent() {return m_current;}
-		const vector<Animation*>& GetAnimations() const {return m_animations;}
+		Animation* GetCurrent() { return m_current; }
+		const vector<Animation*>& GetAnimations() const { return m_animations; }
 				
 		void Update(float dt);
 		

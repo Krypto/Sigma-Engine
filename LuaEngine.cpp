@@ -9,7 +9,9 @@
 
 sig::Lua::Lua()
 	:	L(luaL_newstate())
-{ luaL_openlibs(L); }
+{
+	luaL_openlibs(L);
+}
 
 sig::Lua::~Lua()
 {

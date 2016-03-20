@@ -44,17 +44,17 @@ namespace sig {
 
 		Color& GetStartColor() { return m_startColor; }
 		Color& GetEndColor() { return m_endColor; }
-		float GetParticleSpread() const { return m_particleSpread; }
-		float GetParticleLife() const { return m_particleLife; }
-		float GetParticleSpeed() const { return m_particleSpeed; }
+		float& GetParticleSpread() { return m_particleSpread; }
+		float& GetParticleLife() { return m_particleLife; }
+		float& GetParticleSpeed() { return m_particleSpeed; }
 		Texture2D* GetTexture() { return m_texture; }
 		BlendMode& GetParticleBlend() { return m_particleBlend; }
 		Vector2& GetParticleAcceleration() { return m_particleAccel; }
-		float GetParticleAngularVelocity() { return m_particleAngularVelocity; }
-		float GetParticleStartSize() const { return m_particleStartSize; }
-		float GetParticleEndSize() const { return m_particleEndSize; }
-		float GetEmitRate() const { return m_emitRate; }
-		bool IsEnabled() const { return m_enabled; }
+		float& GetParticleAngularVelocity() { return m_particleAngularVelocity; }
+		float& GetParticleStartSize() { return m_particleStartSize; }
+		float& GetParticleEndSize() { return m_particleEndSize; }
+		float& GetEmitRate() { return m_emitRate; }
+		bool& IsEnabled() { return m_enabled; }
 
 		void SetStartColor(const Color& col) { m_startColor = col; }
 		void SetEndColor(const Color& col) { m_endColor = col; }

@@ -49,7 +49,8 @@ void sig::TileMap::Render(SpriteBatch *batch)
 			float px = 0.0f;
 			float py = 0.0f;
 
-			for (auto it = m_map.begin(); it != m_map.end(); ++it) {
+			SIG_FOREACH(it, m_map)
+			{
 				int layer			= it->first;
 				vector<int> data	= it->second;
 
@@ -157,7 +158,8 @@ void sig::TileMap::LoadFromJSONString(const string &data)
 		m_map.clear();
 
 		picojson::value::object &objl = layers.get<picojson::object>();
-		for (auto it = objl.begin(); it != objl.end(); ++it) {
+		SIG_FOREACH(it, objl)
+		{
 			std::string layerstr = it->first;
 			int layer = ToNumber<int>(layerstr);
 			picojson::array _data = it->second.get<picojson::array>();

@@ -23,9 +23,7 @@ sig::ResourceManager* sig::ResourceManager::Instance()
 void sig::ResourceManager::Release()
 {
 	if (ms_instance != nullptr) {
-		for (auto 	it	= ms_instance->m_resources.begin();
-		     it != ms_instance->m_resources.end();
-			 it++)
+		SIG_FOREACH(it, ms_instance->m_resources)
 		{
 			SIG_FREE((*it).second);
 		}
@@ -37,9 +35,7 @@ void sig::ResourceManager::AddResource(const string &name, const string &fileNam
 {
 	currentRID++;
 
-	for (auto it	= m_resources.begin();
-	     it != m_resources.end();
-		 it++)
+	SIG_FOREACH(it, m_resources)
 	{
 		if ((*it).second->m_fileName == fileName) {
 			return;
@@ -69,9 +65,7 @@ sig::Resource* sig::ResourceManager::GetResource(const RID& resourceID)
 
 sig::Resource* sig::ResourceManager::GetResource(const string& name)
 {
-	for (auto it	= m_resources.begin();
-	     it != m_resources.end();
-		 it++)
+	SIG_FOREACH(it, m_resources)
 	{
 		if ((*it).second->m_name == name) {
 			return GetResource((*it).second->m_rid);
@@ -82,9 +76,7 @@ sig::Resource* sig::ResourceManager::GetResource(const string& name)
 
 void sig::ResourceManager::LoadAll()
 {
-	for (auto it	= m_resources.begin();
-	     it != m_resources.end();
-		 it++)
+	SIG_FOREACH(it, m_resources)
 	{
 		if ((*it).second) {
 			if (!(*it).second->m_loaded) {

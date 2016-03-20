@@ -15,6 +15,7 @@ void sig::Sprite::Render(SpriteBatch* batch)
 		}
 	}
 }
+
 int sig::Sprite::GetDrawOrder() const
 {
     return m_drawOrder;

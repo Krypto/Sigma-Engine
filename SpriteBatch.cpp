@@ -71,7 +71,8 @@ void sig::SpriteBatch::Begin(GlyphSortingMode sortingMode)
 	m_sortingMode = sortingMode;
 	m_renderBatches.clear();
 	
-	for (auto it = m_glyphs.begin(); it != m_glyphs.end(); ++it) {
+	SIG_FOREACH(it, m_glyphs)
+	{
 		SIG_FREE(*it);
 	}
 	
@@ -177,7 +178,8 @@ void sig::SpriteBatch::Render()
 	Shader *previous = nullptr;
 	glBindVertexArray(m_vao);
 	
-	for (auto it = m_renderBatches.begin(); it != m_renderBatches.end(); ++it) {
+	SIG_FOREACH(it, m_renderBatches)
+	{
 		RenderBatch b = *it;
 		
 		glPushMatrix();

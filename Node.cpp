@@ -26,7 +26,8 @@ sig::Node::Node()
 
 sig::Node::~Node()
 {
-	for (auto it = m_components.begin(); it != m_components.end(); ++it) {
+	SIG_FOREACH(it, m_components)
+	{
 		Component *comp = *it;
 		// This prevents double-freeing the pointer
 		if (comp->GetUsers() > 1) {
@@ -35,21 +36,24 @@ sig::Node::~Node()
 			SIG_FREE((*it));
 		}
 	}
-	for (auto it = m_children.begin(); it != m_children.end(); ++it) {
+	SIG_FOREACH(it, m_children)
+	{
 		SIG_FREE((*it));
 	}
 }
 
 void sig::Node::Initialize()
 {
-	for (auto it = m_components.begin(); it != m_components.end(); ++it) {
+	SIG_FOREACH(it, m_components)
+	{
 		Component *comp = *it;
 		if (!comp->m_initialized) {
 			comp->Initialize();
 			comp->m_initialized = true;
 		}
 	}
-	for (auto it = m_children.begin(); it != m_children.end(); ++it) {
+	SIG_FOREACH(it, m_children)
+	{
 		Node *child = *it;
 		if (child == nullptr) {
 			continue;
@@ -62,7 +66,8 @@ void sig::Node::Initialize()
 
 void sig::Node::Render(SpriteBatch *batch)
 {
-	for (auto it = m_children.begin(); it != m_children.end(); ++it) {
+	SIG_FOREACH(it, m_children)
+	{
 		Node *child = *it;
 		if (child == nullptr) {
 			continue;
@@ -71,8 +76,8 @@ void sig::Node::Render(SpriteBatch *batch)
 			child->Render(batch);
 		}
 	}
-
-	for (auto it = m_components.begin(); it != m_components.end(); ++it) {
+	SIG_FOREACH(it, m_components)
+	{
 		Component *comp = *it;
 		if (!comp->IsEnabled()) {
 			continue;
@@ -105,7 +110,8 @@ void sig::Node::Update(float dt)
 		}
 	}
 
-	for (auto it = m_components.begin(); it != m_components.end(); ++it) {
+	SIG_FOREACH(it, m_components)
+	{
 		Component *comp = *it;
 		if (!comp->IsEnabled()) {
 			continue;
@@ -115,8 +121,8 @@ void sig::Node::Update(float dt)
 			comp->m_updated = true;
 		}
 	}
-
-	for (auto it = m_children.begin(); it != m_children.end(); ++it) {
+	SIG_FOREACH(it, m_children)
+	{
 		Node *child = *it;
 		if (child == nullptr) {
 			continue;
@@ -127,7 +133,8 @@ void sig::Node::Update(float dt)
 	}
 
 	if (m_childrenQueue.size() > 0) {
-		for (auto it = m_childrenQueue.begin(); it != m_childrenQueue.end(); ++it) {
+		SIG_FOREACH(it, m_childrenQueue)
+		{
 			Node *child = *it;
 			child->Initialize();
 			m_children.push_back(child);
@@ -136,7 +143,8 @@ void sig::Node::Update(float dt)
 	}
 
 	if (m_childrenDeleteQueue.size() > 0) {
-		for (auto it = m_childrenDeleteQueue.begin(); it != m_childrenDeleteQueue.end(); ++it) {
+		SIG_FOREACH(it, m_childrenDeleteQueue)
+		{
 			Node *child = *it;
 			auto pos = std::find(m_children.begin(), m_children.end(), child);
 			if (pos != m_children.end()) {
@@ -149,7 +157,8 @@ void sig::Node::Update(float dt)
 
 void sig::Node::Finalize()
 {
-	for (auto it = m_components.begin(); it != m_components.end(); ++it) {
+	SIG_FOREACH(it, m_components)
+	{
 		Component *comp = *it;
 		if (!comp->IsEnabled()) {
 			continue;
@@ -158,7 +167,8 @@ void sig::Node::Finalize()
 			comp->m_updated = false;
 		}
 	}
-	for (auto it = m_children.begin(); it != m_children.end(); ++it) {
+	SIG_FOREACH(it, m_children)
+	{
 		Node *child = *it;
 		child->Finalize();
 	}
@@ -185,7 +195,8 @@ sig::math::Matrix4 sig::Node::GetParentTransformMatrix()
 
 sig::Component *sig::Node::GetComponent(const string &nametype)
 {
-	for (auto it = m_components.begin(); it != m_components.end(); ++it) {
+	SIG_FOREACH(it, m_components)
+	{
 		Component *c = *it;
 		if (c->GetName() == nametype) {
 			return c;
@@ -244,7 +255,8 @@ void sig::Node::RemoveChild(Node* c)
 	auto pos = std::find(m_children.begin(), m_children.end(), c);
 	if (pos != m_children.end()) {
 		auto comps = c->GetComponents();
-		for (auto it = comps.begin(); it != comps.end(); ++it) {
+		SIG_FOREACH(it, comps)
+		{
 			(*it)->RemoveUser();
 		}
 		delete m_children[std::distance(m_children.begin(), pos)];
@@ -264,12 +276,14 @@ sig::Node* sig::Node::GetInstance()
 	newNode->m_name			= m_name;
 	newNode->m_scene		= m_scene;
 
-	for (auto it = m_children.begin(); it != m_children.end(); ++it) {
+	SIG_FOREACH(it, m_children)
+	{
 		Node *child = *it;
 		newNode->AddChild(child->GetInstance());
 	}
 
-	for (auto it = m_components.begin(); it != m_components.end(); ++it) {
+	SIG_FOREACH(it, m_components)
+	{
 		Component *comp = *it;
 		newNode->AddComponent(comp->GetInstance(newNode));
 	}
@@ -279,7 +293,8 @@ sig::Node* sig::Node::GetInstance()
 
 sig::Node* sig::Node::GetChild(const string &name)
 {
-	for (auto it = m_children.begin(); it != m_children.end(); ++it) {
+	SIG_FOREACH(it, m_children)
+	{
 		Node *child = *it;
 		if (child->GetName() == name) {
 			return *it;
@@ -312,7 +327,8 @@ sig::Node* sig::Node::AddChildInactive(Node* c)
 sig::Node* sig::Node::RemoveChildInactive(const string &name)
 {
 	Node *n;
-	for (auto it = m_inactiveChildren.begin(); it != m_inactiveChildren.end(); ++it) {
+	SIG_FOREACH(it, m_inactiveChildren)
+	{
 		Node *child = *it;
 		if (child->GetName() == name) {
 			n = *it;
@@ -332,7 +348,8 @@ sig::Node* sig::Node::RemoveChildInactive(const string &name)
 
 sig::Node* sig::Node::GetChildInactive(const string &name)
 {
-	for (auto it = m_inactiveChildren.begin(); it != m_inactiveChildren.end(); ++it) {
+	SIG_FOREACH(it, m_inactiveChildren)
+	{
 		Node *child = *it;
 		if (child->GetName() == name) {
 			return *it;
@@ -347,7 +364,8 @@ void sig::Node::SendMessage(const string &to, const string &body, float delay, v
 
 	if (!to.empty()) {
 		auto nodes = m_scene->GetAllNodes();
-		for (auto it = nodes.begin(); it != nodes.end(); ++it) {
+		SIG_FOREACH(it, nodes)
+		{
 			Node *current = *it;
 			if (current->GetName() == to) {
 				nto = current;
@@ -429,7 +447,8 @@ void sig::Node::CreatePolygonFixture(const vector<Vector2> &points, float densit
 {
 	b2PolygonShape shape;
 	vector<b2Vec2> pts;
-	for (auto it = points.begin(); it != points.end(); ++it) {
+	SIG_FOREACH(it, points)
+	{
 		Vector2 p = *it;
 		pts.push_back(b2Vec2(p.X(), p.Y()));
 	}

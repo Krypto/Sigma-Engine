@@ -22,8 +22,8 @@ namespace sig
 		
 		void SetText(const string& text);
 
-		void SetMasked(bool masked) { this->m_masked = masked; }
 		bool IsMasked() const { return m_masked; }
+		void SetMasked(bool masked) { this->m_masked = masked; }
 
 		void SetCallback(function<void()> callback) { m_changeCallback = callback; }
 

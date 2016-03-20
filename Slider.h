@@ -9,7 +9,7 @@ namespace sig
 
 	class Slider : public Label
 	{
-		friend class ListView;
+		friend class ScrollArea;
 	public:
 		enum {
 			VERTICAL = 2,
@@ -22,6 +22,7 @@ namespace sig
 		void OnMouseDown(MouseEvent e);
 		void OnMouseMove(MouseEvent e);
 		void Render();
+		void Update(float dt);
 
 		bool IsShowingValue() const { return m_showValue; }
 		void SetShowValue(bool showValue) { this->m_showValue = showValue; }
@@ -52,7 +53,7 @@ namespace sig
 	protected:
 		float m_min, m_max, m_value;
 		float m_x, m_increment;
-		bool m_showValue, drag;
+		bool m_showValue, drag, init;
 		int m_orientation;
 		function<void()> m_changeCallback;
 		string m_suffix;

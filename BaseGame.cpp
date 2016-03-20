@@ -87,8 +87,8 @@ void sig::BaseGame::SIG_Init(Window *w)
 {
 	m_window = w;
 
-	MessageNetwork::Instance()->SetGame(this);
 	ResourceManager::Instance()->LoadAll();
+	MessageNetwork::Instance()->SetGame(this);
 	
 	m_spriteBatch = new SpriteBatch();
 	m_spriteBatch->Initialize();

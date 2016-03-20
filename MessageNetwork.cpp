@@ -37,7 +37,8 @@ void sig::MessageNetwork::QueueMessage(Node *from, Node *to, string body, float 
 
 void sig::MessageNetwork::Update(float dt)
 {
-	for (auto it = m_messageQueue.begin(); it != m_messageQueue.end(); ++it) {
+	SIG_FOREACH(it, m_messageQueue)
+	{
 		Message *msg = (*it);
 		if (msg->m_timeout > 0) {
 			msg->m_timeout -= dt;
@@ -48,7 +49,8 @@ void sig::MessageNetwork::Update(float dt)
 	}
 
 	if ( m_deleteQueue.size() > 0) {
-		for (auto it = m_deleteQueue.begin(); it != m_deleteQueue.end(); ++it) {
+		SIG_FOREACH(it, m_deleteQueue)
+		{
 			auto pos = std::find(m_messageQueue.begin(), m_messageQueue.end(), (*it));
 			if (pos != m_messageQueue.end()) {
 				m_messageQueue.erase(pos);
@@ -66,18 +68,21 @@ void sig::MessageNetwork::MessageSend(Message* msg)
 
 	if (to == nullptr) {
 		auto nodes = m_game->GetCurrentScene()->GetAllNodes();
-		for (auto it = nodes.begin(); it != nodes.end(); ++it) {
-			auto behavs = (*it)->GetComponents();
-			for (auto bi = behavs.begin(); bi != behavs.end(); ++bi) {
-				Component* b = (*bi);
-				b->MessageReceived(*msg);
+		SIG_FOREACH(it, nodes)
+		{
+			auto components = (*it)->GetComponents();
+			SIG_FOREACH(cit, components)
+			{
+				Component* c = (*cit);
+				c->MessageReceived(*msg);
 			}
 		}
 	} else {
-		auto behavs = to->GetComponents();
-		for (auto bi = behavs.begin(); bi != behavs.end(); ++bi) {
-			Component* b = (*bi);
-			b->MessageReceived(*msg);
+		auto components = to->GetComponents();
+		SIG_FOREACH(it, components)
+		{
+			Component* c = (*it);
+			c->MessageReceived(*msg);
 		}
 	}
 }

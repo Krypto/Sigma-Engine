@@ -51,6 +51,7 @@ namespace sig {
 
 		Script *RunScriptModule(const string &fileName);
 		Script *RunStringModule(const string &moduleName, const string &expression);
+
 		void RunScript(const string &fileName);
 		void RunString(const string &expression);
 	private:

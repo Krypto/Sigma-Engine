@@ -77,8 +77,8 @@ namespace sig
 		 */
 		virtual void CollisionExit(const Collision &col) {}
 		
-		void SetEnabled(bool enabled) { this->m_enabled = enabled; }
 		bool IsEnabled() const { return m_enabled; }
+		void SetEnabled(bool enabled) { this->m_enabled = enabled; }
 		
 		virtual Component* GetInstance(Node* owner) {
 			return new Component(owner);
@@ -96,7 +96,6 @@ namespace sig
 		int GetUsers() const { return m_users; }
 		
 		COMPONENT_NAME("Component")
-
 	protected:
 		int m_users;
 		bool m_initialized;

@@ -37,26 +37,29 @@ void sig::ListView::Render()
 	Widget::Render();
 
 	Color item_sel_color = m_backColor.Brightness(4.0f);
+	item_sel_color.a = 0.4f;
+	m_bounds.height = 0;
 
 	float ch = (float(m_font->GetHeight()) / 16.0f);
-	int item_width = GetBounds().width;
-	int height = 0;
-	int ypos = GetBounds().y;
-	Rect item_rect = Rect(GetBounds().x, GetBounds().y, item_width, 0);
+	int index = 0;
 
-	for (auto it = m_items.begin(); it != m_items.end(); ++it) {
+	SIG_FOREACH(it, m_items)
+	{
 		ListViewItem *item = (*it);
+		Rect item_rect = Rect(GetBounds().x,
+							  GetBounds().y + index * item->item_height,
+							  GetBounds().width, 0);
+
+		GFX::SetFillColor(Color::WHITE);
+		item->Render();
+
 		item_rect.height = item->item_height;
-		item_rect.y = ypos;
 		item->item_rect = item_rect;
 
 		if (item->selected) {
 			GFX::SetFillColor(item_sel_color);
 			GFX::DrawRectangle(item_rect);
 		}
-
-		GFX::SetFillColor(Color::WHITE);
-		item->Render();
 
 		if (!item->ToString().empty()) {
 			float ya = item_rect.height / 2 - ch / 2;
@@ -66,10 +69,9 @@ void sig::ListView::Render()
 						  m_font, 1.0f, -10.0f);
 		}
 
-		ypos += item->item_height;
-		height += item->item_height;
+		m_bounds.height += item->item_height;
+		index++;
 	}
-	m_bounds.height = height;
 }
 
 void sig::ListView::OnMouseDown(sig::MouseEvent e)
@@ -78,7 +80,9 @@ void sig::ListView::OnMouseDown(sig::MouseEvent e)
 	Rect item_rect = Rect(0, 0, item_width, 0);
 	int index = 0;
 	int ypos = 0;
-	for (auto it = m_items.begin(); it != m_items.end(); ++it) {
+
+	SIG_FOREACH(it, m_items)
+	{
 		ListViewItem *item = (*it);
 		item_rect.height = item->item_height;
 		item_rect.y = ypos;
@@ -95,6 +99,8 @@ void sig::ListView::OnMouseDown(sig::MouseEvent e)
 
 void sig::Texture2DItem::Render()
 {
-	Rect mr = item_rect.Inflated(-2, -2);
-	GFX::DrawRectangle(mr, m_data);
+	item_height = 32;
+	Rect mr = item_rect;
+	mr.width = 32;
+	GFX::DrawRectangle(mr.Inflated(-1, -1), m_data);
 }

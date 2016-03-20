@@ -31,10 +31,16 @@ namespace sig
 		
 		SoundSystem* GetSoundSystem();
 
-		Window* GetWindow() {return m_window;}
+		Window* GetWindow() { return m_window; }
 
-		SpriteBatch* GetSpriteBatch() {return m_spriteBatch;}
+		SpriteBatch* GetSpriteBatch() { return m_spriteBatch; }
 		
+		Scene* GetCurrentScene() {
+			if (m_currentScene == nullptr) {
+				m_currentScene = new Scene(this);
+			}
+			return m_currentScene;
+		}
 		void SetCurrentScene(Scene* currentScene) {
 			this->m_currentScene = currentScene;
 			if (this->m_currentScene != nullptr) {
@@ -42,13 +48,7 @@ namespace sig
 				this->m_currentScene->Initialize();
 			}
 		}
-		Scene* GetCurrentScene() {
-			if (m_currentScene == nullptr) {
-				m_currentScene = new Scene(this);
-			}
-			return m_currentScene;
-		}
-		
+
 		void Restart();
 		void Pause();
 		void Resume();

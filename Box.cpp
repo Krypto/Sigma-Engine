@@ -11,6 +11,8 @@ sig::Box::Box()
 	m_orientation = ORIENTATION_VERTICAL;
 	m_backColor = Color::FromColorAlpha(Color::DARK_BLUE, 0.4f);
 	m_tab_left = false;
+	m_fit = false;
+	m_draw_background = true;
 }
 
 void sig::Box::AddWidget(Widget* widget)
@@ -30,27 +32,41 @@ void sig::Box::AddWidget(Widget* widget)
 
 void sig::Box::Update(float dt)
 {
+	Widget::Update(dt);
+
 	int current_widget_pos = 0;
-	int size = 0;
-	for (auto it = m_widgets.begin(); it != m_widgets.end(); ++it) {
-		Widget *w = (*it);
+
+	if (!m_fit) {
+		int size = 0;
+		SIG_FOREACH(it, m_widgets)
+		{
+			Widget *w = (*it);
+			if (m_orientation == ORIENTATION_VERTICAL) {
+				size += w->m_bounds.height + m_spacing;
+			} else {
+				size += w->m_bounds.width + m_spacing;
+			}
+		}
+
+		size += m_padding * 2;
 		if (m_orientation == ORIENTATION_VERTICAL) {
-			size += w->m_bounds.height + m_spacing;
+			m_bounds.height = size;
 		} else {
-			size += w->m_bounds.width + m_spacing;
+			m_bounds.width = size;
 		}
 	}
 
-	size += m_padding * 2;
-	if (m_orientation == ORIENTATION_VERTICAL) {
-		m_bounds.height = size;
-	} else {
-		m_bounds.width = size;
-	}
+	int padding_size = (m_widgets.size() * m_spacing);
 
-	for (auto it = m_widgets.begin(); it != m_widgets.end(); ++it) {
+	SIG_FOREACH(it, m_widgets)
+	{
 		Widget *w = (*it);
 		if (m_orientation == ORIENTATION_VERTICAL) {
+			if (m_fit) {
+				int wsize = m_bounds.height / m_widgets.size();
+				w->m_bounds.height = wsize + padding_size;
+			}
+
 			w->m_bounds.y = m_padding + current_widget_pos;
 			w->m_bounds.x = m_padding;
 			w->m_bounds.width = m_bounds.width - m_padding * 2;
@@ -61,6 +77,11 @@ void sig::Box::Update(float dt)
 
 			current_widget_pos += w->m_bounds.height + m_spacing;
 		} else {
+			if (m_fit) {
+				int wsize = m_bounds.width / m_widgets.size();
+				w->m_bounds.width = wsize - (padding_size + m_padding/2);
+			}
+
 			w->m_bounds.y = m_padding;
 			w->m_bounds.x = m_padding + current_widget_pos;
 			w->m_bounds.height = m_bounds.height - m_padding * 2;
@@ -72,6 +93,8 @@ void sig::Box::Update(float dt)
 
 void sig::Box::Render()
 {
-	GFX::SetFillColor(m_backColor);
-	GFX::DrawRectangle(GetBounds());
+	if (m_draw_background) {
+		GFX::SetFillColor(m_backColor);
+		GFX::DrawRectangle(GetBounds());
+	}
 }

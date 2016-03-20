@@ -36,16 +36,20 @@ namespace sig
 		Node();
 		virtual ~Node();
 
-		void SetOrigin(const Vector2& origin);
-		void SetPosition(const Vector2& position);
-		void SetRotation(float rotation);
-		void SetSize(const Vector2& size) { this->m_size = size; }
-		void SetScale(const Vector2& scale) { this->m_scale = scale; }
 		Vector2& GetOrigin() { return m_origin; }
+		void SetOrigin(const Vector2& origin);
+
 		Vector2& GetPosition() { return m_position; }
+		void SetPosition(const Vector2& position);
+
 		float GetRotation() const { return m_rotation; }
+		void SetRotation(float rotation);
+
 		Vector2& GetSize() { return m_size; }
+		void SetSize(const Vector2& size) { this->m_size = size; }
+
 		Vector2& GetScale() { return m_scale; }
+		void SetScale(const Vector2& scale) { this->m_scale = scale; }
 
 		math::Matrix4 GetTransformMatrix();
 		math::Matrix4 GetParentTransformMatrix();
@@ -77,15 +81,15 @@ namespace sig
 		
 		b2Body* GetPhysicsBody() { return m_physicsBody; }
 		
-		Node* SetTag(const string& tag) {this->m_tag = tag; return this;}
-		const string& GetTag() const {return m_tag;}
+		const string& GetTag() const { return m_tag; }
+		void SetTag(const string& tag) { this->m_tag = tag; }
 
-		void SetName(const string& name) {this->m_name = name;}
-		const string& GetName() const {return m_name;}
+		const string& GetName() const { return m_name; }
+		void SetName(const string& name) { this->m_name = name; }
 
 		bool IsDead() const { return m_dead; }
 		
-		Scene* GetScene() {return m_scene;}
+		Scene* GetScene() { return m_scene; }
 		
 		/**
 		 * @brief Send a message to a specific Node through the MessageNetwork

@@ -28,11 +28,21 @@ namespace sig
 		int key;
 	} KeyboardEvent;
 	
+	enum class DockDirection {
+		DOCK_LEFT,
+		DOCK_TOP,
+		DOCK_BOTTOM,
+		DOCK_RIGHT,
+		DOCK_FILL,
+		DOCK_NONE
+	};
+
 	class GUI;
 	class Widget
 	{
 		friend class GUI;
 		friend class Box;
+		friend class ScrollArea;
 	public:
 		enum class WType {
 			NUMBER,
@@ -52,14 +62,17 @@ namespace sig
 		Widget();
 		virtual ~Widget();
 		
-		void SetBackColor(const Color& backColor) {this->m_backColor = backColor;}
-		void SetBounds(const Rect& bounds) {this->m_bounds = bounds;}
-		void SetTextColor(const Color& textColor) {this->m_textColor = textColor;}
+		const Color& GetBackColor() const { return m_backColor; }
+		void SetBackColor(const Color& backColor) { this->m_backColor = backColor; }
 
-		const Color& GetBackColor() const {return m_backColor;}
 		Rect GetBounds();
-		Widget* GetParent() {return m_parent;}
-		const Color& GetTextColor() const {return m_textColor;}
+		void SetBounds(const Rect& bounds) { this->m_bounds = bounds; }
+
+		const Color& GetTextColor() const { return m_textColor; }
+		void SetTextColor(const Color& textColor) { this->m_textColor = textColor; }
+
+		Widget* GetParent() { return m_parent; }
+
 		int GetZIndex() const { return m_zindex; }
 		
 		void SetWidth(float w) {
@@ -75,10 +88,14 @@ namespace sig
 		}
 		
 		bool IsActive() const { return m_active; }
-		Widget* SetActive(bool active) { m_active = active; return this; }		
+		Widget* SetActive(bool active) { m_active = active; return this; }
+
 		bool IsFocused() const { return m_focused; }
 		virtual bool IsSensitive() { return true; }
 		
+		DockDirection GetDockDirection() const { return m_dockDir; }
+		void SetDockDirection(const DockDirection& dock) { m_dockDir = dock; }
+
 		GUI* GetGUIManager() { return m_guiManager; }
 		
 		virtual void OnMouseUp		(MouseEvent e) {}
@@ -91,7 +108,7 @@ namespace sig
 		virtual void OnBlur			(MouseEvent e) {}
 		
 		virtual void OnKeyPress		(int e) { }
-		
+
 		virtual void Update(float dt);
 		virtual void Render();
 	protected:
@@ -101,6 +118,7 @@ namespace sig
 		
 		Color m_textColor;
 		Color m_backColor;
+		DockDirection m_dockDir;
 		
 		bool m_active;
 		bool m_focused;
