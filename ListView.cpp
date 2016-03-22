@@ -15,20 +15,19 @@ sig::ListViewItem *sig::ListView::GetItem(int index)
 
 void sig::ListView::SetSelected(int sel)
 {
-	if (sel != m_selected) {
-		ListViewItem *prev = GetItem(m_selected);
-		if (prev != nullptr) {
-			prev->selected = false;
-		}
-		m_selected = sel;
-		ListViewItem *selected = GetItem(m_selected);
-		if (selected != nullptr) {
-			selected->selected = true;
-		}
+	ListViewItem *prev = GetItem(m_selected);
+	if (prev != nullptr) {
+		prev->selected = false;
+	}
 
-		if (m_selectedCallback) {
-			m_selectedCallback();
-		}
+	ListViewItem *selected = GetItem(sel);
+	if (selected != nullptr) {
+		selected->selected = true;
+	}
+	m_selected = sel;
+
+	if (m_selectedCallback) {
+		m_selectedCallback();
 	}
 }
 

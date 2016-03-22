@@ -14,7 +14,7 @@ namespace sig
 		
 		void ApplyTransformation(int w, int h);
 	
-		float GetZoom() const { return m_zoom; }
+		float& GetZoom() { return m_zoom; }
 		void SetZoom(float zoom) {
 			if (zoom >= 0.01f) {
 				this->m_zoom = zoom;

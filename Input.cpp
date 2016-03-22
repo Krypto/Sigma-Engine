@@ -122,6 +122,11 @@ void sig::Input::SetCursorVisibility(bool cur)
 	SDL_ShowCursor(cur ? 1 : 0);
 }
 
+void sig::Input::SetCursorType(sig::CursorType type)
+{
+	SDL_SetCursor(SDL_CreateSystemCursor((SDL_SystemCursor)type));
+}
+
 bool sig::Input::GetModifier(int mod)
 {
 	return m_inputMod & mod;

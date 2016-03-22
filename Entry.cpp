@@ -38,6 +38,16 @@ sig::Entry::Entry()
 	m_bounds.height = 18;
 }
 
+void sig::Entry::OnMouseLeave()
+{
+	Input::SetCursorType(CursorType::CUSSOR_NORMAL);
+}
+
+void sig::Entry::OnMouseEnter()
+{
+	Input::SetCursorType(CursorType::CURSOR_IBEAM);
+}
+
 void sig::Entry::OnMouseDown(MouseEvent e)
 {
 	float xpos = 0;

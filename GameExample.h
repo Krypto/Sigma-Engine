@@ -5,12 +5,40 @@
 using namespace sig;
 using namespace math;
 
+class BlendModeListViewItem : public ListViewItem
+{
+public:
+	BlendModeListViewItem(BlendMode mode)
+		:	ListViewItem(),
+			bmode(mode)
+	{}
+
+	virtual string ToString() {
+		switch (bmode) {
+			case BlendMode::ADD:
+				return "Add";
+			default:
+			case BlendMode::NORMAL:
+				return "Normal";
+			case BlendMode::MULTIPLY:
+				return "Multiply";
+			case BlendMode::SCREEN:
+				return "Screen";
+		}
+	}
+
+	BlendMode GetBlendMode() const { return bmode; }
+private:
+	BlendMode bmode;
+};
+
 class GameExample : public BaseGame
 {
 public:
 	GameExample() : BaseGame() {
 		NewResource("font", "font2.png", ResourceType::RESOURCE_TEXTURE);
 		NewResource("particle", "particle.png", ResourceType::RESOURCE_TEXTURE);
+		NewResource("smoke", "smoke.png", ResourceType::RESOURCE_TEXTURE);
 	}
 	
 	void Initialize() {
@@ -19,9 +47,14 @@ public:
 
 		p = GetCurrentScene()->CreateNode("p");
 		e = new ParticleEmitter();
-		e->SetTexture(GetResourceData(Texture2D*, "particle"));
-		e->SetParticleBlend(BlendMode::ADD);
+		e->SetTexture(GetResourceData(Texture2D*, "smoke"));
 		p->AddComponent(e);
+
+		ItemList blendModes;
+		blendModes.push_back(new BlendModeListViewItem(BlendMode::NORMAL));
+		blendModes.push_back(new BlendModeListViewItem(BlendMode::ADD));
+		blendModes.push_back(new BlendModeListViewItem(BlendMode::MULTIPLY));
+		blendModes.push_back(new BlendModeListViewItem(BlendMode::SCREEN));
 
 		g = new GUI();
 		GetCurrentScene()->SetGUI(g);
@@ -34,18 +67,28 @@ public:
 
 		g->AddParam("Start Color", &e->GetStartColor());
 		g->AddParam("End Color", &e->GetEndColor());
+
+		ListView *bview = g->AddParam("Blend Mode", &selected_bmode);
+		bview->SetItems(blendModes);
+
+		g->AddButton("Update Blend Mode")->SetCallback([this, bview]() {
+			BlendModeListViewItem *sel = static_cast<BlendModeListViewItem*>(bview->GetItem(selected_bmode));
+			e->SetParticleBlend(sel->GetBlendMode());
+		});
+
 		g->AddParam("Acceleration", &e->GetParticleAcceleration());
 		g->AddParam("Spread", &e->GetParticleSpread(), 0.0f, PI);
 		g->AddParam("Life (s)", &e->GetParticleLife());
 		g->AddParam("E. Rate (s)", &e->GetEmitRate());
 		g->AddParam("Speed", &e->GetParticleSpeed());
+		g->AddParam("Ang. Speed", &e->GetParticleAngularVelocity());
 		g->AddParam("Start Size", &e->GetParticleStartSize());
 		g->AddParam("End Size", &e->GetParticleEndSize());
 		g->AddParam("Enabled", &e->IsEnabled());
 
 		g->EndBox();
 
-		g->BeginBox(Rect(0, 0, 120, 200));
+		g->BeginBox(Rect(0, 0, 150, 200));
 		g->GetCurrentBox()->SetDockDirection(DockDirection::DOCK_RIGHT);
 
 		g->AddLabel("Scene");
@@ -53,16 +96,25 @@ public:
 
 		g->AddParam("Background Color", &GetCurrentScene()->GetBackground());
 
+		g->AddLabel("Current Camera");
+		g->AddSeparator();
+		g->AddParam("Position", &GetCurrentScene()->GetCamera()->GetPosition());
+		g->AddParam("Rotation", &GetCurrentScene()->GetCamera()->GetRotation(), 0.0f, PI);
+		g->AddParam("Zoom", &GetCurrentScene()->GetCamera()->GetZoom(), 0.01f, 4.0f);
+
+		g->AddLabel("Game");
+		g->AddSeparator();
+		g->AddParam("Time Scale", &GetTimeScale());
+
 		g->EndBox();
 
-		GetCurrentScene()->AddChild(p);
+		GetCurrentScene()->AddNode(p);
 	}
 
 	GUI *g;
 	Node *p;
 	ParticleEmitter *e;
-	int selected_texture;
-	ListView *tex_list;
+	int selected_bmode;
 };
 
 #endif // GAME_EXAMPLE

@@ -9,6 +9,7 @@
 #include "IUR.h"
 
 #include <vector>
+#include <queue>
 #include <string>
 using namespace std;
 
@@ -16,10 +17,34 @@ using namespace std;
 
 namespace sig
 {
+	enum class NTRAction {
+		NTR_ADD,
+		NTR_ADD_VOLATILE,
+		NTR_DELETE,
+		NTR_REPARENT,
+		NTR_INSTANTIATE
+	};
+
+	// Node tree modification request
+	class Scene;
+	typedef struct NTR {
+		Node *src;
+		Node *dest;
+		NTRAction action;
+		float time;
+
+		NTR(Node *from, Node *to, NTRAction a, float t = -1)
+			:	src(from), dest(to), action(a), time(t)
+		{}
+
+		void Process(Scene* scene);
+	} NodeTreeRequest;
+
 	class BaseGame;
 	class Scene : public IUR, public b2ContactListener
 	{
 		friend class BaseGame;
+		friend struct NTR;
 	public:
 		Scene(BaseGame *game);
 		~Scene();
@@ -41,14 +66,16 @@ namespace sig
 		 */
 		Node* CreateNode(const string &name);
 		
-		Node* AddChild(Node *c, float lifeTime=-1);
-		void RemoveChild(Node *c);
-		Node* Instantiate(Node* node, float time=-1);
-		Node* GetChild(const string &name);
+		void AddNode(Node *c, float lifeTime=-1);
+		void RemoveNode(Node *c);
+		void Instantiate(Node* node, float time=-1);
+		Node* GetNode(const string &name);
+		Node* GetLastAdded() { return m_lastAdded; }
+		void ReparentNodes(Node* src, Node* dest);
 		
-		Node* AddChildInactive(Node *c);
-		Node* RemoveChildInactive(const string &name);
-		Node* GetChildInactive(const string &name);
+		void AddInactiveNode(Node *c);
+		void RemoveInactiveNode(const string &name);
+		Node* GetInactiveNode(const string &name);
 		
 		void SendMessage(const string &to, const string &body, float delay=0);
 		
@@ -81,9 +108,11 @@ namespace sig
 
 		GUI* GetGUI() { return m_gui; }
 		void SetGUI(GUI *gui) { m_gui = gui; }
+
+		void CreateNodeTreeRequest(Node *src, Node *dest, NTRAction action, float time=-1);
 	private:
 		Color m_ambient, m_background;
-		Node *m_root;
+		Node *m_root, *m_lastAdded;
 		BaseGame *m_game;
 		GUI *m_gui;
 		
@@ -94,6 +123,10 @@ namespace sig
 		Camera2D *m_camera;
 		
 		vector<Node*> GetAllNodes(Node *r);
+
+		// Node manager
+		vector<Node*> m_inactiveNodes;
+		queue<NodeTreeRequest*> m_nodeTreeRequests;
 	};
 
 }

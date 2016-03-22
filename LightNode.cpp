@@ -1,11 +1,12 @@
 #include "LightNode.h"
+#include "Node.h"
 #include "SIG_OpenGL.h"
 #include "SIG_Utilities.h"
 
-int sig::LightNode::index = 0;
+int sig::Light::index = 0;
 
-sig::LightNode::LightNode()
-	:	Node()
+sig::Light::Light()
+	:	Component()
 {
 	m_z = 1;
 	m_color = Color::WHITE;
@@ -19,15 +20,15 @@ sig::LightNode::LightNode()
 	}
 }
 
-void sig::LightNode::Update(float dt)
+void sig::Light::Update(float dt)
 {
-	Node::Update(dt);
-	
 	int light = GL_LIGHT0 + index;
 
 	float diffuse[] = { m_color.r, m_color.g, m_color.b, m_color.a };
-	float pos[] 	= { m_position.X(), m_position.Y(), m_z };
+	float pos[] 	= { GetOwner()->GetPosition().X(),
+						GetOwner()->GetPosition().Y(),
+						m_z };
 
-    glLightfv(light, GL_DIFFUSE, diffuse);
-    glLightfv(light, GL_POSITION, pos);
+	glLightfv(light, GL_DIFFUSE,	diffuse);
+	glLightfv(light, GL_POSITION,	pos);
 }

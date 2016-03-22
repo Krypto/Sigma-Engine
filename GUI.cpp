@@ -54,7 +54,6 @@ void sig::GUI::Update(float dt)
 
 void sig::GUI::Render()
 {
-	glDisable(GL_LIGHTING);
 	glPushMatrix();
 	
 	glLoadIdentity();
@@ -394,7 +393,7 @@ sig::ListView* sig::GUI::AddParam(const string &text, int *selected)
 
 	ListView *lst = new ListView();
 	lst->SetCallback([selected, lst]() {
-		*selected = lst->GetSelected();
+		(*selected) = lst->GetSelected();
 	});
 
 	AddWidget(dynamic_cast<Widget*>(lst));

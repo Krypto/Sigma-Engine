@@ -37,10 +37,10 @@ int sig::GameLoop::Start(float frameCap)
 	return SIG_MainLoop(frameCap);
 }
 
-void sig::GameLoop::LogicStep(double dt)
+void sig::GameLoop::LogicStep(float fps, float time_scale)
 {
-	double newTime = Time::Instance()->GetTime();
-	double frameTime = newTime - m_startTime;
+	float newTime = Time::Instance()->GetTime();
+	float frameTime = newTime - m_startTime;
 	m_startTime = newTime;
 	
 	m_frameTime += frameTime;
@@ -50,8 +50,9 @@ void sig::GameLoop::LogicStep(double dt)
 		m_frames = 0;
 	}
 	
+	float cdt = time_scale / fps;
 	while (frameTime > 0) {
-		float deltaTime = std::min(frameTime, dt);
+		float deltaTime = std::min(frameTime, cdt);
 
 		Input::Update();
 		if (m_game != nullptr) {
@@ -65,8 +66,6 @@ void sig::GameLoop::LogicStep(double dt)
 
 int sig::GameLoop::SIG_MainLoop(float fps)
 {
-	const double dt = 1.0 / fps;
-
 	m_startTime = Time::Instance()->GetTime();
 
 	m_window->Initialize();
@@ -80,7 +79,9 @@ int sig::GameLoop::SIG_MainLoop(float fps)
 	SIG_LOG("Sigma Engine Started...");
 	
 	while (!m_window->IsClosing()) {
-		LogicStep(dt);
+		float ts = m_game != nullptr ? m_game->GetTimeScale() : 1.0f;
+		ts = SIG_CLAMPF_R(ts, 0.001f, 1.0f);
+		LogicStep(fps, ts);
 
 		Color bg = Color::BLACK;
 		if (m_game && m_game->GetCurrentScene()) {

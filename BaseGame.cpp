@@ -13,6 +13,7 @@ sig::BaseGame::BaseGame()
 	m_currentScene = nullptr;
 	m_spriteBatch = nullptr;
 	m_window = nullptr;
+	m_timeScale = 1;
 }
 
 sig::BaseGame::~BaseGame()
@@ -62,14 +63,7 @@ void sig::BaseGame::Resume()
 
 void sig::BaseGame::SIG_Render()
 {
-	m_spriteBatch->Begin();
-	
 	GetCurrentScene()->Render();
-	Render();
-	
-	m_spriteBatch->End();
-		
-	m_spriteBatch->Render();
 }
 
 void sig::BaseGame::SIG_Update(float dt)

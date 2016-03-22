@@ -14,7 +14,7 @@ sig::Texture2D::Texture2D(int w, int h, int attachment)
 	m_width = w;
 	m_height = h;
 	
-	if (m_width < 0 || m_height < 0) {
+	if (m_width <= 0 || m_height <= 0) {
 		SIG_LOG_ERROR("Wrong texture size.");
 		return;
 	}

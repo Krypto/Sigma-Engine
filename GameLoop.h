@@ -21,9 +21,10 @@ namespace sig
 		
 		/**
 		 * @brief Updates all the logic
-		 * @param dt Delta time 1.0/fps
+		 * @param fps Frames per second
+		 * @param time_scale Time scale
 		 */
-		void LogicStep(double dt);
+		void LogicStep(float fps, float time_scale=1.0f);
 		
 		BaseGame* GetGame() { return m_game; }
 		GameLoop* SetGame(BaseGame* game) { this->m_game = game; return this; }
@@ -35,7 +36,7 @@ namespace sig
 		Window *m_window;
 		BaseGame *m_game;
 
-		double m_startTime, m_frameTime;
+		float m_startTime, m_frameTime;
 		int m_frames;
 	};
 

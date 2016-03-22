@@ -16,7 +16,7 @@ namespace sig
 		 * @brief Get current time
 		 * @return Time in seconds
 		 */
-		double GetTime();
+		float GetTime();
 		
 	private:
 		Time();

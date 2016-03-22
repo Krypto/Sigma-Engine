@@ -4,12 +4,15 @@
 #include "SIG_Utilities.h"
 #include "Window.h"
 
+#include <algorithm>
+
 sig::Scene::Scene(BaseGame *game)
 {
 	m_game = game;
 	m_pixelsPerMeter = 50.0f;
 	m_root = nullptr;
 	m_camera = nullptr;
+	m_lastAdded = nullptr;
 }
 
 sig::Scene::~Scene()
@@ -116,8 +119,13 @@ void sig::Scene::Render()
 			glMatrixMode(GL_MODELVIEW);
 		}
 	}
-	
+
+	GetGame()->GetSpriteBatch()->Begin();
 	GetRoot()->Render(GetGame()->GetSpriteBatch());
+	GetGame()->GetSpriteBatch()->End();
+
+	GetGame()->GetSpriteBatch()->Render();
+
 	if (m_gui) {
 		m_gui->Render();
 	}
@@ -128,6 +136,16 @@ void sig::Scene::Update(float dt)
 	m_physicsWorld->Step(dt, 6, 2);
 	
 	GetRoot()->Update(dt);
+
+	// Process Node Tree requests
+	while (m_nodeTreeRequests.size() > 0) {
+		NodeTreeRequest *req = m_nodeTreeRequests.front();
+		req->Process(this);
+
+		SIG_FREE(req);
+		m_nodeTreeRequests.pop();
+	}
+
 	if (m_gui) {
 		m_gui->Update(dt);
 	}
@@ -136,6 +154,13 @@ void sig::Scene::Update(float dt)
 void sig::Scene::Finalize()
 {
 	GetRoot()->Finalize();
+}
+
+void sig::Scene::CreateNodeTreeRequest(sig::Node *src, sig::Node *dest, sig::NTRAction action, float time)
+{
+	NodeTreeRequest *req = new NodeTreeRequest(src, dest,
+											   action, time);
+	m_nodeTreeRequests.push(req);
 }
 
 vector<sig::Node*> sig::Scene::GetAllNodes(Node* r)
@@ -155,42 +180,128 @@ vector<sig::Node*> sig::Scene::GetAllNodes(Node* r)
 	return nodes;
 }
 
-sig::Node* sig::Scene::AddChild(Node* c, float lifeTime)
+void sig::Scene::AddNode(Node* c, float lifeTime)
 {
-	return GetRoot()->AddChild(c, lifeTime);
+	CreateNodeTreeRequest(c, GetRoot(),
+						  NTRAction::NTR_ADD_VOLATILE,
+						  lifeTime);
 }
 
-void sig::Scene::RemoveChild(Node* c)
+void sig::Scene::RemoveNode(Node* c)
 {
-	GetRoot()->RemoveChild(c);
+	CreateNodeTreeRequest(c, GetRoot(),
+						  NTRAction::NTR_DELETE);
 }
 
-sig::Node* sig::Scene::Instantiate(Node* node, float time)
+void sig::Scene::Instantiate(Node* node, float time)
 {
-	return GetRoot()->Instantiate(node, time);
+	CreateNodeTreeRequest(node, GetRoot(),
+						  NTRAction::NTR_INSTANTIATE, time);
 }
 
-sig::Node* sig::Scene::GetChild(const string &name)
+sig::Node* sig::Scene::GetNode(const string &name)
 {
-	return GetRoot()->GetChild(name);
+	SIG_FOREACH(it, GetAllNodes())
+	{
+		Node *n = *it;
+		if (n->GetName() == name) {
+			return n;
+		}
+	}
+	return nullptr;
 }
 
-sig::Node* sig::Scene::AddChildInactive(Node* c)
+void sig::Scene::ReparentNodes(sig::Node *src, sig::Node *dest)
 {
-	return GetRoot()->AddChildInactive(c);
+	CreateNodeTreeRequest(src, dest,
+						  NTRAction::NTR_REPARENT);
 }
 
-sig::Node* sig::Scene::RemoveChildInactive(const string &name)
+void sig::Scene::AddInactiveNode(Node* c)
 {
-	return GetRoot()->RemoveChildInactive(name);
+	m_inactiveNodes.push_back(c);
 }
 
-sig::Node* sig::Scene::GetChildInactive(const string &name)
+void sig::Scene::RemoveInactiveNode(const string &name)
 {
-	return GetRoot()->GetChildInactive(name);
+	Node *n = nullptr;
+	SIG_FOREACH(it, m_inactiveNodes)
+	{
+		Node *child = *it;
+		if (child->GetName() == name) {
+			n = *it;
+			break;
+		}
+	}
+
+	if (n != nullptr) {
+		auto pos = std::find(m_inactiveNodes.begin(), m_inactiveNodes.end(), n);
+		if (pos != m_inactiveNodes.end()) {
+			m_inactiveNodes.erase(pos);
+		}
+	}
+}
+
+sig::Node* sig::Scene::GetInactiveNode(const string &name)
+{
+	SIG_FOREACH(it, m_inactiveNodes)
+	{
+		Node *child = *it;
+		if (child->GetName() == name) {
+			return *it;
+		}
+	}
+	return nullptr;
 }
 
 void sig::Scene::SendMessage(const string& to, const string& body, float delay)
 {
 	GetRoot()->SendMessage(to, body, delay);
+}
+
+/* NodeTreeRequest methods */
+void sig::NTR::Process(Scene* scene)
+{
+	if (src == nullptr || dest == nullptr) { return; }
+	if (scene == nullptr) { return; }
+
+	switch (action) {
+		case NTRAction::NTR_ADD: {
+			Node *_src = src;
+			auto pos = std::find(scene->m_inactiveNodes.begin(),
+								 scene->m_inactiveNodes.end(),
+								 src);
+			if (pos != scene->m_inactiveNodes.end()) {
+				_src = *pos;
+			}
+			dest->AddChild(_src);
+			scene->m_lastAdded = _src;
+		} break;
+		case NTRAction::NTR_ADD_VOLATILE: {
+			Node *_src = src;
+			auto pos = std::find(scene->m_inactiveNodes.begin(),
+								 scene->m_inactiveNodes.end(),
+								 src);
+			if (pos != scene->m_inactiveNodes.end()) {
+				_src = *pos;
+			}
+			dest->AddChild(_src, time);
+			scene->m_lastAdded = _src;
+		} break;
+		case NTRAction::NTR_DELETE: {
+			Node* rem = dest->RemoveChild(src);
+			if (rem != nullptr) {
+				scene->m_inactiveNodes.push_back(rem);
+			}
+		} break;
+		case NTRAction::NTR_INSTANTIATE: {
+			Node* instance = dest->GetInstance();
+			scene->CreateNodeTreeRequest(instance, dest,
+										 NTRAction::NTR_ADD_VOLATILE,
+										 time);
+		} break;
+		case NTRAction::NTR_REPARENT: {
+			src->SetParent(dest);
+		} break;
+	}
 }

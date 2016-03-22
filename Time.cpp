@@ -26,7 +26,7 @@ void sig::Time::Release()
 	ms_instance = nullptr;
 }
 
-double sig::Time::GetTime()
+float sig::Time::GetTime()
 {
-	return SDL_GetTicks() / 1000.0;
+	return float(SDL_GetTicks()) / 1000.0f;
 }

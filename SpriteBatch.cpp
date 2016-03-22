@@ -212,6 +212,12 @@ void sig::SpriteBatch::Render()
 			case BlendMode::ADD:
 				glBlendFunc(GL_ONE, GL_ONE);
 				break;
+			case BlendMode::MULTIPLY:
+				glBlendFunc(GL_DST_COLOR, GL_ONE_MINUS_SRC_ALPHA);
+				break;
+			case BlendMode::SCREEN:
+				glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_COLOR);
+				break;
 		}
 
 		glDrawArrays(GL_TRIANGLES, b.offset, b.numVertices);

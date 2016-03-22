@@ -97,7 +97,8 @@ void sig::Node::Update(float dt)
 		}
 	} else {
 		if (m_parent != nullptr) {
-			m_parent->m_childrenDeleteQueue.push_back(this);
+			m_scene->CreateNodeTreeRequest(this, m_parent,
+										   NTRAction::NTR_DELETE);
 		}
 	}
 
@@ -130,28 +131,6 @@ void sig::Node::Update(float dt)
 		if (!child->m_dead) {
 			child->Update(dt);
 		}
-	}
-
-	if (m_childrenQueue.size() > 0) {
-		SIG_FOREACH(it, m_childrenQueue)
-		{
-			Node *child = *it;
-			child->Initialize();
-			m_children.push_back(child);
-		}
-		m_childrenQueue.clear();
-	}
-
-	if (m_childrenDeleteQueue.size() > 0) {
-		SIG_FOREACH(it, m_childrenDeleteQueue)
-		{
-			Node *child = *it;
-			auto pos = std::find(m_children.begin(), m_children.end(), child);
-			if (pos != m_children.end()) {
-				child->RemoveParent();
-			}
-		}
-		m_childrenDeleteQueue.clear();
 	}
 }
 
@@ -216,7 +195,7 @@ void sig::Node::AddComponent(Component* component)
 	m_components.push_back(component);
 }
 
-sig::Node* sig::Node::AddChild(Node* c, float lifeTime)
+void sig::Node::AddChild(Node* c, float lifeTime)
 {
 	c->m_scene		= m_scene;
 	c->m_dead		= false;
@@ -227,19 +206,21 @@ sig::Node* sig::Node::AddChild(Node* c, float lifeTime)
 		c->InitBody();
 	}
 
-	m_childrenQueue.push_back(c);
+	c->Initialize();
 
-	return this;
+	m_children.push_back(c);
 }
 
-sig::Node* sig::Node::SetParent(Node* parent)
+void sig::Node::SetParent(Node* parent)
 {
-	if (parent != nullptr) {
+	if (parent != nullptr && m_parent != parent) {
+		RemoveParent();
+
+		Vector2 newPos = this->GetPosition() - parent->GetPosition();
+		this->SetPosition(newPos);
+
 		parent->AddChild(this);
-	} else {
-		this->m_parent = parent;
 	}
-	return this;
 }
 
 void sig::Node::RemoveParent()
@@ -250,8 +231,9 @@ void sig::Node::RemoveParent()
 	}
 }
 
-void sig::Node::RemoveChild(Node* c)
+sig::Node* sig::Node::RemoveChild(Node* c)
 {
+	Node *removed = nullptr;
 	auto pos = std::find(m_children.begin(), m_children.end(), c);
 	if (pos != m_children.end()) {
 		auto comps = c->GetComponents();
@@ -259,10 +241,12 @@ void sig::Node::RemoveChild(Node* c)
 		{
 			(*it)->RemoveUser();
 		}
-		delete m_children[std::distance(m_children.begin(), pos)];
-		m_children[std::distance(m_children.begin(), pos)] = nullptr;
+		auto i = std::distance(m_children.begin(), pos);
+		removed = m_children[i];
+		m_children[i] = nullptr;
 		m_children.erase(pos);
 	}
+	return removed;
 }
 
 sig::Node* sig::Node::GetInstance()
@@ -301,60 +285,6 @@ sig::Node* sig::Node::GetChild(const string &name)
 		}
 	}
 
-	return nullptr;
-}
-
-sig::Node* sig::Node::Instantiate(Node* node, float time)
-{
-	Node* n = node->GetInstance();
-	AddChild(n, time);
-
-	return n;
-}
-
-sig::Node* sig::Node::AddChildInactive(Node* c)
-{
-	c->m_scene		= m_scene;
-	c->m_dead		= false;
-	c->m_lifeTime	= -1;
-	c->m_parent		= this;
-
-	m_inactiveChildren.push_back(c);
-
-	return this;
-}
-
-sig::Node* sig::Node::RemoveChildInactive(const string &name)
-{
-	Node *n;
-	SIG_FOREACH(it, m_inactiveChildren)
-	{
-		Node *child = *it;
-		if (child->GetName() == name) {
-			n = *it;
-			break;
-		}
-	}
-
-	if (n != nullptr) {
-		auto pos = std::find(m_inactiveChildren.begin(), m_inactiveChildren.end(), n);
-		if (pos != m_inactiveChildren.end()) {
-			m_inactiveChildren.erase(pos);
-		}
-	}
-
-	return this;
-}
-
-sig::Node* sig::Node::GetChildInactive(const string &name)
-{
-	SIG_FOREACH(it, m_inactiveChildren)
-	{
-		Node *child = *it;
-		if (child->GetName() == name) {
-			return *it;
-		}
-	}
 	return nullptr;
 }
 

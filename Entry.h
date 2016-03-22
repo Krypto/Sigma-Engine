@@ -17,6 +17,8 @@ namespace sig
 	public:
 		Entry();
 		
+		void OnMouseLeave();
+		void OnMouseEnter();
 		void OnMouseDown(MouseEvent e);
 		void OnKeyPress(int e);
 		

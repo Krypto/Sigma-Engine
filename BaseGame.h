@@ -49,6 +49,11 @@ namespace sig
 			}
 		}
 
+		float& GetTimeScale() { return m_timeScale; }
+		void SetTimeScale(float ts) {
+			m_timeScale = SIG_CLAMPF_R(ts, 0.001f, 1.0f);
+		}
+
 		void Restart();
 		void Pause();
 		void Resume();
@@ -71,6 +76,8 @@ namespace sig
 		Lua *m_lua;
 
 		Scene *m_currentScene;
+
+		float m_timeScale;
 	};
 
 }

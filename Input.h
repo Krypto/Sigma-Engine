@@ -6,6 +6,7 @@
 
 #include "Vector.h"
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_mouse.h>
 
 #include <map>
 #include <string>
@@ -13,12 +14,29 @@
 namespace sig
 {
 	using namespace math;
+
+	enum class CursorType : int {
+		CURSOR_ARROW = SDL_SYSTEM_CURSOR_ARROW,
+		CURSOR_IBEAM = SDL_SYSTEM_CURSOR_IBEAM,
+		CURSOR_WAIT = SDL_SYSTEM_CURSOR_WAIT,
+		CURSOR_CROSSHAIR = SDL_SYSTEM_CURSOR_CROSSHAIR,
+		CURSOR_WAITARROW = SDL_SYSTEM_CURSOR_WAITARROW,
+		CURSOR_SIZE_NWSE = SDL_SYSTEM_CURSOR_SIZENWSE,
+		CURSOR_SIZE_NESW = SDL_SYSTEM_CURSOR_SIZENESW,
+		CURSOR_SIZE_WE = SDL_SYSTEM_CURSOR_SIZEWE,
+		CURSOR_SIZE_NS = SDL_SYSTEM_CURSOR_SIZENS,
+		CURSOR_SIZE_ALL = SDL_SYSTEM_CURSOR_SIZEALL,
+		CURSOR_NO = SDL_SYSTEM_CURSOR_NO,
+		CURSOR_HAND = SDL_SYSTEM_CURSOR_HAND,
+		CUSSOR_NORMAL = 0
+	};
+
 	class Camera2D;
 	class Input
 	{
 		friend class Window;
 	public:
-		
+
 		enum {
 			MOD_CTRL = KMOD_CTRL,
 			MOD_SHIFT = KMOD_SHIFT,
@@ -449,6 +467,12 @@ namespace sig
 		 * @param cur True for Visible, False for Invisible.
 		 */
 		static void SetCursorVisibility(bool cur);
+
+		/**
+		 * @brief Set cursor shape/image to a system cursor
+		 * @param type Cursor type
+		 */
+		static void SetCursorType(CursorType type);
 
 		static void Update();
 

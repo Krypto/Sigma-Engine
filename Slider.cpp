@@ -9,7 +9,8 @@ sig::Slider::Slider()
 	m_max = 10;
 	m_value = 0;
 	m_increment = 1;
-	init = m_showValue = false;
+	init = false;
+	m_showValue = true;
 	m_x = 0;
 
 	m_bounds.height = 10;

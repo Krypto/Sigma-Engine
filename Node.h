@@ -42,7 +42,7 @@ namespace sig
 		Vector2& GetPosition() { return m_position; }
 		void SetPosition(const Vector2& position);
 
-		float GetRotation() const { return m_rotation; }
+		float& GetRotation() { return m_rotation; }
 		void SetRotation(float rotation);
 
 		Vector2& GetSize() { return m_size; }
@@ -59,26 +59,14 @@ namespace sig
 		void AddComponent(Component *component);
 		
 		Node* GetParent() { return m_parent; }
-		Node* SetParent(Node* parent);
+		void SetParent(Node* parent);
 		void RemoveParent();
 		
 		Node* GetChild(const string &name);
-		const vector<Node*>& GetChildren() const { return m_children; }		
-		Node* AddChild(Node *c, float lifeTime=-1);
-		void RemoveChild(Node *c);
+		const vector<Node*>& GetChildren() const { return m_children; }
+		void AddChild(Node *c, float lifeTime=-1);
+		Node* RemoveChild(Node *c);
 
-		/**
-		 * @brief Create a new instance of a Node
-		 * @param node The node to Instantiate
-		 * @param time The life time of the node (how many seconds until it's deleted)
-		 * @return The node instance
-		 */
-		Node* Instantiate(Node* node, float time=-1);		
-		
-		Node* AddChildInactive(Node *c);
-		Node* RemoveChildInactive(const string &name);
-		Node* GetChildInactive(const string &name);
-		
 		b2Body* GetPhysicsBody() { return m_physicsBody; }
 		
 		const string& GetTag() const { return m_tag; }
@@ -142,10 +130,6 @@ namespace sig
 		// Transform hierarchy
 		Node *m_parent;
 		vector<Node*> m_children;
-		// TODO: Move to Scene
-		vector<Node*> m_inactiveChildren;
-		vector<Node*> m_childrenQueue;
-		vector<Node*> m_childrenDeleteQueue;
 		
 		Scene *m_scene;
 		
