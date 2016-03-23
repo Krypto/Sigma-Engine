@@ -1,0 +1,6 @@
+[submodule "dependencies/lua-intf"]
+	path = dependencies/lua-intf
+	url = https://github.com/SteveKChiu/lua-intf
+[submodule "dependencies/OAL"]
+	path = dependencies/OAL
+	url = https://github.com/FrictionalGames/OALWrapper
