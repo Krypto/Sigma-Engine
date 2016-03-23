@@ -27,5 +27,9 @@ Release
 build-debug
 build-release
 build
+/build/TGT
 /build
-/build/.*
+/dependencies/luaintf
+/dependencies/OAL
+dependencies/luaintf
+dependencies/OAL

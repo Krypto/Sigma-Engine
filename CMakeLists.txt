@@ -3,11 +3,12 @@ project(SigmaEngine)
 
 SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${SigmaEngine_SOURCE_DIR}/CMakeModules)
 
-set(BOX2D_LIB ${SigmaEngine_SOURCE_DIR}/dependencies/Box2D/lib)
-set(OAL_LIB ${SigmaEngine_SOURCE_DIR}/dependencies/OAL/lib)
+include(${SigmaEngine_SOURCE_DIR}/CMakeModules/submodules.cmake)
 
+add_subdirectory(${SigmaEngine_SOURCE_DIR}/dependencies/OAL)
+
+set(BOX2D_LIB ${SigmaEngine_SOURCE_DIR}/dependencies/Box2D/lib)
 find_library(BOX_2D libBox2D.a ${BOX2D_LIB})
-find_library(OAL_WRAPPER libOALWrapper.a ${OAL_LIB})
 
 find_package(GLEW REQUIRED)
 find_package(SDL2 REQUIRED)
@@ -99,7 +100,7 @@ target_link_libraries(TGT
     ${GLEW_LIBRARY}
     ${BOX_2D}
 	${SDL2_LIBRARY}
-    ${OAL_WRAPPER}
+	OALWrapper
 	${VORBIS_LIBRARY}
     ${VORBISFILE_LIBRARY}
 	${OPENAL_LIBRARY}
