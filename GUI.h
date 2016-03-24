@@ -35,9 +35,14 @@ namespace sig
 		
 		void AddWidget(Widget *w);
 
+		template <typename WidgetType>
+		void AddWidget(const string& text, WidgetType* widget);
+
 		Label* AddLabel(const string& text);
 		Button* AddButton(const string& text);
 		void AddSeparator();
+
+		//< Quick GUI creation
 		void AddParam(const string& text, int *value, int vmin, int vmax);
 		void AddParam(const string& text, float *value, float vmin, float vmax, float increment=0.1f);
 		void AddParam(const string& text, Color *value);

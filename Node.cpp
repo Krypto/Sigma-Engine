@@ -251,12 +251,12 @@ sig::Node* sig::Node::RemoveChild(Node* c)
 
 sig::Node* sig::Node::GetInstance()
 {
-	Node* newNode 			= new Node();
-	newNode->m_position 	= Vector2(m_position);
-	newNode->m_scale 		= Vector2(m_scale);
-	newNode->m_origin 		= Vector2(m_origin);
-	newNode->m_rotation 	= m_rotation;
-	newNode->m_tag 			= m_tag;
+	Node* newNode			= new Node();
+	newNode->m_position		= Vector2(m_position);
+	newNode->m_scale		= Vector2(m_scale);
+	newNode->m_origin		= Vector2(m_origin);
+	newNode->m_rotation		= m_rotation;
+	newNode->m_tag			= m_tag;
 	newNode->m_name			= m_name;
 	newNode->m_scene		= m_scene;
 
@@ -372,7 +372,8 @@ bool Node::IsAwake()
 	return GetPhysicsBody()->IsAwake();
 }
 
-void sig::Node::CreatePolygonFixture(const vector<Vector2> &points, float density, float friction,
+void sig::Node::CreatePolygonFixture(const vector<Vector2> &points,
+									 float density, float friction,
 									 float restitution, bool issensor)
 {
 	b2PolygonShape shape;
@@ -394,7 +395,9 @@ void sig::Node::CreatePolygonFixture(const vector<Vector2> &points, float densit
 	CreateFixture(f);
 }
 
-void Node::CreateBoxFixture(float hx, float hy, const sig::math::Vector2 &center, float angle)
+void Node::CreateBoxFixture(float hx, float hy,
+							const sig::math::Vector2 &center,
+							float angle)
 {
 	if (GetPhysicsBody() == nullptr) { return; }
 

@@ -469,6 +469,12 @@ namespace sig
 		static void SetCursorVisibility(bool cur);
 
 		/**
+		 * @brief Gets the mouse button that is currently pressed
+		 * @return MOUSE_LEFT_BUTTON, MOUSE_MIDDLE_BUTTON, MOUSE_RIGHT_BUTTON
+		 */
+		static int GetMouseButton();
+
+		/**
 		 * @brief Set cursor shape/image to a system cursor
 		 * @param type Cursor type
 		 */
@@ -481,6 +487,7 @@ namespace sig
 	private:
 		static bool m_inputKeys[];
 		static int m_inputMod;
+		static int m_mouseButton;
 		static bool m_downKeys[];
 		static bool m_upKeys[];
 

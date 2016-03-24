@@ -41,7 +41,7 @@ sig::GUI::~GUI()
 
 void sig::GUI::Initialize()
 {
-	
+
 }
 
 void sig::GUI::Update(float dt)
@@ -138,13 +138,6 @@ void sig::GUI::AddSeparator()
 
 void sig::GUI::AddParam(const string &text, int *value, int vmin, int vmax)
 {
-	BeginBox(Rect(0, 0, 0, 18));
-	GetCurrentBox()->SetDrawBackground(false);
-	GetCurrentBox()->SetFitWidgets(true);
-	GetCurrentBox()->SetOrientation(Box::ORIENTATION_HORIZONTAL);
-
-	AddLabel(text)->SetAlign(Label::ALIGN_RIGHT);
-
 	Slider *sld = new Slider();
 	sld->SetIncrement(1.0f);
 	sld->SetValue(*value);
@@ -155,20 +148,11 @@ void sig::GUI::AddParam(const string &text, int *value, int vmin, int vmax)
 		*value = sld->GetValue();
 	});
 
-	AddWidget(dynamic_cast<Widget*>(sld));
-
-	EndBox();
+	AddWidget<Slider>(text, sld);
 }
 
 void sig::GUI::AddParam(const string &text, float *value, float vmin, float vmax, float increment)
 {
-	BeginBox(Rect(0, 0, 0, 18));
-	GetCurrentBox()->SetDrawBackground(false);
-	GetCurrentBox()->SetFitWidgets(true);
-	GetCurrentBox()->SetOrientation(Box::ORIENTATION_HORIZONTAL);
-
-	AddLabel(text)->SetAlign(Label::ALIGN_RIGHT);
-
 	Slider *sld = new Slider();
 	sld->SetIncrement(increment);
 	sld->SetValue(*value);
@@ -179,29 +163,19 @@ void sig::GUI::AddParam(const string &text, float *value, float vmin, float vmax
 		*value = sld->GetValue();
 	});
 
-	AddWidget(dynamic_cast<Widget*>(sld));
-
-	EndBox();
+	AddWidget<Slider>(text, sld);
 }
 
 void sig::GUI::AddParam(const string &text, sig::Color *value)
 {
 	Widget *wcol = new Widget();
-	Rect b = wcol->GetBounds();
-	b.height = 8;
-	wcol->SetBounds(b);
+	wcol->SetHeight(6);
 	wcol->SetBackColor((*value));
 
 	AddLabel(text);
 
 	BeginBox(Rect(0, 0, 1, 1));
 
-	BeginBox(Rect(0, 0, 0, 18));
-	GetCurrentBox()->SetDrawBackground(false);
-	GetCurrentBox()->SetFitWidgets(true);
-	GetCurrentBox()->SetOrientation(Box::ORIENTATION_HORIZONTAL);
-
-	AddLabel("R")->SetAlign(Label::ALIGN_RIGHT);
 	Slider *sr = new Slider();
 	sr->SetMin(0.0f);
 	sr->SetMax(1.0f);
@@ -211,16 +185,8 @@ void sig::GUI::AddParam(const string &text, sig::Color *value)
 		(*value).r= sr->GetValue();
 		wcol->SetBackColor(*value);
 	});
-	AddWidget(dynamic_cast<Widget*>(sr));
+	AddWidget<Slider>("R", sr);
 
-	EndBox();
-
-	BeginBox(Rect(0, 0, 0, 18));
-	GetCurrentBox()->SetDrawBackground(false);
-	GetCurrentBox()->SetFitWidgets(true);
-	GetCurrentBox()->SetOrientation(Box::ORIENTATION_HORIZONTAL);
-
-	AddLabel("G")->SetAlign(Label::ALIGN_RIGHT);
 	Slider *sg = new Slider();
 	sg->SetMin(0.0f);
 	sg->SetMax(1.0f);
@@ -230,15 +196,8 @@ void sig::GUI::AddParam(const string &text, sig::Color *value)
 		(*value).g = sg->GetValue();
 		wcol->SetBackColor(*value);
 	});
-	AddWidget(dynamic_cast<Widget*>(sg));
-	EndBox();
+	AddWidget<Slider>("G", sg);
 
-	BeginBox(Rect(0, 0, 0, 18));
-	GetCurrentBox()->SetDrawBackground(false);
-	GetCurrentBox()->SetFitWidgets(true);
-	GetCurrentBox()->SetOrientation(Box::ORIENTATION_HORIZONTAL);
-
-	AddLabel("B")->SetAlign(Label::ALIGN_RIGHT);
 	Slider *sb = new Slider();
 	sb->SetMin(0.0f);
 	sb->SetMax(1.0f);
@@ -248,15 +207,8 @@ void sig::GUI::AddParam(const string &text, sig::Color *value)
 		(*value).b = sb->GetValue();
 		wcol->SetBackColor(*value);
 	});
-	AddWidget(dynamic_cast<Widget*>(sb));
-	EndBox();
+	AddWidget<Slider>("B", sb);
 
-	BeginBox(Rect(0, 0, 0, 18));
-	GetCurrentBox()->SetDrawBackground(false);
-	GetCurrentBox()->SetFitWidgets(true);
-	GetCurrentBox()->SetOrientation(Box::ORIENTATION_HORIZONTAL);
-
-	AddLabel("A")->SetAlign(Label::ALIGN_RIGHT);
 	Slider *sa = new Slider();
 	sa->SetMin(0.0f);
 	sa->SetMax(1.0f);
@@ -266,8 +218,7 @@ void sig::GUI::AddParam(const string &text, sig::Color *value)
 		(*value).a = sa->GetValue();
 		wcol->SetBackColor(*value);
 	});
-	AddWidget(dynamic_cast<Widget*>(sa));
-	EndBox();
+	AddWidget<Slider>("A", sa);
 
 	AddWidget(wcol);
 
@@ -276,25 +227,15 @@ void sig::GUI::AddParam(const string &text, sig::Color *value)
 
 void sig::GUI::AddParam(const string &text, string *value, bool masked)
 {
-	BeginBox(Rect(0, 0, 0, 18));
-	GetCurrentBox()->SetPadding(1);
-	GetCurrentBox()->SetDrawBackground(false);
-	GetCurrentBox()->SetFitWidgets(true);
-	GetCurrentBox()->SetOrientation(Box::ORIENTATION_HORIZONTAL);
-
-	AddLabel(text)->SetAlign(Label::ALIGN_RIGHT);
-
 	Entry *txt = new Entry();
 	txt->SetMasked(masked);
 	txt->SetText(*value);
 	txt->SetCallback([txt, value]() {
-		*value = txt->GetText();
+		(*value) = txt->GetText();
 	});
 	txt->Fit(0);
 
-	AddWidget(dynamic_cast<Widget*>(txt));
-
-	EndBox();
+	AddWidget<Entry>(text, txt);
 }
 
 void sig::GUI::AddParam(const string &text, bool *value)
@@ -313,25 +254,15 @@ void sig::GUI::AddParam(const string &text, bool *value)
 
 void sig::GUI::AddParam(const string &text, float *value)
 {
-	BeginBox(Rect(0, 0, 0, 18));
-	GetCurrentBox()->SetPadding(1);
-	GetCurrentBox()->SetDrawBackground(false);
-	GetCurrentBox()->SetFitWidgets(true);
-	GetCurrentBox()->SetOrientation(Box::ORIENTATION_HORIZONTAL);
-
-	AddLabel(text)->SetAlign(Label::ALIGN_RIGHT);
-
 	NumberEntry *ent = new NumberEntry();
 	ent->SetValue(*value);
 	ent->Fit(0);
 
 	ent->SetValueCallback([ent, value]() {
-		*value = ent->GetValue();
+		(*value) = ent->GetValue();
 	});
 
-	AddWidget(dynamic_cast<Widget*>(ent));
-
-	EndBox();
+	AddWidget<NumberEntry>(text, ent);
 }
 
 void sig::GUI::AddParam(const string &text, sig::math::Vector2 *value)
@@ -340,37 +271,21 @@ void sig::GUI::AddParam(const string &text, sig::math::Vector2 *value)
 
 	BeginBox(Rect(0, 0, 0, 0));
 
-	BeginBox(Rect(0, 0, 0, 18));
-	GetCurrentBox()->SetPadding(1);
-	GetCurrentBox()->SetDrawBackground(false);
-	GetCurrentBox()->SetFitWidgets(true);
-	GetCurrentBox()->SetOrientation(Box::ORIENTATION_HORIZONTAL);
-
-	AddLabel("x")->SetAlign(Label::ALIGN_RIGHT);
 	NumberEntry *x = new NumberEntry();
 	x->SetValue((*value).X());
 	x->Fit(0);
 	x->SetValueCallback([x, value]() {
 		(*value).SetX(x->GetValue());
 	});
-	AddWidget(dynamic_cast<Widget*>(x));
-	EndBox();
+	AddWidget<NumberEntry>("x", x);
 
-	BeginBox(Rect(0, 0, 0, 18));
-	GetCurrentBox()->SetPadding(1);
-	GetCurrentBox()->SetDrawBackground(false);
-	GetCurrentBox()->SetFitWidgets(true);
-	GetCurrentBox()->SetOrientation(Box::ORIENTATION_HORIZONTAL);
-
-	AddLabel("y")->SetAlign(Label::ALIGN_RIGHT);
 	NumberEntry *y = new NumberEntry();
 	y->SetValue((*value).Y());
 	y->Fit(0);
 	y->SetValueCallback([y, value]() {
 		(*value).SetY(y->GetValue());
 	});
-	AddWidget(dynamic_cast<Widget*>(y));
-	EndBox();
+	AddWidget<NumberEntry>("y", y);
 
 	EndBox();
 }
@@ -430,4 +345,21 @@ sig::Rect sig::GUI::GetWindowDimensions()
 	glGetIntegerv(GL_VIEWPORT, vp);
 
 	return Rect(0, 0, vp[2], vp[3]);
+}
+
+template <typename WidgetType>
+void sig::GUI::AddWidget(const string &text, WidgetType *widget)
+{
+	if (widget == nullptr) { return; }
+
+	BeginBox(Rect(0, 0, 0, 18));
+	GetCurrentBox()->SetPadding(1);
+	GetCurrentBox()->SetDrawBackground(false);
+	GetCurrentBox()->SetFitWidgets(true);
+	GetCurrentBox()->SetOrientation(Box::ORIENTATION_HORIZONTAL);
+
+	AddLabel(text)->SetAlign(Label::ALIGN_RIGHT);
+	AddWidget(dynamic_cast<Widget*>(widget));
+
+	EndBox();
 }

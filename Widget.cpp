@@ -79,10 +79,11 @@ void sig::Widget::Update(float dt)
 	Vector2 mp = Input::GetMousePosition();
 
 	MouseEvent e;
+	e.position = mp - Vector2(b.x, b.y);
+	e.button = Input::GetMouseButton();
 
 	if (b.HasPoint(mp.X(), mp.Y())) {
 		e.hitWidget = this;
-		e.position = mp - Vector2(b.x, b.y);
 
 		if (!enter) {
 			OnMouseEnter();
@@ -99,20 +100,6 @@ void sig::Widget::Update(float dt)
 				m_focused = true;
 				m_guiManager->m_focused = this;
 			}
-		}
-
-		if (Input::GetMouseButtonUp(SDL_BUTTON_LEFT) ||
-			Input::GetMouseButtonDown(SDL_BUTTON_LEFT))
-		{
-			e.button = SDL_BUTTON_LEFT;
-		} else if (Input::GetMouseButtonUp(SDL_BUTTON_RIGHT) ||
-				   Input::GetMouseButtonDown(SDL_BUTTON_RIGHT))
-		{
-			e.button = SDL_BUTTON_RIGHT;
-		} else if (Input::GetMouseButtonUp(SDL_BUTTON_MIDDLE) ||
-				   Input::GetMouseButtonDown(SDL_BUTTON_MIDDLE))
-		{
-			e.button = SDL_BUTTON_MIDDLE;
 		}
 
 		if (!m_guiManager->handled) {
@@ -137,21 +124,26 @@ void sig::Widget::Update(float dt)
 			m_guiManager->handled = false;
 		}
 	} else {
-		if (enter) {
-			OnMouseLeave();
-			enter = false;
-			focus = false;
+		if (!click) {
+			if (enter) {
+				OnMouseLeave();
+				enter = false;
+				focus = false;
+			}
+			m_guiManager->handled = false;
+		} else {
+			if (Input::GetMouseButtonUp(SDL_BUTTON_LEFT)	||
+				Input::GetMouseButtonUp(SDL_BUTTON_RIGHT)	||
+				Input::GetMouseButtonUp(SDL_BUTTON_MIDDLE)) {
+				if (m_guiManager->m_focused != nullptr) {
+					m_guiManager->m_focused->m_focused = false;
+					m_guiManager->m_focused->OnBlur(e);
+				}
+				click = false;
+				OnMouseUp(e);
+				m_guiManager->handled = false;
+			}
 		}
-
-//		if (Input::GetMouseButtonDown(SDL_BUTTON_LEFT)) {
-//			if (m_guiManager->m_focused != nullptr) {
-//				m_guiManager->m_focused->m_focused = false;
-//				m_guiManager->m_focused->OnBlur(e);
-//			}
-//			m_guiManager->m_focused = nullptr;
-//		}
-
-		m_guiManager->handled = false;
 	}
 	
 	if (m_focused) {

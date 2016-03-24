@@ -7,6 +7,7 @@ namespace sig
 {
 	bool Input::m_inputKeys[MAX_KEYS];
 	int Input::m_inputMod = 0;
+	int Input::m_mouseButton = 0;
 	bool Input::m_downKeys[MAX_KEYS];
 	bool Input::m_upKeys[MAX_KEYS];
 
@@ -62,6 +63,7 @@ void sig::Input::Update()
 		
 		if (evt.type == SDL_MOUSEBUTTONDOWN) {
 			int value = evt.button.button;
+			m_mouseButton = value;
 
 			m_inputMouse[value] = true;
 			m_downMouse[value] = true;
@@ -69,6 +71,7 @@ void sig::Input::Update()
 		
 		if (evt.type == SDL_MOUSEBUTTONUP) {
 			int value = evt.button.button;
+			m_mouseButton = value;
 
 			m_inputMouse[value] = false;
 			m_upMouse[value] = true;
@@ -120,6 +123,11 @@ void sig::Input::SetMousePosition(float x, float y)
 void sig::Input::SetCursorVisibility(bool cur)
 {
 	SDL_ShowCursor(cur ? 1 : 0);
+}
+
+int sig::Input::GetMouseButton()
+{
+	return m_mouseButton;
 }
 
 void sig::Input::SetCursorType(sig::CursorType type)
