@@ -28,6 +28,7 @@ namespace sig
 	class Component : public IUR
 	{
 		friend class Node;
+		friend class RigidBody2D;
 	public:
 		
 		Component()
@@ -61,7 +62,7 @@ namespace sig
 		 * @param owner Owner Node
 		 * @param msg Message Object
 		 */
-		virtual void MessageReceived(Message& msg) {}
+		virtual void MessageReceived(Message* msg) {}
 		
 		/**
 		 * @brief Called when the Owner Node starts colliding with another Node.
@@ -79,7 +80,7 @@ namespace sig
 		
 		bool IsEnabled() const { return m_enabled; }
 		void SetEnabled(bool enabled) { this->m_enabled = enabled; }
-		
+
 		virtual Component* GetInstance(Node* owner) {
 			return new Component(owner);
 		}

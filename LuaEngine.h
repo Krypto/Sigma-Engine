@@ -26,11 +26,11 @@ namespace sig {
 	public:
 		Script() : Component() {}
 
-		void Initialize();
-		void Update(float dt);
-		void MessageReceived(Message& msg);
-		void CollisionEnter(const Collision &col);
-		void CollisionExit(const Collision &col);
+		void Initialize() override;
+		void Update(float dt) override;
+		void MessageReceived(Message* msg) override;
+		void CollisionEnter(const Collision &col) override;
+		void CollisionExit(const Collision &col) override;
 
 		LuaRef	OnInitialize;
 		LuaRef	OnUpdate;
@@ -38,6 +38,8 @@ namespace sig {
 		LuaRef	OnCollisionEnter;
 		LuaRef	OnCollisionExit;
 		LuaRef	Properties;
+
+		virtual Script *GetInstance(Node *owner) override;
 
 		COMPONENT_NAME("Script")
 	};
@@ -50,7 +52,7 @@ namespace sig {
 		lua_State *GetState() { return L; }
 
 		Script *RunScriptModule(const string &fileName);
-		Script *RunStringModule(const string &moduleName, const string &expression);
+		Script *RunStringModule(const string &expression);
 
 		void RunScript(const string &fileName);
 		void RunString(const string &expression);

@@ -5,7 +5,7 @@
 
 int main(int argc, char **argv)
 {
-	sig::Window *window = new sig::Window("Sigma Engine", 960, 640);
+	sig::Window *window = new sig::Window("Sigma Engine", 286, 512);
 	sig::GameLoop *mainLoop = new sig::GameLoop(window);
 
 	GameExample *game = new GameExample();

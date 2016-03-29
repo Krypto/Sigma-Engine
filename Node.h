@@ -11,24 +11,15 @@
 #include <string>
 using namespace std;
 
-#include <Box2D/Box2D.h>
-
 namespace sig
 {
 	using namespace math;
-	
-	typedef struct _fix_def_ {
-		float friction;
-		float density;
-		float restitution;
-		bool is_sensor;
-		b2Shape *shape;
-	} Fixture;
 
 	class SpriteBatch;
 	class Scene;
 	class Node
 	{
+		friend struct NTR;
 		friend class Scene;
 		friend class Component;
 		friend class Sprite;
@@ -67,8 +58,6 @@ namespace sig
 		void AddChild(Node *c, float lifeTime=-1);
 		Node* RemoveChild(Node *c);
 
-		b2Body* GetPhysicsBody() { return m_physicsBody; }
-		
 		const string& GetTag() const { return m_tag; }
 		void SetTag(const string& tag) { this->m_tag = tag; }
 
@@ -86,24 +75,7 @@ namespace sig
 		 * @param delay Message delay in seconds
 		 * @param udata User data
 		 */
-		void SendMessage(const string &to, const string &body, float delay=0, void *udata=nullptr);
-		
-		void ApplyForce(const Vector2 &force, bool wake = true);
-		void ApplyForce(const Vector2 &force, const Vector2 &point, bool wake = true);
-		void ApplyImpulse(const Vector2 &im, const Vector2 &point, bool wake = true);
-		void ApplyTorque(float t, bool wake = true);
-
-		const Vector2 GetLinearVelocity();
-		void SetLinearVelocity(const Vector2 &vel);
-		float GetAngularVelocity();
-		void SetAngularVelocity(float vel);
-
-		float GetMass();
-		bool IsAwake();
-
-		void CreatePolygonFixture(const vector<Vector2> &points, float density=0.0f, float friction=0.5f, float restitution=0.0f, bool issensor=false);
-		void CreateBoxFixture(float hx, float hy, const Vector2 &center = Vector2::Zero, float angle = 0.0f);
-		void CreateFixture(const Fixture &fixture);
+		void SendMessage(const string &to, const string &body, float delay=0);
 
 		virtual void Initialize();
 		virtual void Update(float dt);
@@ -112,6 +84,7 @@ namespace sig
 		
 		Node* GetInstance();
 		
+		unsigned int GetPickID() const { return m_pickID; }
 	protected:
 		// Identity
 		string m_tag;
@@ -136,10 +109,11 @@ namespace sig
 		// Scene graph
 		float m_lifeTime;
 		bool m_dead;
-		
-		// Physics
-		b2Body *m_physicsBody;
-		void InitBody();
+		bool m_initialized;
+
+		// Picking
+		static unsigned int pickID;
+		unsigned int m_pickID;
 	};
 }
 

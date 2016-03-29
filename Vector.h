@@ -147,32 +147,32 @@ public:
 	bool operator ==(const Vector4 &other) const;
 	bool operator !=(const Vector4 &other) const;
 
-	Scalar operator [](uint i) {
+	const Scalar& operator [](uint i) const {
 		switch (i) {
-		case 0:
-			return m_x;
-		case 1:
-			return m_y;
-		case 2:
-			return m_z;
-		case 3:
-			return m_w;
+			case 0:
+				return m_x;
+			case 1:
+				return m_y;
+			case 2:
+				return m_z;
+			case 3:
+				return m_w;
 		}
-		return -1.0f;
+		return m_x;
 	}
 
-	Scalar operator [](uint i) const {
+	Scalar& operator [](uint i) {
 		switch (i) {
-		case 0:
-			return m_x;
-		case 1:
-			return m_y;
-		case 2:
-			return m_z;
-		case 3:
-			return m_w;
+			case 0:
+				return m_x;
+			case 1:
+				return m_y;
+			case 2:
+				return m_z;
+			case 3:
+				return m_w;
 		}
-		return -1.0f;
+		return m_x;
 	}
 
 private:

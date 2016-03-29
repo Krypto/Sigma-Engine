@@ -4,7 +4,6 @@
 #include "IUR.h"
 #include "Scene.h"
 #include "Vector.h"
-#include "SoundSystem.h"
 #include "SpriteBatch.h"
 
 #include <vector>
@@ -28,8 +27,6 @@ namespace sig
 		virtual void Update(float dt);
 		virtual void Render();
 		virtual void OnNodeHover(Node *node, float mx, float my) {}
-		
-		SoundSystem* GetSoundSystem();
 
 		Window* GetWindow() { return m_window; }
 
@@ -54,6 +51,8 @@ namespace sig
 			m_timeScale = SIG_CLAMPF_R(ts, 0.001f, 1.0f);
 		}
 
+		Node *PickNode();
+
 		void Restart();
 		void Pause();
 		void Resume();
@@ -67,10 +66,7 @@ namespace sig
 		void SIG_Update(float dt);
 		void SIG_Init(Window *w);
 		void SIG_Finalize();
-		
-		vector<Node*> GetAllNodes(Node *root);
-		
-		SoundSystem *m_soundSystem;
+
 		SpriteBatch *m_spriteBatch;
 		Window *m_window;
 		Lua *m_lua;

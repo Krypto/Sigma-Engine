@@ -24,6 +24,8 @@
 #include "AnimatedSprite.h"
 #include "TileMap.h"
 #include "ParticleEmitter.h"
+#include "RigidBody2D.h"
+#include "SoundSystem.h"
 
 #include "Component.h"
 #include "MessageNetwork.h"

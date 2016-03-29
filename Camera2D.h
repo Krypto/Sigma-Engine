@@ -7,12 +7,13 @@
 namespace sig
 {
 
+	class Window;
 	class Camera2D : public Node
 	{
 	public:
 		Camera2D();
 		
-		void ApplyTransformation(int w, int h);
+		void ApplyTransformation(Window* w);
 	
 		float& GetZoom() { return m_zoom; }
 		void SetZoom(float zoom) {
@@ -23,7 +24,7 @@ namespace sig
 
 		math::Matrix4 GetCameraMatrix();
 	private:
-		float m_zoom, m_zNear, m_zFar;
+		float m_zoom;
 	};
 
 }

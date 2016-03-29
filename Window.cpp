@@ -37,7 +37,8 @@ void sig::Window::Open(bool fullscreen)
 	SDL_GL_SetAttribute(SDL_GL_GREEN_SIZE, 		8);
 	SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE, 		8);
 	SDL_GL_SetAttribute(SDL_GL_ALPHA_SIZE,		8);
-	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 	1);
+	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER,	1);
+	SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE,	8);
 	
 	m_sdl_window = SDL_CreateWindow(m_title.c_str(), SDL_WINDOWPOS_CENTERED,
 									SDL_WINDOWPOS_CENTERED, m_width, m_height, 
@@ -79,6 +80,17 @@ void sig::Window::Update(float dt)
 	if (Input::CLOSE_REQUESTED) {
 		m_closing = true;
 	}
+}
+
+sig::math::Matrix4 sig::Window::GetProjectionMatrix()
+{
+	Matrix4 proj;
+	Scalar m[16];
+	glGetFloatv(GL_PROJECTION_MATRIX, m);
+
+	proj = Matrix4(m);
+
+	return proj;
 }
 
 void sig::Window::Clear(Color backColor, int flags)

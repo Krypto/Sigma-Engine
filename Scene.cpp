@@ -3,22 +3,26 @@
 #include "SIG_OpenGL.h"
 #include "SIG_Utilities.h"
 #include "Window.h"
+#include "SoundSystem.h"
 
 #include <algorithm>
 
 sig::Scene::Scene(BaseGame *game)
 {
 	m_game = game;
-	m_pixelsPerMeter = 50.0f;
+	m_pixelsPerMeter = 60.0f;
 	m_root = nullptr;
 	m_camera = nullptr;
 	m_lastAdded = nullptr;
+	m_showPhysics = false;
+	m_gui = nullptr;
 }
 
 sig::Scene::~Scene()
 {
 	SIG_FREE(m_root);
 	SIG_FREE(m_physicsWorld);
+	SIG_FREE(m_gui);
 }
 
 sig::Node* sig::Scene::CreateNode(const string &name)
@@ -26,51 +30,80 @@ sig::Node* sig::Scene::CreateNode(const string &name)
 	Node *n = new Node();
 	n->m_scene = this;
 	n->SetName(name);
-	n->InitBody();
 
 	return n;
 }
 
 void sig::Scene::BeginContact(b2Contact* contact)
 {
-	void* userData = contact->GetFixtureA()->GetBody()->GetUserData();
+	void* userData1 = contact->GetFixtureA()->GetBody()->GetUserData();
+	void* userData2 = contact->GetFixtureB()->GetBody()->GetUserData();
 	b2Manifold *mf = contact->GetManifold();
-	
-	Collision col;
-	col.hitNode = static_cast<Node*>(contact->GetFixtureB()->GetBody()->GetUserData());
-	col.hitNormal = Vector2(mf->localNormal.x, mf->localNormal.y);
-	col.hitPosition = Vector2(mf->localPoint.x, mf->localPoint.y);
-	
-	Node *to = static_cast<Node*>(userData);
-	
+
+	Node *to = static_cast<Node*>(userData1);
+	Node *from = static_cast<Node*>(userData2);
+
 	if (to) {
+		Collision col1;
+		col1.hitNode = from;
+		col1.hitNormal = Vector2(mf->localNormal.x, mf->localNormal.y);
+		col1.hitPosition = Vector2(mf->localPoint.x, mf->localPoint.y);
+
 		vector<Component*> bvs = to->GetComponents();
 		SIG_FOREACH(it, bvs)
 		{
 			Component *b = (*it);
-			b->CollisionEnter(col);
+			b->CollisionEnter(col1);
+		}
+	}
+	if (from) {
+		Collision col2;
+		col2.hitNode = to;
+		col2.hitNormal = Vector2(mf->localNormal.x, mf->localNormal.y);
+		col2.hitPosition = Vector2(mf->localPoint.x, mf->localPoint.y);
+
+		vector<Component*> bvs = from->GetComponents();
+		SIG_FOREACH(it, bvs)
+		{
+			Component *b = (*it);
+			b->CollisionEnter(col2);
 		}
 	}
 }
 
 void sig::Scene::EndContact(b2Contact* contact)
 {
-	void* userData = contact->GetFixtureA()->GetBody()->GetUserData();
+	void* userData1 = contact->GetFixtureA()->GetBody()->GetUserData();
+	void* userData2 = contact->GetFixtureB()->GetBody()->GetUserData();
 	b2Manifold *mf = contact->GetManifold();
 	
-	Collision col;
-	col.hitNode = static_cast<Node*>(contact->GetFixtureB()->GetBody()->GetUserData());
-	col.hitNormal = Vector2(mf->localNormal.x, mf->localNormal.y);
-	col.hitPosition = Vector2(mf->localPoint.x, mf->localPoint.y);
-	
-	Node *to = static_cast<Node*>(userData);
+	Node *to = static_cast<Node*>(userData1);
+	Node *from = static_cast<Node*>(userData2);
 	
 	if (to) {
+		Collision col1;
+		col1.hitNode = from;
+		col1.hitNormal = Vector2(mf->localNormal.x, mf->localNormal.y);
+		col1.hitPosition = Vector2(mf->localPoint.x, mf->localPoint.y);
+
+		vector<Component*> bvs = from->GetComponents();
+		SIG_FOREACH(it, bvs)
+		{
+			Component *b = (*it);
+			b->CollisionExit(col1);
+		}
+	}
+	if (from) {
+		Collision col2;
+		col2.hitNode = to;
+		col2.hitNormal = Vector2(mf->localNormal.x, mf->localNormal.y);
+		col2.hitPosition = Vector2(mf->localPoint.x, mf->localPoint.y);
+
 		vector<Component*> bvs = to->GetComponents();
 		SIG_FOREACH(it, bvs)
 		{
 			Component *b = (*it);
-			b->CollisionExit(col);
+			b->CollisionExit(col2);
 		}
 	}
 }
@@ -85,12 +118,17 @@ void sig::Scene::Initialize()
 	m_physicsWorld = new b2World(b2Vec2(0, 140));
 	m_physicsWorld->SetAllowSleeping(true);
 	m_physicsWorld->SetContinuousPhysics(true);
-	
 	m_physicsWorld->SetContactListener(this);
+
+	m_draw = new DebugDraw();
+	m_draw->m2p = GetM2P();
+	m_draw->SetFlags(b2Draw::e_shapeBit | b2Draw::e_centerOfMassBit);
+	m_physicsWorld->SetDebugDraw(m_draw);
 	
 	if (m_camera == nullptr) {
 		m_camera = new Camera2D();
 		m_camera->SetName("defaultCamera");
+		m_camera->AddComponent(new AudioListener());
 		
 		GetRoot()->AddChild(m_camera);
 	}
@@ -107,8 +145,7 @@ void sig::Scene::Render()
 	if (m_camera != nullptr) {
 		Window *win = m_game->GetWindow();
 		if (win != nullptr) {
-			m_camera->ApplyTransformation(	win->GetWidth(),
-											win->GetHeight());
+			m_camera->ApplyTransformation(win);
 		}
 	} else {
 		Window *win = m_game->GetWindow();
@@ -126,6 +163,11 @@ void sig::Scene::Render()
 
 	GetGame()->GetSpriteBatch()->Render();
 
+	if (m_showPhysics) {
+		m_draw->m2p = GetM2P();
+		m_physicsWorld->DrawDebugData();
+	}
+
 	if (m_gui) {
 		m_gui->Render();
 	}
@@ -133,7 +175,7 @@ void sig::Scene::Render()
 
 void sig::Scene::Update(float dt)
 {
-	m_physicsWorld->Step(dt, 6, 2);
+	m_physicsWorld->Step(dt, 8, 3);
 	
 	GetRoot()->Update(dt);
 
@@ -145,15 +187,17 @@ void sig::Scene::Update(float dt)
 		SIG_FREE(req);
 		m_nodeTreeRequests.pop();
 	}
-
-	if (m_gui) {
-		m_gui->Update(dt);
-	}
 }
 
 void sig::Scene::Finalize()
 {
 	GetRoot()->Finalize();
+}
+
+const sig::math::Vector2 sig::Scene::GetGravity()
+{
+	b2Vec2 g = m_physicsWorld->GetGravity();
+	return Vector2(g.x, g.y);
 }
 
 void sig::Scene::CreateNodeTreeRequest(sig::Node *src, sig::Node *dest, sig::NTRAction action, float time)
@@ -289,14 +333,10 @@ void sig::NTR::Process(Scene* scene)
 			scene->m_lastAdded = _src;
 		} break;
 		case NTRAction::NTR_DELETE: {
-			Node* rem = dest->RemoveChild(src);
-			if (rem != nullptr) {
-				scene->m_inactiveNodes.push_back(rem);
-			}
+			dest->RemoveChild(src);
 		} break;
 		case NTRAction::NTR_INSTANTIATE: {
-			Node* instance = dest->GetInstance();
-			scene->CreateNodeTreeRequest(instance, dest,
+			scene->CreateNodeTreeRequest(src->GetInstance(), dest,
 										 NTRAction::NTR_ADD_VOLATILE,
 										 time);
 		} break;

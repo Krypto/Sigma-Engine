@@ -74,7 +74,7 @@ void sig::MessageNetwork::MessageSend(Message* msg)
 			SIG_FOREACH(cit, components)
 			{
 				Component* c = (*cit);
-				c->MessageReceived(*msg);
+				c->MessageReceived(msg);
 			}
 		}
 	} else {
@@ -82,7 +82,7 @@ void sig::MessageNetwork::MessageSend(Message* msg)
 		SIG_FOREACH(it, components)
 		{
 			Component* c = (*it);
-			c->MessageReceived(*msg);
+			c->MessageReceived(msg);
 		}
 	}
 }

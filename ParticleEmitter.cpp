@@ -132,6 +132,30 @@ void sig::ParticleEmitter::EmitParticles(u32 count)
 	}
 }
 
+sig::ParticleEmitter *sig::ParticleEmitter::GetInstance(Node *owner)
+{
+	ParticleEmitter *inst = new ParticleEmitter(m_maxParticles);
+	inst->m_emitRate = m_emitRate;
+	inst->m_enabled = m_enabled;
+	inst->m_endColor = Color(m_endColor.r, m_endColor.g, m_endColor.b, m_endColor.a);
+	inst->m_liveParticles = m_liveParticles;
+	inst->m_owner = owner;
+	inst->m_particleAccel = Vector2(m_particleAccel.X(), m_particleAccel.Y());
+	inst->m_particleAngularVelocity = m_particleAngularVelocity;
+	inst->m_particleBlend = m_particleBlend;
+	inst->m_particleEndSize = m_particleEndSize;
+	inst->m_particleLife = m_particleLife;
+	inst->m_particleSpeed = m_particleSpeed;
+	inst->m_particleSpread = m_particleSpread;
+	inst->m_particleStartSize = m_particleStartSize;
+	inst->m_posFun = m_posFun;
+	inst->m_startColor = Color(m_startColor.r, m_startColor.g, m_startColor.b, m_startColor.a);
+	inst->m_texture = m_texture;
+	inst->m_time = m_time;
+
+	return inst;
+}
+
 sig::Particle::Particle()
 	:	angle(0),
 		size(0),

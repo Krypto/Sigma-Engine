@@ -16,6 +16,17 @@ void sig::Sprite::Render(SpriteBatch* batch)
 	}
 }
 
+sig::Sprite *sig::Sprite::GetInstance(Node *owner)
+{
+	Sprite *inst = new Sprite(m_texture, m_shader);
+	inst->m_uvRectangle = Rect(m_uvRectangle.x, m_uvRectangle.y,
+							   m_uvRectangle.width, m_uvRectangle.height);
+	inst->m_color = Color(m_color.r, m_color.g, m_color.b, m_color.a);
+	inst->m_owner = owner;
+
+	return inst;
+}
+
 int sig::Sprite::GetDrawOrder() const
 {
     return m_drawOrder;

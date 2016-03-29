@@ -7,7 +7,7 @@ sig::AnimatedSprite::AnimatedSprite()
 	m_rows = 1;
 	m_cols = 1;
 	m_static = false;
-	m_current = nullptr;
+	m_current = -1;
 }
 
 sig::AnimatedSprite::AnimatedSprite(Texture2D* texture, int rows, int cols)
@@ -44,46 +44,73 @@ void sig::AnimatedSprite::Configure(int rows, int cols)
 void sig::AnimatedSprite::Update(float dt)
 {
 	if (m_animations.size() == 0) { return; }
-	if (m_current == nullptr) { return; }
+	if (m_current < 0) { return; }
 	if (m_static) { return; }
 	
-	m_current->time += dt;
+	Animation *current = GetCurrent();
+
+	current->time += dt;
 	
 	int frame = 0;
-	if (m_current->time >= m_current->speed) {
-		m_current->time = 0;
+	if (current->time >= current->speed) {
+		current->time = 0;
 		
-		if (m_current->frames.size() > 0) {
-			if (m_current->currentIndex++ >= m_current->frames.size()-1) {
-				if (m_current->loop) {
-					m_current->currentIndex = 0;
-					m_current->stopped = false;
+		if (current->frames.size() > 0) {
+			if (current->currentIndex++ >= current->frames.size()-1) {
+				if (current->loop) {
+					current->currentIndex = 0;
+					current->stopped = false;
 				} else {
-					m_current->currentIndex = m_current->frames.size()-1;
-					m_current->stopped = true;
+					current->currentIndex = current->frames.size()-1;
+					current->stopped = true;
 				}
 			}
 		} else {
 			u32 maxF = m_rows * m_cols;
-			if (m_current->currentIndex++ >= maxF-1) {
-				if (m_current->loop) {
-					m_current->currentIndex = 0;
-					m_current->stopped = false;
+			if (current->currentIndex++ >= maxF-1) {
+				if (current->loop) {
+					current->currentIndex = 0;
+					current->stopped = false;
 				} else {
-					m_current->currentIndex = maxF-1;
-					m_current->stopped = true;
+					current->currentIndex = maxF-1;
+					current->stopped = true;
 				}
 			}
 		}
 	}
 	
-	if (m_current->frames.size() > 0) {
-		frame = m_current->frames[m_current->currentIndex];
+	if (current->frames.size() > 0) {
+		frame = current->frames[current->currentIndex];
 	} else {
-		frame = m_current->currentIndex;
+		frame = current->currentIndex;
 	}
 	
 	SetUVRectangle(m_frames[frame]);
+}
+
+sig::AnimatedSprite *sig::AnimatedSprite::GetInstance(Node* owner)
+{
+	AnimatedSprite *inst = dynamic_cast<AnimatedSprite*>(Sprite::GetInstance(owner));
+	inst->m_current = m_current;
+	inst->Configure(m_rows, m_cols);
+	inst->m_static = m_static;
+
+	SIG_FOREACH(it, m_animations)
+	{
+		Animation *anim = *it;
+		Animation *new_anim = new Animation();
+		new_anim->currentIndex = anim->currentIndex;
+		new_anim->frames = anim->frames;
+		new_anim->loop = anim->loop;
+		new_anim->name = anim->name;
+		new_anim->speed = anim->speed;
+		new_anim->stopped = anim->stopped;
+		new_anim->time = anim->time;
+
+		inst->m_animations.push_back(new_anim);
+	}
+
+	return inst;
 }
 
 sig::Animation* sig::AnimatedSprite::AddAnimation(string name, float speed, bool loop, std::initializer_list<int> frames)
@@ -95,15 +122,15 @@ sig::Animation* sig::AnimatedSprite::AddAnimation(string name, float speed, bool
 	ani->speed = speed;
 	ani->time = ani->speed;
 	
-	if (GetAnim(name) == nullptr) {
+	if (GetAnim(name) <= -1) {
 		m_animations.push_back(ani);
 	} else {
 		SIG_FREE(ani);
 		return nullptr;
 	}
 	
-	if (m_current == nullptr) {
-		m_current = ani;
+	if (m_current <= -1) {
+		m_current = 0;
 	}
 	
 	return ani;
@@ -111,31 +138,33 @@ sig::Animation* sig::AnimatedSprite::AddAnimation(string name, float speed, bool
 
 void sig::AnimatedSprite::SetAnimation(string name)
 {
-	Animation* ani = GetAnim(name);
-	if (ani != nullptr) {
-		ani->currentIndex = 0;
-		ani->stopped = false;
-		ani->time = 0;
-		
+	int ani = GetAnim(name);
+	if (ani >= 0) {
 		m_current = ani;
+
+		GetCurrent()->currentIndex = 0;
+		GetCurrent()->stopped = false;
+		GetCurrent()->time = 0;
 	}
 }
 
-sig::Animation* sig::AnimatedSprite::GetAnim(string name)
+int sig::AnimatedSprite::GetAnim(string name)
 {
+	int index = 0;
 	SIG_FOREACH(it, m_animations)
 	{
 		if ((*it)->name == name) {
-			return (*it);
+			return index;
 		}
+		index++;
 	}
-	return nullptr;
+	return -1;
 }
 
 void sig::AnimatedSprite::SetFrame(int f)
 {
-	if (m_current != nullptr) {
-		m_current->currentIndex = f;
+	if (m_current >= 0) {
+		GetCurrent()->currentIndex = f;
 		SetUVRectangle(m_frames[f]);
 	}
 }

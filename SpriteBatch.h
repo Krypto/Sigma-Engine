@@ -72,7 +72,7 @@ namespace sig
 		u32 offset;
 		u32 numVertices;
 		Texture2D *texture;
-		math::Matrix4 transform;
+		Matrix4 transform;
 		BlendMode blendMode;
 	};
 	
@@ -97,6 +97,7 @@ namespace sig
 		void Draw(float x, float y, float orix, float oriy, float rot, Sprite *sprite);
 		void Draw(float x, float y, float rot, Sprite *sprite);
 		void Draw(int order, float x, float y, float scale, float rot, Texture2D *tex, const Color& color, BlendMode blend_mode = BlendMode::NORMAL);
+		void Draw(const math::Matrix4 &transform, const Vector2& size);
 		
 		void Render();
 		

@@ -14,6 +14,9 @@
 #define SIG_LOG(msg) 		std::cout << COLOR_WHITE_NORMAL << msg << COLOR_NORMAL << std::endl;
 #define SIG_LOG_DETAIL(msg) SIG_LOG(COLOR_YELLOW_NORMAL << "(" << __FILE__ << ":" << __LINE__ << "): " << COLOR_WHITE_NORMAL << msg)
 #define SIG_LOG_ERROR(msg) 	SIG_LOG(COLOR_RED_NORMAL << "ERROR: " << COLOR_WHITE_NORMAL << msg)
+#define SIG_LOG_VEC2(v) SIG_LOG("x="<<v.X()<<", y="<<v.Y())
+#define SIG_LOG_VEC3(v) SIG_LOG("x="<<v.X()<<", y="<<v.Y()<<", z="<<v.Z())
+#define SIG_LOG_VEC4(v) SIG_LOG("x="<<v.X()<<", y="<<v.Y()<<", z="<<v.Z()<<", w="<<v.W())
 #define SIG_DIE(errcode) 	exit(errcode);
 #define SIG_DUMP(vec) {\
 	for (auto it = vec.begin(); it != vec.end(); ++it) {\

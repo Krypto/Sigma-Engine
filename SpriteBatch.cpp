@@ -187,6 +187,8 @@ void sig::SpriteBatch::Render()
 		
 		if (b.texture != nullptr) {
 			b.texture->Bind(0);
+		} else {
+			Texture2D::Unbind();
 		}
 		
 		if (b.shader != nullptr) {
@@ -202,7 +204,11 @@ void sig::SpriteBatch::Render()
 					previous->SetInt("tex0", 0);
 				}
 			}
+		} else {
+			Shader::Unbind();
+			glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 		}
+
 		glEnable(GL_BLEND);
 		switch (b.blendMode) {
 			default:
@@ -296,6 +302,13 @@ void sig::SpriteBatch::Draw(int order, float x, float y, float scale, float rot,
 	Matrix4 t = pos * siz * rotm * ori;
 
 	Draw(t, GPUShaders::SIG_GPU_SPRITEDEFAULT, w, h, Rect(0,0,1,1), tex, order, color, blend_mode);
+}
+
+void sig::SpriteBatch::Draw(const sig::math::Matrix4 &transform, const Vector2 &size)
+{
+	Draw(transform, nullptr, size.X(), size.Y(),
+		 Rect(0,0,1,1), nullptr, drawOrder,
+		 Color::WHITE, BlendMode::NORMAL);
 }
 
 void sig::SpriteBatch::Draw(float x, float y, float scalex, float scaley, float orix, float oriy, float rot, const Rect& uv, Sprite* sprite)

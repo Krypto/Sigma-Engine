@@ -7,6 +7,7 @@
 #include "Color.h"
 #include "GUI.h"
 #include "IUR.h"
+#include "DebugDraw.h"
 
 #include <vector>
 #include <queue>
@@ -86,16 +87,21 @@ namespace sig
 		
 		b2World* GetPhysicsWorld() { return m_physicsWorld; }
 		
-		void SetPixelsPerMeter(float pixelsPerMeter) { this->m_pixelsPerMeter = pixelsPerMeter; }
-		float GetPixelsPerMeter() const {return m_pixelsPerMeter;}
+		void SetM2P(float pixelsPerMeter) { this->m_pixelsPerMeter = pixelsPerMeter; }
+		float GetM2P() const { return m_pixelsPerMeter; }
+		float GetP2M() const { return 1.0f / m_pixelsPerMeter; }
 		
-		void SetAmbient(const Color& ambient) {this->m_ambient = ambient;}
-		void SetBackground(const Color& background) {this->m_background = background;}
-		const Color& GetAmbient() const {return m_ambient;}
-		Color& GetBackground() {return m_background;}
+		void SetAmbient(const Color& ambient) { this->m_ambient = ambient; }
+		void SetBackground(const Color& background) { this->m_background = background; }
+		const Color& GetAmbient() const { return m_ambient; }
+		Color& GetBackground() { return m_background; }
 		
-		void SetCamera(Camera2D* camera) {this->m_camera = camera;}
-		Camera2D* GetCamera() {return m_camera;}
+		void SetCamera(Camera2D* camera) { this->m_camera = camera; }
+		Camera2D* GetCamera() { return m_camera; }
+
+		const Vector2 GetGravity();
+
+		void ShowPhysicsVisualization(bool show) { m_showPhysics = show; }
 		
 		Node* GetRoot() {
 			if (m_root == nullptr) {
@@ -127,6 +133,9 @@ namespace sig
 		// Node manager
 		vector<Node*> m_inactiveNodes;
 		queue<NodeTreeRequest*> m_nodeTreeRequests;
+
+		bool m_showPhysics;
+		DebugDraw *m_draw;
 	};
 
 }

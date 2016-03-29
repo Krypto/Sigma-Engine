@@ -71,6 +71,8 @@ namespace sig {
 		void SetEnabled(bool v) { m_enabled = v; }
 
 		void SetPositionCallback(function<Vector2(float, float)> cb) { m_posFun = cb; }
+
+		virtual ParticleEmitter *GetInstance(Node* owner) override;
 	private:
 		u32 m_maxParticles, m_liveParticles;
 		Color m_startColor, m_endColor;

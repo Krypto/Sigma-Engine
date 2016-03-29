@@ -1,9 +1,12 @@
 #ifndef SIGMA_SOUND_SYSTEM
 #define SIGMA_SOUND_SYSTEM
 
-#include "AudioClip.h"
+#include "SIG_Utilities.h"
+
+#include "Component.h"
 
 #include <OALWrapper/OAL_Funcs.h>
+#include <OALWrapper/OAL_Sample.h>
 
 #include <map>
 #include <vector>
@@ -12,51 +15,82 @@ using namespace std;
 
 namespace sig
 {
-	typedef map<string, AudioClip*> AudioClipMap;
+	class AudioSample;
+	typedef struct AudioObject {
+		float volume, pitch, pan;
+		bool paused, playing, is3D, loop;
+		int source;
 
-	class SoundSystem
+		void Play(AudioSample* sample);
+		void Pause();
+		void Stop();
+
+		bool IsPlaying() const { return playing; }
+
+		void Update(const Vector2& pos);
+	} AudioObject;
+
+	class AudioSample
+	{
+		friend class AudioSource;
+	public:
+		AudioSample(void *data, u32 size);
+		~AudioSample();
+
+		cOAL_Sample *GetSample() { return m_sample; }
+		void *GetData() { return m_data; }
+		u32 GetSize() { return m_size; }
+
+		void Reload();
+	protected:
+		bool m_loaded;
+		cOAL_Sample *m_sample;
+		void *m_data;
+		u32 m_size;
+	};
+
+	typedef map<string, AudioSample*> AudioSampleList;
+
+	class AudioSource : public Component
 	{
 	public:
-		SoundSystem();
-		~SoundSystem();
-		
+		AudioSource();
+		~AudioSource();
+
 		void Initialize();
-		void Update();
-		
-		/**
-		 * @brief Play an AudioClip object
-		 * @param ac non-null Audio Clip
-		 */
-		void Play(AudioClip *ac);
+		void Update(float dt);
 
-		/**
-		 * @brief Play an AudioClip object from the library
-		 * @param name Clip name, unique
-		 */
-		void Play(const string &name);
+		void AddSample(const string& name, AudioSample *sample);
+		AudioSample *GetSample(const string& name);
 
-		/**
-		 * @brief Add an audio clip to the audio library
-		 * @param name Clip name, unique
-		 * @param audio_clip Audio clip object. Not null
-		 */
-		void AddToLibrary(const string &name, AudioClip* audio_clip);
-		
-		/**
-		 * @brief Get an AudioClip object from the library
-		 * @param name Clip name, unique
-		 * @return Null if the AudioClip doesn't exist, AudioClip* otherwise
-		 */
-		AudioClip *GetAudioClipFromLibrary(const string &name);
+		AudioObject *Play(AudioSample *sample);
+		AudioObject *Play(const string& name);
 
-		void SetMasterVolume(float masterVolume) {this->m_masterVolume = masterVolume;}
-		float GetMasterVolume() const {return m_masterVolume;}
-		
+		AudioSource *GetInstance(Node *owner) override;
+
+		static bool OAL_Initialized;
+
+		COMPONENT_NAME("AudioSource");
+	private:
+		AudioSampleList m_library;
+		vector<AudioObject*> m_playing, m_remove;
+	};
+
+	class AudioListener : public Component
+	{
+	public:
+		AudioListener();
+
+		void Update(float dt);
+
+		float GetMasterVolume() const { return m_masterVolume; }
+		void SetMasterVolume(float v) { m_masterVolume = v; }
+
+		AudioListener *GetInstance(Node *owner) override;
+
+		COMPONENT_NAME("AudioListener");
 	private:
 		float m_masterVolume;
-		bool m_valid;
-		vector<AudioClip*> m_playing, m_remove;
-		AudioClipMap m_library;
 	};
 }
 

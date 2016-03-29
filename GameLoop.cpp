@@ -17,6 +17,7 @@ sig::GameLoop::GameLoop()
 {
 	m_frames = 0;
 	m_frameTime = 0;
+	m_startTime = 0;
 }
 
 sig::GameLoop::GameLoop(Window* window)
@@ -74,6 +75,7 @@ int sig::GameLoop::SIG_MainLoop(float fps)
 
 	if (m_game != nullptr) {
 		m_game->SIG_Init(m_window);
+		m_game->SIG_Render();
 	}
 
 	SIG_LOG("Sigma Engine Started...");

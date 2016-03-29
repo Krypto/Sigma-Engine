@@ -41,6 +41,8 @@ namespace sig
 		void SetDrawOrder(int drawOrder);
 
 		void Render(SpriteBatch *batch);
+
+		virtual Sprite *GetInstance(Node* owner) override;
 		
 		COMPONENT_NAME("Sprite")
 	protected:

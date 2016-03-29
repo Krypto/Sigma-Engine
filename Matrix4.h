@@ -11,11 +11,10 @@ namespace sig { namespace math {
 		Matrix4(Quaternion q);
 		Matrix4(Scalar m[16]);
 
-		const Matrix4 operator* (const Matrix4 &m) const;
-
 		Scalar& operator() (uint row, uint col);
 		Scalar operator() (uint row, uint col) const;
 
+		Matrix4 Inverted();
 		Matrix4 Transposed();
 		Matrix4 RotationFromVectors(Vector3 forward, Vector3 up, Vector3 right);
 
@@ -28,7 +27,7 @@ namespace sig { namespace math {
 		static Matrix4 MakeScale(const Vector3 &scal);
 		static Matrix4 MakeLookAt(const Vector3 &eye, const Vector3 &center, const Vector3 &up);
 		static Matrix4 MakePerspective(Scalar fov, Scalar aspect, Scalar znear, Scalar zfar);
-		static Matrix4 MakeOrtho(Scalar left, Scalar right, Scalar bottom, Scalar top, Scalar znear, Scalar zfar);
+		static Matrix4 MakeOrtho(Scalar width, Scalar height, Scalar znear, Scalar zfar);
 
 		Scalar** Raw() {
 			Scalar **rows = new Scalar*[4] { m_matrix[0], m_matrix[1], m_matrix[2], m_matrix[3] };
@@ -41,6 +40,9 @@ namespace sig { namespace math {
 		void Set(int r, int c, Scalar v) {
 			m_matrix[r][c] = v;
 		}
+
+		const Vector4 &operator *(const Vector4& v);
+		const Matrix4 operator *(const Matrix4 &m) const;
 
 	private:
 		Scalar m_matrix[4][4];

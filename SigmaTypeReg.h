@@ -15,6 +15,7 @@
 #include "Sprite.h"
 #include "AnimatedSprite.h"
 #include "Input.h"
+#include "RigidBody2D.h"
 
 namespace sig {
 	using namespace math;
@@ -35,7 +36,7 @@ namespace sig {
 					.addFunction("dot", &Vector2::Dot, LUA_ARGS(_opt<const Vector2&>))
 					.addPropertyReadOnly("length", &Vector2::Length)
 					.addFunction("max", static_cast<float(Vector2::*)()>(&Vector2::Max))
-					.addFunction("normalized", &Vector2::Normalized)
+					.addFunction("normalised", &Vector2::Normalized)
 					.addFunction("__len", &Vector2::Length)
 					.addFunction("__add", &Vector2::operator+)
 					.addFunction("__sub", &Vector2::operator-)
@@ -51,23 +52,18 @@ namespace sig {
 					.addPropertyReadOnly("components", &Node::GetComponents)
 					.addPropertyReadOnly("name", &Node::GetName)
 					.addPropertyReadOnly("parent", &Node::GetParent)
+					.addPropertyReadOnly("tag", &Node::GetTag)
 					.addProperty("origin", &Node::GetOrigin, &Node::SetOrigin)
 					.addProperty("position", &Node::GetPosition, &Node::SetPosition)
 					.addProperty("scale", &Node::GetScale, &Node::SetScale)
 					.addProperty("rotation", &Node::GetRotation, &Node::SetRotation)
-					.addProperty("linear_velocity", &Node::GetLinearVelocity, &Node::SetLinearVelocity)
-					.addProperty("angular_velocity", &Node::GetAngularVelocity, &Node::SetAngularVelocity)
-					.addPropertyReadOnly("awake", &Node::IsAwake)
-					.addPropertyReadOnly("mass", &Node::GetMass)
 					.addPropertyReadOnly("scene", &Node::GetScene)
 					.addPropertyReadOnly("dead", &Node::IsDead)
 					.addFunction("get_child", &Node::GetChild)
+					.addFunction("get_instance", &Node::GetInstance)
 					.addFunction("get_component", &Node::GetComponent)
 					.addFunction("set_parent", &Node::SetParent)
-					.addFunction("apply_force", static_cast<void(Node::*)(const Vector2&, bool)>(&Node::ApplyForce))
-					.addFunction("apply_force", static_cast<void(Node::*)(const Vector2&, const Vector2&, bool)>(&Node::ApplyForce))
-					.addFunction("apply_impulse", &Node::ApplyImpulse)
-					.addFunction("apply_torque", &Node::ApplyTorque)
+					.addFunction("send_message", &Node::SendMessage)
 					.endClass();
 
 			// Register Scene
@@ -76,11 +72,15 @@ namespace sig {
 					.addPropertyReadOnly("nodes", static_cast<std::vector<Node*>(Scene::*)()>(&Scene::GetAllNodes))
 					.addPropertyReadOnly("game", &Scene::GetGame)
 					.addPropertyReadOnly("root", &Scene::GetRoot)
+					.addPropertyReadOnly("gravity", &Scene::GetGravity)
+					.addPropertyReadOnly("p2m", &Scene::GetP2M)
+					.addPropertyReadOnly("m2p", &Scene::GetM2P)
 					.addProperty("active_camera", &Scene::GetCamera, &Scene::SetCamera)
 					.addProperty("back_color", &Scene::GetBackground, &Scene::SetBackground)
 					.addFunction("instantiate", &Scene::Instantiate)
 					.addFunction("remove_child", &Scene::RemoveNode)
-					.addFunction("add_child_inactive", &Scene::AddInactiveNode)
+					.addFunction("add_inactive_node", &Scene::AddInactiveNode)
+					.addFunction("add_node", &Scene::AddNode)
 					.addFunction("remove_child_inactive", &Scene::RemoveInactiveNode)
 					.addFunction("reparent_nodes", &Scene::ReparentNodes)
 					.addFunction("get_node", &Scene::GetNode)
@@ -92,7 +92,6 @@ namespace sig {
 			// Register Game
 			LuaBinding(L)
 				.beginClass<BaseGame>("Game")
-					.addPropertyReadOnly("sound_system", &BaseGame::GetSoundSystem)
 					.addPropertyReadOnly("window", &BaseGame::GetWindow)
 					.addProperty("current_scene", &BaseGame::GetCurrentScene, &BaseGame::SetCurrentScene)
 					.addFunction("pause", &BaseGame::Pause)
@@ -144,36 +143,12 @@ namespace sig {
 					.addPropertyReadOnly("user_data", &Message::GetUserData)
 					.addPropertyReadOnly("body", &Message::GetBody)
 				.endClass();
+
 			LuaBinding(L)
 				.beginClass<Collision>("Collision")
 					.addVariable("hit_node", &Collision::hitNode, false)
 					.addVariable("hit_normal", &Collision::hitNormal, false)
 					.addVariable("hit_position", &Collision::hitPosition, false)
-				.endClass();
-
-			// Register Sound System
-			LuaBinding(L)
-				.beginClass<SoundSystem>("SoundSystem")
-					.addProperty("master_volume", &SoundSystem::GetMasterVolume, &SoundSystem::SetMasterVolume)
-					.addFunction("play", static_cast<void(SoundSystem::*)(AudioClip*)>(&SoundSystem::Play))
-					.addFunction("play", static_cast<void(SoundSystem::*)(const string&)>(&SoundSystem::Play))
-				.endClass();
-
-			// Register AudioClip
-			LuaBinding(L)
-				.beginClass<AudioClip>("AudioClip")
-					.addProperty("pan", &AudioClip::GetPan, &AudioClip::SetPan)
-					.addProperty("pitch", &AudioClip::GetPitch, &AudioClip::SetPitch)
-					.addProperty("volume", &AudioClip::GetVolume, &AudioClip::SetVolume)
-					.addProperty("position", &AudioClip::GetPosition, &AudioClip::SetPosition)
-					.addProperty("spatial", &AudioClip::Is3D, &AudioClip::SetIs3D)
-					.addProperty("loop", &AudioClip::IsLoop, &AudioClip::SetLoop)
-					.addPropertyReadOnly("playing", &AudioClip::IsPlaying)
-					.addPropertyReadOnly("paused", &AudioClip::IsPaused)
-					.addPropertyReadOnly("name", &AudioClip::GetName)
-					.addFunction("play", &AudioClip::Play)
-					.addFunction("pause", &AudioClip::Pause)
-					.addFunction("stop", &AudioClip::Stop)
 				.endClass();
 
 			// Register Window
@@ -190,6 +165,47 @@ namespace sig {
 					.addPropertyReadOnly("name", &Component::GetName)
 					.addPropertyReadOnly("owner", &Component::GetOwner)
 					.addProperty("enabled", &Component::IsEnabled, &Component::SetEnabled)
+				.endClass();
+
+			// Register Sound System
+			LuaBinding(L)
+				.beginClass<AudioObject>("AudioObject")
+					.addVariable("volume", &AudioObject::volume)
+					.addVariable("loop", &AudioObject::loop)
+					.addVariable("pan", &AudioObject::pan)
+					.addVariable("pitch", &AudioObject::pitch)
+					.addPropertyReadOnly("playing", &AudioObject::IsPlaying)
+					.addFunction("play", &AudioObject::Play)
+					.addFunction("pause", &AudioObject::Pause)
+					.addFunction("stop", &AudioObject::Stop)
+				.endClass();
+
+			LuaBinding(L)
+				.beginClass<AudioSample>("AudioSample")
+					.addFunction("reload", &AudioSample::Reload)
+				.endClass();
+
+			LuaBinding(L)
+				.beginExtendClass<AudioSource, Component>("AudioSource")
+					.addFunction("play", static_cast<AudioObject*(AudioSource::*)(const string&)>(&AudioSource::Play))
+					.addFunction("play_sample", static_cast<AudioObject*(AudioSource::*)(AudioSample*)>(&AudioSource::Play))
+					.addFunction("get_sample", &AudioSource::GetSample)
+				.endClass();
+
+			LuaBinding(L)
+				.beginExtendClass<AudioListener, Component>("AudioListener")
+					.addProperty("master_volume", &AudioListener::GetMasterVolume, &AudioListener::SetMasterVolume)
+				.endClass();
+
+			// Register RigidBody2D
+			LuaBinding(L)
+				.beginExtendClass<RigidBody2D, Component>("RigidBody2D")
+					.addProperty("type", &RigidBody2D::GetType, &RigidBody2D::SetType)
+					.addProperty("position", &RigidBody2D::GetPosition, &RigidBody2D::SetPosition)
+					.addProperty("rotation", &RigidBody2D::GetRotation, &RigidBody2D::SetRotation)
+					.addProperty("linear_velocity", &RigidBody2D::GetLinearVelocity, &RigidBody2D::SetLinearVelocity)
+					.addFunction("apply_force", &RigidBody2D::ApplyForce)
+					.addFunction("apply_impulse", &RigidBody2D::ApplyImpulse)
 				.endClass();
 
 			// Register Script
@@ -237,6 +253,11 @@ namespace sig {
 					.addStaticFunction("get_mouse_button_down", &Input::GetMouseButtonDown)
 					.addStaticFunction("get_mouse_button_up", &Input::GetMouseButtonUp)
 					.addStaticFunction("get_mouse_position", &Input::GetMousePosition)
+					.addConstant("LEFT_MOUSE", Input::MOUSE_LEFT_BUTTON)
+					.addConstant("MIDDLE_MOUSE", Input::MOUSE_MIDDLE_BUTTON)
+					.addConstant("RIGHT_MOUSE", Input::MOUSE_RIGHT_BUTTON)
+					.addConstant("MOUSE_WHEEL_UP", Input::MOUSE_WHEEL_UP)
+					.addConstant("MOUSE_WHEEL_DOWN", Input::MOUSE_WHEEL_DOWN)
 					.addConstant("KEY_UNKNOWN", Input::KEY_UNKNOWN)
 					.addConstant("KEY_A", Input::KEY_A)
 					.addConstant("KEY_B", Input::KEY_B)
@@ -483,11 +504,9 @@ namespace sig {
 			// Register instances
 			Scene *current_scene = nullptr;
 			Window *window = nullptr;
-			SoundSystem *ssys = nullptr;
 			if (game != nullptr) {
 				current_scene = game->GetCurrentScene();
 				window = game->GetWindow();
-				ssys = game->GetSoundSystem();
 			}
 
 			LuaBinding(L)
@@ -495,7 +514,6 @@ namespace sig {
 					.addVariable("game", game)
 					.addVariable("current_scene", current_scene)
 					.addVariable("window", window)
-					.addVariable("sound_system", ssys)
 				.endModule();
 		}
 

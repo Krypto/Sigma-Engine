@@ -3,6 +3,7 @@
 
 #include "IUR.h"
 #include "Color.h"
+#include "Matrix4.h"
 
 #include <SDL2/SDL.h>
 
@@ -11,6 +12,7 @@ using namespace std;
 
 namespace sig
 {
+	using namespace math;
 	class Window : public IUR
 	{
 		friend class Input;
@@ -72,6 +74,8 @@ namespace sig
 		void Update(float dt);
 		
 		SDL_Window* GetSDLWindow() {return m_sdl_window;}
+
+		Matrix4 GetProjectionMatrix();
 	protected:
 		SDL_Window *m_sdl_window;
 		SDL_GLContext m_context;

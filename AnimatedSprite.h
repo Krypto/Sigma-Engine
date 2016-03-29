@@ -47,8 +47,8 @@ namespace sig
 		 */
 		void SetFrame(int f);
 		int GetFrame() {
-			if (m_current != nullptr) {
-				return m_current->currentIndex;
+			if (m_current >= 0) {
+				return GetCurrent()->currentIndex;
 			}
 			return 0;
 		}
@@ -66,21 +66,23 @@ namespace sig
 		void SetStatic(bool _static) { this->m_static = _static; }
 		bool IsStatic() const { return m_static; }
 		
-		Animation* GetCurrent() { return m_current; }
+		Animation* GetCurrent() { return m_animations[m_current]; }
 		const vector<Animation*>& GetAnimations() const { return m_animations; }
 				
 		void Update(float dt);
 		
+		virtual AnimatedSprite *GetInstance(Node* owner) override;
+
 		COMPONENT_NAME("AnimatedSprite")
 	private:
 		vector<Animation*> m_animations;
-		Animation* m_current;
+		int m_current;
 		vector<Rect> m_frames;
 		
 		int m_rows, m_cols;
 		bool m_static;
 		
-		Animation* GetAnim(string name);
+		int GetAnim(string name);
 	};
 
 }

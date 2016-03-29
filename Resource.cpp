@@ -1,10 +1,13 @@
 #include "Resource.h"
 #include "Texture2D.h"
-#include "AudioClip.h"
 #include "TileMap.h"
+#include "SoundSystem.h"
 
 #include <fstream>
 #include <string>
+#include <stdio.h>
+#include <stdlib.h>
+#include <malloc.h>
 
 sig::Resource::Resource()
 	:	m_rid(0),
@@ -31,7 +34,7 @@ sig::Resource::~Resource()
 			delete static_cast<std::string*>(data); break;
 		}
 		case RESOURCE_AUDIO: {
-			delete static_cast<AudioClip*>(data); break;
+			delete static_cast<AudioSample*>(data); break;
 		}
 	}
 	data = nullptr;
@@ -57,7 +60,20 @@ bool sig::Resource::Load()
 			return true;
 		}
 		case RESOURCE_AUDIO: {
-			data = new AudioClip(m_fileName);
+			FILE *f = fopen(m_fileName.c_str(), "rb");
+			if (f) {
+				u32 len = 0;
+				fseek(f, 0, SEEK_END);
+				len = ftell(f);
+				rewind(f);
+
+				Byte *buffer;
+				buffer = (Byte*) calloc(1, len+1);
+				fread(buffer, len, 1, f);
+				fclose(f);
+
+				data = new AudioSample((void*)buffer, len);
+			}
 			return true;
 		}
 		case RESOURCE_TILEMAP: {

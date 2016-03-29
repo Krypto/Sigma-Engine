@@ -28,28 +28,17 @@ sig::Script *sig::Lua::RunScriptModule(const string &fileName)
 	stream << t.rdbuf();
 	std::string ss = stream.str();
 
-	std::string mod = fileNameN;
-	size_t pos = fileNameN.rfind('.');
-	if (pos != std::string::npos || pos != 0) {
-		std::string noext = fileNameN.substr(0, pos);
-		size_t spos = noext.rfind('/');
-		if (spos != std::string::npos) {
-			mod = noext.substr(spos);
-		} else {
-			mod = noext;
-		}
-	}
-	return RunStringModule(mod, ss);
+	return RunStringModule(ss);
 }
 
-sig::Script *sig::Lua::RunStringModule(const string &moduleName, const string &expression)
+sig::Script *sig::Lua::RunStringModule(const string &expression)
 {
 	Script *ns = new Script();
 
 	LuaState lua = L;
-	lua.doString(expression.c_str());
+	ErrReport(lua.doString(expression.c_str()));
 
-	LuaRef tableM(L, moduleName.c_str());
+	LuaRef tableM(L, -1);
 	if (tableM.isTable()) {
 		if (tableM.has("properties")) {
 			ns->Properties = tableM.get<LuaRef>("properties");
@@ -70,6 +59,7 @@ sig::Script *sig::Lua::RunStringModule(const string &moduleName, const string &e
 			ns->OnMessageReceived = tableM.get<LuaRef>("on_message");
 		}
 	}
+	lua.pop();
 
 	return ns;
 }
@@ -100,34 +90,46 @@ void sig::Lua::ErrReport(int state)
 void sig::Script::Initialize()
 {
 	if (OnInitialize.isFunction()) {
-		OnInitialize(1, GetOwner());
+		OnInitialize(GetOwner());
 	}
 }
 
 void sig::Script::Update(float dt)
 {
 	if (OnUpdate.isFunction()) {
-		OnUpdate(1, GetOwner(), dt);
+		OnUpdate(GetOwner(), dt);
 	}
 }
 
-void sig::Script::MessageReceived(Message &msg)
+void sig::Script::MessageReceived(Message *msg)
 {
 	if (OnMessageReceived.isFunction()) {
-		OnMessageReceived(1, GetOwner(), msg);
+		OnMessageReceived(GetOwner(), msg);
 	}
 }
 
 void sig::Script::CollisionEnter(const Collision &col)
 {
 	if (OnCollisionEnter.isFunction()) {
-		OnCollisionEnter(1,  GetOwner(), col);
+		OnCollisionEnter(GetOwner(), col);
 	}
 }
 
 void sig::Script::CollisionExit(const Collision &col)
 {
 	if (OnCollisionExit.isFunction()) {
-		OnCollisionExit(1, GetOwner(), col);
+		OnCollisionExit(GetOwner(), col);
 	}
+}
+
+Script *Script::GetInstance(Node *owner)
+{
+	Script *inst = new Script();
+	inst->OnCollisionEnter = LuaRef(OnCollisionEnter);
+	inst->OnCollisionExit = LuaRef(OnCollisionExit);
+	inst->OnInitialize = LuaRef(OnInitialize);
+	inst->OnMessageReceived = LuaRef(OnMessageReceived);
+	inst->OnUpdate = LuaRef(OnUpdate);
+
+	return inst;
 }
