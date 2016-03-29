@@ -26,9 +26,11 @@ Debug
 Release
 build-debug
 build-release
-build
-/build/TGT
-/build
+build/sig
+build/dependencies
+build/CMakeFiles
+/build/dependencies
+/build/CMakeFiles
 /dependencies/luaintf
 /dependencies/OAL
 dependencies/luaintf
